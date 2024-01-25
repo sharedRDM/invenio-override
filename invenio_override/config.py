@@ -8,7 +8,7 @@
 
 """invenio module for sharedRDM theme."""
 
-from flask_babelex import gettext as _
+from invenio_i18n import gettext as _
 
 INVENIO_THEME_TUGRAZ_DEFAULT_VALUE = _("TU Graz Repository")
 """Default value for the application."""
