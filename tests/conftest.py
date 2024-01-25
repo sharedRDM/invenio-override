@@ -16,7 +16,7 @@ import pytest
 from flask import Flask
 from invenio_i18n import InvenioI18N
 
-from invenio-override import InvenioThemeTugraz
+from invenio_override import InvenioOverride
 
 
 @pytest.fixture()
@@ -26,7 +26,7 @@ def app(request):
     app.config.update(
         I18N_LANGUAGES=[("en", "English"), ("de", "German")],
     )
-    InvenioThemeTugraz(app)
+    InvenioOverride(app)
     InvenioI18N(app)
 
     return app

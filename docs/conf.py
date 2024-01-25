@@ -8,7 +8,7 @@
 
 """Sphinx configuration."""
 
-from invenio-override import __version__
+from invenio_override import __version__
 
 # -- General configuration ------------------------------------------------
 

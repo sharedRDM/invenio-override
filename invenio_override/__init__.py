@@ -8,8 +8,8 @@
 
 """invenio module for sharedRDM theme."""
 
-from .ext import InvenioThemeTugraz
+from .ext import InvenioOverride
 
 __version__ = "4.10.0"
 
-__all__ = ("__version__", "InvenioThemeTugraz")
+__all__ = ("__version__", "InvenioOverride")

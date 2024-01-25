@@ -12,7 +12,7 @@ from . import config
 from .views import index
 
 
-class InvenioThemeTugraz(object):
+class InvenioOverride(object):
     """invenio-override extension."""
 
     def __init__(self, app=None):

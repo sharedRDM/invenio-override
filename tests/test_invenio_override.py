@@ -10,12 +10,12 @@
 
 from flask import Flask
 
-from invenio-override import InvenioThemeTugraz
+from invenio_override import InvenioOverride
 
 
 def test_version():
     """Test version import."""
-    from invenio-override import __version__
+    from invenio_override import __version__
 
     assert __version__
 
@@ -23,11 +23,11 @@ def test_version():
 def test_init():
     """Test extension initialization."""
     app = Flask("testapp")
-    ext = InvenioThemeTugraz(app)
+    ext = InvenioOverride(app)
     assert "invenio-override" in app.extensions
 
     app = Flask("testapp")
-    ext = InvenioThemeTugraz()
+    ext = InvenioOverride()
     assert "invenio-override" not in app.extensions
     ext.init_app(app)
     assert "invenio-override" in app.extensions
@@ -35,4 +35,4 @@ def test_init():
 
 def test_app(app):
     """Test extension initialization."""
-    _ = InvenioThemeTugraz(app)
+    _ = InvenioOverride(app)
