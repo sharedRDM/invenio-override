@@ -14,8 +14,8 @@
 [main]
 host = https://www.transifex.com
 
-[invenio.invenio-theme-tugraz-messages]
-file_filter = invenio_theme_tugraz/translations/<lang>/LC_MESSAGES/messages.po
-source_file = invenio_theme_tugraz/translations/messages.pot
+[invenio.invenio-override-messages]
+file_filter = invenio_override/translations/<lang>/LC_MESSAGES/messages.po
+source_file = invenio_override/translations/messages.pot
 source_lang = en
 type = PO

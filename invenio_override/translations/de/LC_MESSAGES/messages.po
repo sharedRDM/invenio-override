@@ -427,7 +427,7 @@ msgid ""
 msgstr "Gebaut basierend auf Expertise derTU Graz im Bereich Data Management"
 
 #: invenio-override/templates/invenio-override/accounts/register_user.html:48
-msgid "Sign up with TUGRAZ "
+msgid "Sign up with sharedRDM "
 msgstr "Mit Ihrem TUGonline-Account registrieren"
 
 #: invenio-override/templates/invenio-override/accounts/register_user.html:65

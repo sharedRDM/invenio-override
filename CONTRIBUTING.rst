@@ -10,7 +10,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/tu-graz-library/invenio-override/issues.
+Report bugs at https://github.com/sharedRDM/invenio-override/issues.
 
 If you are reporting a bug, please include:
 
@@ -41,7 +41,7 @@ Submit Feedback
 ~~~~~~~~~~~~~~~
 
 The best way to send feedback is to file an issue at
-https://github.com/tu-graz-library/invenio-override/issues.
+https://github.com/sharedRDM/invenio-override/issues.
 
 If you are proposing a feature:
 
@@ -55,7 +55,7 @@ Get Started!
 
 Ready to contribute? Here's how to set up `invenio-override` for local development.
 
-1. Fork the `https://github.com/tu-graz-library/invenio-override.git` repo on GitHub.
+1. Fork the `https://github.com/sharedRDM/invenio-override.git` repo on GitHub.
 2. Clone your fork locally:
 
    .. code-block:: console
@@ -114,5 +114,5 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring.
 3. The pull request should work for Python 2.7, 3.5 and 3.6. Check
-   https://github.com/tu-graz-library/invenio-override/actions?query=event%3Apull_request
+   https://github.com/sharedRDM/invenio-override/actions?query=event%3Apull_request
    and make sure that the tests pass for all supported Python versions.

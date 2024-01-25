@@ -9,17 +9,17 @@
  invenio-override
 ======================
 
-.. image:: https://github.com/tu-graz-library/invenio-override/workflows/CI/badge.svg
-        :target: https://github.com/tu-graz-library/invenio-override/actions
+.. image:: https://github.com/sharedRDM/invenio-override/workflows/CI/badge.svg
+        :target: https://github.com/sharedRDM/invenio-override/actions
 
 .. image:: https://img.shields.io/pypi/dm/invenio-override.svg
         :target: https://pypi.python.org/pypi/invenio-override
 
-.. image:: https://img.shields.io/github/tag/tu-graz-library/invenio-override.svg
-        :target: https://github.com/tu-graz-library/invenio-override/releases
+.. image:: https://img.shields.io/github/tag/sharedRDM/invenio-override.svg
+        :target: https://github.com/sharedRDM/invenio-override/releases
 
-.. image:: https://img.shields.io/github/license/tu-graz-library/invenio-override.svg
-        :target: https://github.com/tu-graz-library/invenio-override/blob/master/LICENSE
+.. image:: https://img.shields.io/github/license/sharedRDM/invenio-override.svg
+        :target: https://github.com/sharedRDM/invenio-override/blob/master/LICENSE
 
 .. image:: https://readthedocs.org/projects/invenio-override/badge/?version=latest
         :target: https://invenio-override.readthedocs.io/en/latest/?badge=latest

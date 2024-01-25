@@ -8,6 +8,6 @@
 Authors
 =======
 
-invenio module for TUGRAZ theme.
+invenio module for sharedRDM theme.
 
 - mojib wali <mojib.wali@tugraz.at>

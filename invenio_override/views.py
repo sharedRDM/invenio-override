@@ -6,7 +6,7 @@
 # modify it under the terms of the MIT License; see LICENSE file for more
 # details.
 
-"""invenio module for TUGRAZ theme."""
+"""invenio module for sharedRDM theme."""
 
 from typing import Dict
 

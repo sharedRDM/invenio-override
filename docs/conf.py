@@ -106,14 +106,14 @@ todo_include_todos = False
 html_theme = "alabaster"
 
 html_theme_options = {
-    "description": "invenio module for TUGRAZ theme.",
+    "description": "invenio module for sharedRDM theme.",
     "github_user": "TU Graz",
     "github_repo": "invenio-override",
     "github_button": False,
     "github_banner": True,
     "show_powered_by": False,
     "extra_nav_links": {
-        "invenio-override@GitHub": "https://github.com/tu-graz-library/invenio-override",
+        "invenio-override@GitHub": "https://github.com/sharedRDM/invenio-override",
         "invenio-override@PyPI": "https://pypi.python.org/pypi/invenio-override/",
     },
 }
@@ -298,7 +298,7 @@ texinfo_documents = [
         "invenio-override Documentation",
         author,
         "invenio-override",
-        "invenio module for TUGRAZ theme.",
+        "invenio module for sharedRDM theme.",
         "Miscellaneous",
     ),
 ]

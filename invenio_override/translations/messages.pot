@@ -408,7 +408,7 @@ msgid ""
 msgstr ""
 
 #: invenio-override/templates/invenio-override/accounts/register_user.html:48
-msgid "Sign up with TUGRAZ "
+msgid "Sign up with sharedRDM "
 msgstr ""
 
 #: invenio-override/templates/invenio-override/accounts/register_user.html:65

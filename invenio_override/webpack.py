@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2020 TUGRAZ.
+# Copyright (C) 2020 sharedRDM.
 #
 # invenio-override  is free software.
 
