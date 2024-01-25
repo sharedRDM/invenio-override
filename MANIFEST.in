@@ -1,0 +1,44 @@
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2024 Shared RDM.
+#
+# invenio-override is free software; you can redistribute it and/or
+# modify it under the terms of the MIT License; see LICENSE file for more
+# details.
+
+include .dockerignore
+include .editorconfig
+include .tx/config
+prune docs/_build
+recursive-include invenio-override/translations *.po *.pot *.mo
+
+# added by check_manifest.py
+include *.md
+include *.rst
+include *.sh
+include *.txt
+include *.rst
+include LICENSE
+include babel.ini
+include pytest.ini
+recursive-include docs *.bat
+recursive-include docs *.py
+recursive-include docs *.rst
+recursive-include docs *.txt
+recursive-include docs Makefile
+recursive-include invenio-override *.html
+recursive-include invenio-override *.js
+recursive-include invenio-override *.png
+recursive-include invenio-override *.scss
+recursive-include invenio-override *.svg
+recursive-include invenio-override *.less
+recursive-include invenio-override *.ico
+recursive-include invenio-override *.pdf
+recursive-include invenio-override *.ttf
+recursive-include invenio-override *.txt
+
+recursive-include tests *.py
+recursive-include invenio-override *.jpg
+recursive-include invenio-override *.gitkeep
+recursive-include .github/workflows *.yml
+include .git-blame-ignore-revs
