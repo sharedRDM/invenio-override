@@ -62,10 +62,10 @@ def index():
     records = FrontpageRecordsSearch()[:5].sort("-created").execute()
 
     return render_template(
-        "invenio-override/index.html", records=records_serializer(records)
+        "invenio_override/index.html", records=records_serializer(records)
     )
 
 
 def comingsoon():
     """Comingsoon."""
-    return render_template("invenio-override/comingsoon.html")
+    return render_template("invenio_override/comingsoon.html")

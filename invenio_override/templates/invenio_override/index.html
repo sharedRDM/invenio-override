@@ -12,7 +12,7 @@
   {{ webpack['invenio-override-js.js'] }}
 {%- endblock javascript %}
 
-{%- from "invenio-override/macros/authors.html" import creators -%}
+{%- from "invenio_override/macros/authors.html" import creators -%}
 
 {%- block page_body %}
 
@@ -135,7 +135,7 @@
       <div class="ui segment" style="padding-bottom: 10px;">
         <h4>{{_ ("Why use")}} {{config.THEME_SITENAME}}?</h4>
 
-        {% include "invenio-override/benefits.html" %}
+        {% include "invenio_override/benefits.html" %}
       </div>
     </div>
   </div>

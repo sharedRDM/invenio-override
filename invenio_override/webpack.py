@@ -15,8 +15,8 @@ theme = WebpackThemeBundle(
     themes={
         "semantic-ui": dict(
             entry={
-                "invenio-override-theme": "./less/invenio-override/theme.less",
-                "invenio-override-js": "./js/invenio-override/theme.js",
+                "invenio-override-theme": "./less/invenio_override/theme.less",
+                "invenio-override-js": "./js/invenio_override/theme.js",
             },
             dependencies={
                 # add any additional npm dependencies here...
