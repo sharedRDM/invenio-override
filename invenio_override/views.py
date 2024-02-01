@@ -41,7 +41,7 @@ def cast_to_dict(attr_dict):
 
 def ui_blueprint(app):
     """Blueprint for the routes and resources provided by Invenio-theme-tugraz."""
-    routes = app.config.get("TUG_ROUTES")
+    routes = app.config.get("OVERRIDE_ROUTES")
 
     blueprint.add_url_rule(routes["index"], view_func=index)
     blueprint.add_url_rule(routes["comingsoon"], view_func=comingsoon)

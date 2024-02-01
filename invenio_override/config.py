@@ -22,15 +22,30 @@ INVENIO_OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
 INVENIO_OVERRIDE_ICON = "images/icon_use.png"
 """icon used in login page"""
 
-THEME_TUGRAZ_CONTACT_FORM = False
+INVENIO_OVERRIDE_CONTACT_FORM = False
 """Enable/Disable Contact form."""
 
-THEME_TUGRAZ_PRODUCTION = False
+INVENIO_OVERRIDE_PRODUCTION = False
 """Production environment.
 
     Can also be set as an environment variable in a .env file. Then the name
     has to be 'INVENIO_OVERRIDE_PRODUCTION'.
 """
+
+OVERRIDE_ROUTES = {
+    "index": "/",
+    "comingsoon": "/comingsoon",
+}
+
+INVENIO_OVERRIDE_LOGO = "images/TUG.png"
+"""override logo"""
+
+# TODO: fix it
+INVENIO_OVERRIDE_FAVICON = "favicon.ico"
+"""override favicon"""
+
+INVENIO_OVERRIDE_SHIBBOLETH = False
+"""Set True if SAML is configured"""
 
 # Invenio-theme
 # ============
@@ -97,23 +112,6 @@ DEPOSITS_HEADER_TEMPLATE = "invenio_override/header.html"
 # SEARCH_UI_SEARCH_TEMPLATE = "invenio_override/search.html"
 # """override the default search page"""
 
-TUG_ROUTES = {
-    "index": "/",
-    "comingsoon": "/comingsoon",
-}
-
-
-##############################################################################
-
-INVENIO_OVERRIDE_LOGO = "images/TUG.png"
-"""override logo"""
-
-# TODO: fix it
-INVENIO_OVERRIDE_FAVICON = "favicon.ico"
-"""override favicon"""
-
-INVENIO_OVERRIDE_SHIBBOLETH = False
-"""Set True if SAML is configured"""
 
 # Invenio-I18N
 # ============
@@ -356,4 +354,3 @@ RATELIMIT_GUEST_USER = "5000 per hour;500 per minute"
 
 SESSION_COOKIE_SAMESITE = "Strict"
 """Sets cookie with the samesite flag to 'Strict' by default."""
-
