@@ -24,9 +24,6 @@
 .. image:: https://readthedocs.org/projects/invenio-override/badge/?version=latest
         :target: https://invenio-override.readthedocs.io/en/latest/?badge=latest
         
-.. image:: https://img.shields.io/coveralls/mb-wali/invenio-override.svg
-        :target: https://coveralls.io/r/mb-wali/invenio-override
-        
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
 
