@@ -219,7 +219,7 @@ html_sidebars = {
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "invenio-theme-tugraz_namedoc"
+htmlhelp_basename = "invenio-override_namedoc"
 
 # -- Options for LaTeX output ---------------------------------------------
 

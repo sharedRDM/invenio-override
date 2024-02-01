@@ -129,11 +129,11 @@ I18N_LANGUAGES = [("de", _("German"))]
 MAIL_SERVER = "localhost"
 """Domain ip where mail server is running."""
 
-SECURITY_EMAIL_SENDER = "info@invenio-test.tugraz.at"
+SECURITY_EMAIL_SENDER = "info@example.com"
 """Email address used as sender of account registration emails."""
 """Domain name should match the domain used in web server."""
 
-SECURITY_EMAIL_SUBJECT_REGISTER = _("Welcome to TU Graz Repository!")
+SECURITY_EMAIL_SUBJECT_REGISTER = _("Welcome to The Repository!")
 """Email subject for account registration emails."""
 
 MAIL_SUPPRESS_SEND = True
@@ -231,7 +231,7 @@ If False, you won't be able to login via the web UI.
 
 Instead if you have a overriden template somewhere in your config.py:
 like this:
-SECURITY_LOGIN_USER_TEMPLATE = 'invenio_theme_tugraz/accounts/login.html'
+SECURITY_LOGIN_USER_TEMPLATE = 'invenio_override/accounts/login.html'
 then you can remove this condition from header_login.htm:
 {%- if config.ACCOUNTS %}
 to render your overriden login.html
@@ -244,15 +244,6 @@ to render your overriden login.html
 RECAPTCHA_PUBLIC_KEY = None
 #: Recaptcha private key (change to enable).
 RECAPTCHA_PRIVATE_KEY = None
-
-# invenio-records-permissions
-# =======
-# See:
-# https://invenio-records-permissions.readthedocs.io/en/latest/configuration.html
-# Uncomment these to enable overriding RDM permissions
-# from .rdm_permissions import TUGRAZRDMRecordServiceConfig
-# RDM_RECORDS_BIBLIOGRAPHIC_SERVICE_CONFIG = TUGRAZRDMRecordServiceConfig
-"""Access control configuration for records."""
 
 # invenio-rdm-records
 # =======
