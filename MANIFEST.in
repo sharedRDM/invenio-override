@@ -69,18 +69,8 @@ include .git-blame-ignore-revs
   invenio_override/assets/semantic-ui/less/invenio_override/variables.less
   invenio_override/static/extra/orcid.png
   invenio_override/static/favicon.ico
-  invenio_override/static/images/Fair_Data_Austria_orangerot.png
-  invenio_override/static/images/Icon_1_v2.svg
-  invenio_override/static/images/TU_Austria_Logo.png
-  invenio_override/static/images/footer.jpg
   invenio_override/static/images/icon_use.png
-  invenio_override/static/images/inveniordm-tail.svg
-  invenio_override/static/images/library_logo.png
-  invenio_override/static/images/login_logo.png
   invenio_override/static/images/logo.svg
-  invenio_override/static/images/oea.svg
-  invenio_override/static/images/re3data.svg
-  invenio_override/static/images/tug_logo.png
   invenio_override/templates/invenio_override/accounts/accounts_base.html
   invenio_override/templates/invenio_override/accounts/header_login.html
   invenio_override/templates/invenio_override/accounts/login_user.html
