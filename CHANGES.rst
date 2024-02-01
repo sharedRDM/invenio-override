@@ -8,6 +8,6 @@
 Changes
 =======
 
-Version v4.10.0 (release 2022-10-13)
+Version v0.0.1 (release 2024-02-01)
 
-- global: migrate to v10 (#282)
+- global: init repository
