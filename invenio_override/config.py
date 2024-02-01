@@ -111,3 +111,15 @@ INVENIO_OVERRIDE_LOGO = "images/TUG.png"
 # TODO: fix it
 INVENIO_OVERRIDE_FAVICON = "favicon.ico"
 """override favicon"""
+
+INVENIO_OVERRIDE_SHIBBOLETH = False
+"""Set True if SAML is configured"""
+
+# Invenio-I18N
+# ============
+# See https://invenio-i18n.readthedocs.io/en/latest/configuration.html
+BABEL_DEFAULT_LOCALE = "en"
+# Default time zone
+BABEL_DEFAULT_TIMEZONE = "Europe/Vienna"
+# Other supported languages (do not include BABEL_DEFAULT_LOCALE in list).
+I18N_LANGUAGES = [("de", _("German"))]
