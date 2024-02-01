@@ -10,17 +10,14 @@
 
 from invenio_i18n import gettext as _
 
-INVENIO_OVERRIDE_DEFAULT_VALUE = _("TU Graz Repository")
-"""Default value for the application."""
-
 INVENIO_OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
-"""TU Graz Default base template"""
+"""Default base template"""
 
 INVENIO_OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
-"""TU Graz Default account base template"""
+"""Default account base template"""
 
 INVENIO_OVERRIDE_ICON = "images/icon_use.png"
-"""icon used in login page"""
+"""Icon used in login page"""
 
 INVENIO_OVERRIDE_CONTACT_FORM = False
 """Enable/Disable Contact form."""
@@ -56,7 +53,7 @@ THEME_SEARCHBAR = False
 """Enable or disable the header search bar."""
 
 THEME_HEADER_TEMPLATE = "invenio_override/header.html"
-"""TU Graz header template"""
+"""header template"""
 
 THEME_FRONTPAGE = False
 """Use default frontpage."""
@@ -67,7 +64,7 @@ THEME_HEADER_LOGIN_TEMPLATE = "invenio_override/accounts/header_login.html"
 THEME_FOOTER_TEMPLATE = "invenio_override/footer.html"
 """footer template"""
 
-THEME_FRONTPAGE_TITLE = _("TU Graz Repository")
+THEME_FRONTPAGE_TITLE = _("Repository")
 """Frontpage title."""
 
 THEME_SITENAME = _("Repository")

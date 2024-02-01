@@ -30,16 +30,16 @@
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
 
-TU Graz standard theme.
+Override invenioRDM theme.
 
 Features:
 
-* TU Graz custom header template.
-* TU Graz custom footer template.
-* TU Graz custom login/signup templates.
-* TU Graz custom frontpage template.
-* TU Graz custom contact template.
-* TU Graz overriden theme.
+* Custom header template.
+* Custom footer template.
+* Custom login/signup templates.
+* Custom frontpage template.
+* Custom contact template.
+* Overriden theme.
 
 Further documentation is available on
 https://invenio-override.readthedocs.io/

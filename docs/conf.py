@@ -107,7 +107,7 @@ html_theme = "alabaster"
 
 html_theme_options = {
     "description": "invenio module for sharedRDM theme.",
-    "github_user": "TU Graz",
+    "github_user": "sharedRDM",
     "github_repo": "invenio-override",
     "github_button": False,
     "github_banner": True,
