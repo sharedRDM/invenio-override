@@ -11,3 +11,7 @@ Changes
 Version v0.0.1 (release 2024-02-01)
 
 - global: init repository
+
+Version v0.0.2 (release 2024-02-02)
+
+- global: remove scss
