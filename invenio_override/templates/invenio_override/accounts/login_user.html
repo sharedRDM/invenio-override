@@ -6,7 +6,7 @@
   details.
 #}
 
-{% extends config.INVENIO_OVERRIDE_ACCOUNT_BASE %}
+{% extends config.OVERRIDE_ACCOUNT_BASE %}
 
 
 {% from "invenio_accounts/_macros.html" import render_field, form_errors %}
@@ -37,7 +37,7 @@
             {{
             _('Log in with %(title)s', title=config.SSO_SAML_IDPS[name]['title']|default("SAML", true))
             }}
-            <img src="{{ url_for('static', filename=config.INVENIO_OVERRIDE_ICON)}}" height="20px" />
+            <img src="{{ url_for('static', filename=config.OVERRIDE_ICON)}}" height="20px" />
           </a>
         </div>
         {% endfor %}

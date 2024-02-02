@@ -10,19 +10,19 @@
 
 from invenio_i18n import gettext as _
 
-INVENIO_OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
+OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 """Default base template"""
 
-INVENIO_OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
+OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
 """Default account base template"""
 
-INVENIO_OVERRIDE_ICON = "images/icon_use.png"
+OVERRIDE_ICON = "images/icon_use.png"
 """Icon used in login page"""
 
-INVENIO_OVERRIDE_CONTACT_FORM = False
+OVERRIDE_CONTACT_FORM = False
 """Enable/Disable Contact form."""
 
-INVENIO_OVERRIDE_PRODUCTION = False
+OVERRIDE_PRODUCTION = False
 """Production environment.
 
     Can also be set as an environment variable in a .env file. Then the name
@@ -34,14 +34,14 @@ OVERRIDE_ROUTES = {
     "comingsoon": "/comingsoon",
 }
 
-INVENIO_OVERRIDE_LOGO = "images/TUG.png"
+OVERRIDE_LOGO = "images/TUG.png"
 """override logo"""
 
 # TODO: fix it
-INVENIO_OVERRIDE_FAVICON = "favicon.ico"
+OVERRIDE_FAVICON = "favicon.ico"
 """override favicon"""
 
-INVENIO_OVERRIDE_SHIBBOLETH = False
+OVERRIDE_SHIBBOLETH = False
 """Set True if SAML is configured"""
 
 # Invenio-theme
