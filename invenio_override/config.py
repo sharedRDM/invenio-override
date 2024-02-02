@@ -34,7 +34,7 @@ OVERRIDE_ROUTES = {
     "comingsoon": "/comingsoon",
 }
 
-OVERRIDE_LOGO = "images/logo-invenio-rdm.svg"
+OVERRIDE_LOGO = "images/invenioRDM.svg"
 """override logo"""
 
 # TODO: fix it
