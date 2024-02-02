@@ -5,15 +5,6 @@
  * under the terms of the MIT License; see LICENSE file for more details.
  */
 
-/***
-**TODO:
-** test overriding variables.
-***/
-
-//@import "../invenio_app_rdm/variables.less";
-//@navbar_background_image: unset;
-//@navbar_background_color: #ffffff;
-
 
 // badge colors, accessibility
 @accessRight          : #e9711c;
@@ -23,9 +14,11 @@
 @accessRightClosed    : @accessRightEmbargoed;
 @accessRightMetadata    : #2185D0;
 
-// primary colors 
-@overrideBlack: #231f20;
-@overrideRed  : #e4154b;
+// primary colors
+@overridePrimary  : #0377CD;
+@overrideSecondary: #058af0;
+
+@overridePrimaryBt  : #048622; // override primary button - e.g. Create community
 
 // general
 @primaryBackground: #fff;
@@ -37,7 +30,9 @@
 @greyLight             : #E0E1E2;
 @labelKeywordBackground: #E8E8E8;
 
-
+// ui message
+@uiMsgBc: #FCFFF5;
+@uiMsgGc: @overridePrimary;
 
 // link and button colors
 @primaryLinkInverted          : @primaryText;
@@ -73,12 +68,19 @@
 @notificationBorder: #e2d5c2;
 
 .home-stroke {
-    stroke:@overrideRed;;stroke-linecap:square;stroke-width:4;fill:none
+   stroke:@overridePrimary;;stroke-linecap:square;stroke-width:4;fill:none
 }
 
 /**** hyperlink hover color ****/
 a:focus,
 a:hover {
-  color: @overrideRed;
-  text-decoration: underline;
+ color: @overridePrimary;
+ text-decoration: underline;
+}
+
+// Overrided 
+.ui.primary.label {
+  background-color: @overridePrimary;
+  border-color: @overridePrimary;
+  color: rgba(255, 255, 255, 0.9);
 }

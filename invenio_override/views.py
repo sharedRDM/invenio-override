@@ -43,7 +43,7 @@ def ui_blueprint(app):
     """Blueprint for the routes and resources provided by Invenio-theme-tugraz."""
     routes = app.config.get("OVERRIDE_ROUTES")
 
-    blueprint.add_url_rule(routes["index"], view_func=index)
+    # blueprint.add_url_rule(routes["index"], view_func=index)
     blueprint.add_url_rule(routes["comingsoon"], view_func=comingsoon)
 
     return blueprint
@@ -69,3 +69,8 @@ def index():
 def comingsoon():
     """Comingsoon."""
     return render_template("invenio_override/comingsoon.html")
+
+
+def locked(e):
+    """Error page for status locked."""
+    return render_template("invenio_override/423.html")

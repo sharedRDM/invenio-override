@@ -9,7 +9,7 @@
 """invenio module for sharedRDM theme."""
 
 from . import config
-from .views import index
+from .views import locked
 
 
 class InvenioOverride(object):
@@ -24,9 +24,11 @@ class InvenioOverride(object):
         """Flask application initialization."""
         # add index route rule
         # https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.add_url_rule
-        app.add_url_rule("/", "index", index)
+        # app.add_url_rule("/", "index", index)
         self.init_config(app)
+        app.register_error_handler(423, locked)
         app.extensions["invenio-override"] = self
+        app.config["THEME_LOGO"] = app.config.get("OVERRIDE_LOGO")
 
     def init_config(self, app):
         """Initialize configuration."""

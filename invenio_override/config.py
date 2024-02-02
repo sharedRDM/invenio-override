@@ -10,6 +10,9 @@
 
 from invenio_i18n import gettext as _
 
+OVERRIDE_FRONTPAGE_RIGHT = False
+"""Frontpage right section"""
+
 OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 """Default base template"""
 
@@ -92,6 +95,8 @@ SEARCH_UI_HEADER_TEMPLATE = "invenio_override/header.html"
 DEPOSITS_HEADER_TEMPLATE = "invenio_override/header.html"
 """Deposits header page's template."""
 
+THEME_FRONTPAGE_TEMPLATE = "invenio_override/frontpage.html"
+"""Frontpage template."""
 
 # Invenio-rdm-records
 # =============
