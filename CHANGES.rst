@@ -7,11 +7,14 @@
 
 Changes
 =======
+Version v0.0.3 (release 2024-02-02)
 
-Version v0.0.1 (release 2024-02-01)
-
-- global: init repository
+- global: configs naming
 
 Version v0.0.2 (release 2024-02-02)
 
 - global: remove scss
+
+Version v0.0.1 (release 2024-02-01)
+
+- global: init repository

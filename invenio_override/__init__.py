@@ -10,6 +10,6 @@
 
 from .ext import InvenioOverride
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 __all__ = ("__version__", "InvenioOverride")
