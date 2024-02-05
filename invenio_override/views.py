@@ -69,3 +69,8 @@ def index():
 def comingsoon():
     """Comingsoon."""
     return render_template("invenio_override/comingsoon.html")
+
+
+def locked(e):
+    """Error page for status locked."""
+    return render_template("invenio_override/423.html")
