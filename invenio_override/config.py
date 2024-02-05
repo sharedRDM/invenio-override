@@ -92,6 +92,8 @@ SEARCH_UI_HEADER_TEMPLATE = "invenio_override/header.html"
 DEPOSITS_HEADER_TEMPLATE = "invenio_override/header.html"
 """Deposits header page's template."""
 
+THEME_FRONTPAGE_TEMPLATE = "invenio_override/frontpage.html"
+"""Frontpage template."""
 
 # Invenio-rdm-records
 # =============
