@@ -1,9 +1,9 @@
 {#
-  Copyright (C) 2024 Shared RDM.
+Copyright (C) 2024 Shared RDM.
 
-  invenio-override is free software; you can redistribute it and/or
-  modify it under the terms of the MIT License; see LICENSE file for more
-  details.
+invenio-override is free software; you can redistribute it and/or
+modify it under the terms of the MIT License; see LICENSE file for more
+details.
 #}
 
 {% if not config.OVERRIDE_PRODUCTION %}
@@ -22,39 +22,54 @@
       {%- endblock navbar_header %}
 
       <div class="ui container">
+
         <div class="ui grid stackable container">
+
           <div class="three column row centered" style="padding-bottom: 0;">
+
+
             <div class="two wide column main-menu-entry">
-              <a href="/" title="Home" class="no-decoration">
-                <span class="home-inline">
-                  <svg shape-rendering="geometricPrecision" id="int-menu-q-home-icon"
-                       xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg"
-                       version="1.1" xml:space="preserve" height="36.997" width="35.969"
-                       enable-background="new 0 0 595.28 841.89" y="0px" x="0px" xmlns:cc="http://creativecommons.org/ns#"
-                       xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 35.969 36.997451">
-                    <polyline class="home-stroke"
-                              points="282.72 437.28 282.72 414.77 297.71 406.69 312.69 414.77 312.69 437.28"
-                              transform="translate(-279.72 -403.28)">
-                    </polyline>
-                  </svg>
-                  {{_ ("Home")}}
-                </span>
-              </a>
+              <div class="ui secondary menu">
+                <a href="/" title="Home" class="ui item no-decoration">
+                  <span class="home-inline">
+                    <i class="home icon"></i>
+                    {{_ ("Home")}}
+                  </span>
+                </a>
+              </div>
             </div>
 
 
 
             {%- for item in current_menu.submenu('main').children|sort(attribute='order') if item.visible recursive %}
-              <div class="two wide column main-menu-entry">
-                <a role="menuitem" href="{{ item.url }}" class="no-decoration">{{ item.text|safe }}</a>
+            <div class="two wide column main-menu-entry">
+              <div class="ui secondary menu">
+                <a class="ui item no-decoration" href="{{ item.url }}">{{ item.text|safe }}</a>
               </div>
+            </div>
             {% endfor %}
 
             {% for item in current_menu.submenu('actions').children|sort(attribute='order') if item.visible recursive %}
-              <div class="two wide column main-menu-entry">
-                <a role="menuitem" href="{{ item.url }}" class="no-decoration">{{ item.text|safe }}</a>
+            <div class="two wide column main-menu-entry">
+              <div class="ui secondary menu">
+                <a class="ui item no-decoration" href="{{ item.url }}">{{ item.text|safe }}</a>
               </div>
+            </div>
             {% endfor %}
+
+
+            {%- for l in current_i18n.get_locales() %}
+            {%- if current_i18n.language != l.language %}
+            <div class="two wide column main-menu-entry">
+              <div class="ui secondary menu">
+            <a class="ui item no-decoration" 
+              href="{{ url_for('invenio_i18n.set_lang', lang_code=l.language) }}">{{ l.get_display_name().upper() [0:2]}}</a>
+            </div>
+          </div>
+            {%- endif %}
+            {%- endfor %}
+
+
           </div>
 
           <div id="margin-divider" class="ui divider main-menu-underline-line">
@@ -69,14 +84,14 @@
     {%- endblock navbar %}
 
     {%- block flashmessages %}
-      {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
-      {{ flashed_messages() }}
+    {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
+    {{ flashed_messages() }}
     {%- endblock %}
   </header>
 
   {#
   {%- block breadcrumbs %}
-    {%- include "invenio_theme/breadcrumbs.html" %}
+  {%- include "invenio_theme/breadcrumbs.html" %}
   {%- endblock breadcrumbs %}
   #}
 </div>
