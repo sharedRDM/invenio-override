@@ -10,6 +10,9 @@
 
 from invenio_i18n import gettext as _
 
+OVERRIDE_FRONTPAGE_RIGHT = False
+"""Frontpage right section"""
+
 OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 """Default base template"""
 

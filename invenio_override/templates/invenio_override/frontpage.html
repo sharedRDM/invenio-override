@@ -1,20 +1,20 @@
 {#
-  Copyright (C) 2024 Shared RDM.
+Copyright (C) 2024 Shared RDM.
 
-  invenio-override is free software; you can redistribute it and/or
-  modify it under the terms of the MIT License; see LICENSE file for more
-  details.
+invenio-override is free software; you can redistribute it and/or
+modify it under the terms of the MIT License; see LICENSE file for more
+details.
 
-  overriden grid_section from original:
-  https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm/frontpage.html
+overriden grid_section from original:
+https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm/frontpage.html
 
-  and overriden page_header: 
-  header_frontpage.html
+and overriden page_header:
+header_frontpage.html
 
 #}
 
 {%- block javascript %}
-  {{ webpack['invenio-override-js.js'] }}
+{{ webpack['invenio-override-js.js'] }}
 {%- endblock javascript %}
 
 {%- from "invenio_override/macros/authors.html" import creators -%}
@@ -24,37 +24,42 @@
 
 
 {%- block page_header %}
-  {%- include "invenio_override/header_frontpage.html" %}
+{%- include "invenio_override/header_frontpage.html" %}
 {%- endblock page_header %}
-  
-  {%- block grid_section %}
-  <div class="ui container">
-    <div class="ui divider hidden"></div>
-  
-    <div class="ui stackable grid">
-      {% block main_column %}
-          <div class="ten wide column">
-          {% block main_column_content %}
-            {{ records_list() }}
-          {% endblock main_column_content %}
+
+{%- block grid_section %}
+<div class="ui container">
+  <div class="ui divider hidden"></div>
+
+  {%- if config.OVERRIDE_FRONTPAGE_RIGHT %}
+
+  <div class="ui stackable grid">
+    {%- endif %}
+
+    {% block main_column %}
+    <div class="ten wide column">
+      {% block main_column_content %}
+      {{ records_list() }}
+      {% endblock main_column_content %}
       {% endblock main_column %}
     </div>
 
-        <!---segments-->
-        <!--New grid section, not included on invenio-app-rdm-->
-        <div class="six wide column">
-          {% include "invenio_override/contact_us.html" %}
-          {% include "invenio_override/benefits.html" %}
-        </div>
-
+    {%- if config.OVERRIDE_FRONTPAGE_RIGHT %}
+    <!---segments-->
+    <!--New grid section, not included on invenio-app-rdm-->
+    <div class="six wide column">
+      {% include "invenio_override/contact_us.html" %}
+      {% include "invenio_override/benefits.html" %}
     </div>
-    </div>
+    {%- endif %}
+  </div>
+</div>
 
-    
-  {%- endblock grid_section %}
+
+{%- endblock grid_section %}
 
 
 {#
-  For more override: 
-  https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm/frontpage.html
+For more override:
+https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm/frontpage.html
 #}
