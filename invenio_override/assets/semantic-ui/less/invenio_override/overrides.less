@@ -208,19 +208,24 @@ pre {
 /// positive
 /// uncomment and override primary button - e.g. Create community
 
-// .ui.positive.buttons .button, .ui.positive.button {
-//   background-color: #048622;
-//   color: #FFFFFF;
-// }
+.ui.positive.buttons .button, .ui.positive.button {
+  background-color: @overridePrimaryBt;
+  color: #FFFFFF;
+}
 
 .ui.positive.buttons .button:hover, .ui.positive.button:hover {
   background-color: #000;
-  color: #048622;
+  color: @overridePrimaryBt;
   // color: #FFFFFF;
   // text-shadow: none;
 }
 
 /// primary
+.ui.primary.buttons .button, .ui.primary.button {
+  background-color: @overridePrimary;
+  color: #FFFFFF;
+}
+
 .ui.primary.buttons .button:hover, .ui.primary.button:hover {
   background-color: #000;
   color: #0069b7;
@@ -236,5 +241,11 @@ pre {
 .ui.negative.buttons .button:hover, .ui.negative.button:hover {
   background-color: #000;
   color: #d01919;
+}
+
+.ui.menu .brand.active.item, .ui.brand.menu .active.item {
+  border-color: @overridePrimary !important;
+  background-color: @overridePrimary;
+  color: #FFFFFF !important;
 }
 
