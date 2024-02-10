@@ -23,9 +23,8 @@
 @accessRightClosed    : @accessRightEmbargoed;
 @accessRightMetadata    : #2185D0;
 
-// primary colors 
-@overrideBlack: #231f20;
-@overrideRed  : #e4154b;
+// primary colors
+@overridePrimary  : #fb8273;
 
 // general
 @primaryBackground: #fff;
@@ -34,13 +33,12 @@
 
 // accent colors
 @greyDark              : #777;
-@greyLight             : #E0E1E2;  // used for the underline divider menu 
+@greyLight             : #E0E1E2;
 @labelKeywordBackground: #E8E8E8;
-
 
 // ui message
 @uiMsgBc: #FCFFF5;
-@uiMsgGc: @overrideRed;
+@uiMsgGc: @overridePrimary;
 
 // link and button colors
 @primaryLinkInverted          : @primaryText;
@@ -76,12 +74,20 @@
 @notificationBorder: #e2d5c2;
 
 .home-stroke {
-    stroke:@overrideRed;;stroke-linecap:square;stroke-width:4;fill:none
+   stroke:@overridePrimary;;stroke-linecap:square;stroke-width:4;fill:none
 }
 
 /**** hyperlink hover color ****/
 a:focus,
 a:hover {
-  color: @overrideRed;
-  text-decoration: underline;
+ color: @overridePrimary;
+ text-decoration: underline;
 }
+
+// Overrided 
+.ui.primary.label {
+  background-color: @overridePrimary;
+  border-color: @overridePrimary;
+  color: rgba(255, 255, 255, 0.9);
+}
+

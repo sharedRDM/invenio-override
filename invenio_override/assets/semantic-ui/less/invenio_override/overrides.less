@@ -74,7 +74,7 @@ pre {
  ***/
 /*.ui.button,*/
 .ui.search.button {
-  background-color: @overrideRed;
+  background-color: @overridePrimary;
 }
 
 /***
@@ -172,7 +172,31 @@ pre {
   display: block !important;
 }
 
+
+///////////
+/// UI messages
+///////////
 .ui.success.message {
-  background-color: @uiMsgBc;
-  // color: @uiMsgGc;
+  background-color: #F8FFFF;
+  color: #0e576c;
+}
+
+.ui.info.message {
+  background-color: #F8FFFF;
+  color: #0e576c;
+}
+
+.ui.button:hover, .ui.search.button:hover, .ui.accordion.styled .title:hover, .ui.accordion.styled .accordion .title:hover {
+  background-color: #000;
+  color: @overridePrimary;
+}
+
+// deposit page accordions
+.ui.accordion.invenio-accordion-field .title {
+  background-color: @overridePrimary;
+  // color: #FFFFFF;
+  // padding: 1em;
+  // font-size: 1rem;
+  // border-radius: 0.28571429rem;
+  // margin-bottom: 1rem;
 }
