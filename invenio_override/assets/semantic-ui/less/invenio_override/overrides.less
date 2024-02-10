@@ -201,17 +201,40 @@ pre {
   // margin-bottom: 1rem;
 }
 
-//
-.ui.positive.buttons .button, .ui.positive.button {
-  background-color: @overridePrimary;
-  // color: #FFFFFF;
-  // text-shadow: none;
-  // background-image: none;
-}
+////////////////// 
+///// Buttons
+//////////////////
+
+/// positive
+/// uncomment and override primary button - e.g. Create community
+
+// .ui.positive.buttons .button, .ui.positive.button {
+//   background-color: #048622;
+//   color: #FFFFFF;
+// }
 
 .ui.positive.buttons .button:hover, .ui.positive.button:hover {
   background-color: #000;
-  color: @overridePrimary;
+  color: #048622;
   // color: #FFFFFF;
   // text-shadow: none;
 }
+
+/// primary
+.ui.primary.buttons .button:hover, .ui.primary.button:hover {
+  background-color: #000;
+  color: #0069b7;
+}
+
+/// warning
+.ui.warning.button:hover {
+  background-color: #000;
+  color: #FBBD08;
+}
+
+/// negative
+.ui.negative.buttons .button:hover, .ui.negative.button:hover {
+  background-color: #000;
+  color: #d01919;
+}
+
