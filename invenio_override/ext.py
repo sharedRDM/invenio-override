@@ -30,6 +30,7 @@ class InvenioOverride(object):
         app.register_error_handler(423, locked)
 
         app.extensions["invenio-override"] = self
+
         app.config['THEME_LOGO'] = app.config.get("OVERRIDE_LOGO")
 
     def init_config(self, app):
