@@ -32,7 +32,6 @@ class InvenioOverride(object):
         app.extensions["invenio-override"] = self
         app.config['THEME_LOGO'] = app.config.get("OVERRIDE_LOGO")
 
-
     def init_config(self, app):
         """Initialize configuration."""
         for k in dir(config):
