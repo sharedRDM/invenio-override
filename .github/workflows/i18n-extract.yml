@@ -27,7 +27,7 @@ jobs:
       # install dependencies
       - name: Install dependencies
         run: |
-          pip install -e ".[all]"
+          pip install -e ".[tests,opensearch2]"
 
       # extract backend messages
       - name: Extract backend messages
