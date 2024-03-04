@@ -67,12 +67,6 @@ THEME_HEADER_LOGIN_TEMPLATE = "invenio_override/accounts/header_login.html"
 THEME_FOOTER_TEMPLATE = "invenio_override/footer.html"
 """footer template"""
 
-THEME_FRONTPAGE_TITLE = _("Repository")
-"""Frontpage title."""
-
-THEME_SITENAME = _("Repository")
-"""Site name."""
-
 # Invenio-accounts
 # ============
 # See https://invenio-accounts.readthedocs.io/en/latest/configuration.html
@@ -347,3 +341,5 @@ RATELIMIT_GUEST_USER = "5000 per hour;500 per minute"
 
 SESSION_COOKIE_SAMESITE = "Strict"
 """Sets cookie with the samesite flag to 'Strict' by default."""
+
+OVERRIDE_PR = "#2F9128"
