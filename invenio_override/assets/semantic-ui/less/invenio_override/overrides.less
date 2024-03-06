@@ -204,6 +204,7 @@ pre {
 // deposit page accordions
 .ui.accordion.invenio-accordion-field .title {
   background-color: @overridePrimary;
+  color: @ocerridePlabels !important;
   // color: #FFFFFF;
   // padding: 1em;
   // font-size: 1rem;
@@ -233,7 +234,7 @@ pre {
 /// primary button
 .ui.primary.buttons .button, .ui.primary.button {
   background-color: @overridePrimary;
-  color: #FFFFFF;
+  color: @ocerridePlabels !important;
   text-shadow: none;
 }
 
@@ -274,3 +275,25 @@ pre {
   color: #FFFFFF !important;
 }
 
+
+// Overrided 
+.ui.primary.label {
+  background-color: @overridePrimary;
+  border-color: @overridePrimary;
+  color: @ocerridePlabels;
+}
+
+#skip-to-main {
+  display: none !important;}
+//   background-color: @primaryButton;
+//   &:focus {
+//     background-color: @primaryButtonInverted;
+//   }
+// }
+
+.right-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
