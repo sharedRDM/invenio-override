@@ -7,13 +7,13 @@
 
 
 {%- if config.SECURITY_REGISTERABLE %}
-<a class="ui item no-decoration" href="{{ url_for('security.register') }}">
+<a class="ui item no-decoration menus" href="{{ url_for('security.register') }}">
     {{_ ("Sign up")}}
 </a>
 {%- endif %}
 
 
-<a class="ui item no-decoration" href="{{url_for_security('login', next=request.path)}}">
+<a class="ui item no-decoration menus" href="{{url_for_security('login', next=request.path)}}">
     {{_ ("Log in")}}
 </a>
 
@@ -21,11 +21,11 @@
 {%- else %}
 {%- if config.USERPROFILES %}
 
-<a class="ui item no-decoration" href="{{ url_for('invenio_userprofiles.profile') }}">
+<a class="ui item no-decoration menus" href="{{ url_for('invenio_userprofiles.profile') }}">
     <i class="user icon"></i> {{ current_user.email }}
 </a>
 
-<a class="ui item no-decoration" href="{{url_for_security('logout')}}">
+<a class="ui item no-decoration menus" href="{{url_for_security('logout')}}">
     {{_('Sign out')}}
 </a>
 
