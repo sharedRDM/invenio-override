@@ -1,4 +1,5 @@
 # German translations for invenio-override.
+# Copyright (C) 2020-2023 Graz University of Technology.
 # Copyright (C) 2024 sharedRDM
 # This file is distributed under the same license as the invenio-override
 # project.
@@ -245,4 +246,3 @@ msgstr ""
 #: invenio_override/templates/invenio_override/accounts/register_user.html:65
 msgid "Sign up with repository credentials"
 msgstr ""
-
