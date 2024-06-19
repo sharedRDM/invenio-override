@@ -3,6 +3,7 @@
 #
 # Copyright (C) 2019-2020 CERN.
 # Copyright (C) 2019-2020 Northwestern University.
+# Copyright (C) 2020-2023 Graz University of Technology.
 # Copyright (C) 2024 Shared RDM.
 #
 # invenio-override is free software; you can redistribute it and/or
