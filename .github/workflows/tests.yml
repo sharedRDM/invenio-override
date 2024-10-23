@@ -66,7 +66,6 @@ jobs:
           pip install ".[$EXTRAS]"
           pip freeze
           docker --version
-          docker-compose --version
 
       - name: Run translations test
         run: ./run-i18n-tests.sh
