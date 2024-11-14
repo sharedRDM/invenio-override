@@ -2,56 +2,38 @@
  *   Copyright (C) 2020-2023 Graz University of Technology.
  *   Copyright (C) 2024 Shared RDM.
  *
- * invenio-override  is free software; you can redistribute it and/or modify it
+ * invenio-override is free software; you can redistribute it and/or modify it
  * under the terms of the MIT License; see LICENSE file for more details.
  */
 
-/***
- * Logos background frontpage.
- * from rgba(173, 206, 224, 0.52)
- * to #ffffff
- ***/
+/*
+section backgrounds and text colors
+login background color
+login & signup page title
+ */
 .section-content-light-bg {
   background-color: @primaryBackground;
 }
-
-/***
- * section title.
- * from #0377cd
- * to #000000
- ***/
 .section-title {
   color: @primaryText;
 }
-
-
-/***
- * login background color
- * from : rgba(13,95,137,.8)
- * To #ffffff
- ***/
 .cover-page {
-  //text-align: center;
   background-color: @primaryBackground;
 }
-
-
-/***
- * login & sigup page title
- * from : #0377cd
- * To #000000
- ***/
 .panel-free-title {
   color: @primaryText;
 }
 
-
-/***
- * force: the font changes
- ***/
+/* global font styling */
 *,
-html, body,
-h1, h2, h3, h4, h5, h6,
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 pre,
 .ui.button,
 .ui.items,
@@ -69,18 +51,12 @@ pre {
   font-size: 14px;
 }
 
-
-/***
- * search.button
- ***/
-/*.ui.button,*/
+/* button backgrounds */
 .ui.search.button {
-  background-color: @overridePrimary;
+  background-color: @mugSearch;
 }
 
-/***
- * accordion title
- ***/
+/* accordion styling */
 .ui.accordion.styled {
   .title,
   .title.active {
@@ -89,42 +65,26 @@ pre {
   }
 }
 
-// /***
-//  * buttons hover and accordion hover
-//  ***/
-// .ui.button:hover,
-// .ui.search.button:hover,
-// .ui.accordion.styled .title:hover,
-// .ui.accordion.styled .accordion .title:hover {
-//   background-color: @primaryButtonHoverBackground;
-//   color: @primaryButton;
-// }
+/* hover effects */
+.ui.search.button:hover {
+  background-color: @overrideSecondary;
+  color: #ffffff;
+}
 
-
-/***
- * buttons hover and accordion hover
- ***/
- .ui.search.button:hover{
-   background-color: @overrideSecondary;
-   color: #FFFFFF;
- }
-
- 
-/***
- * force: remove corners from border
- ***/
+/* border radius reset */
 .label-keyword,
 .ui.label,
 .ui.button,
 .ui.rdm-sidebar,
 .ui.menu,
-.ui.input > input, /* it seams redundant but it is not */
+.ui.input > input,
 .ui.segment,
 .ui.selection.dropdown,
 .ui.accordion.styled,
 .ui.card,
 .ui.cards > .card,
-.ui.basic.button, .ui.basic.buttons .button,
+.ui.basic.button,
+.ui.basic.buttons .button,
 .ui.action.input:not([class*="left action"]) > .button:last-child,
 .ui.action.input:not([class*="left action"]) > .buttons:last-child > .button,
 .ui.action.input:not([class*="left action"]) > .dropdown:last-child,
@@ -133,151 +93,108 @@ pre {
   border-radius: 0;
 }
 
-/***
- * force: rdm-side-bar same empty box as on the frontpage
- ***/
+/* sidebar styling */
 .ui.rdm-sidebar {
   background-color: unset;
   box-shadow: unset;
 }
 
-/***
- * force: font weight: normal
- ***/
 .ui.label {
   font-weight: 400;
 }
 
-// override access badges color
+/* access badge colors */
 .ui.label.access-status {
   &.open {
     background-color: @accessRightOpen;
   }
-
   &.embargoed {
-    background-color: @accessRightEmbargoed;;
+    background-color: @accessRightEmbargoed;
   }
-
   &.metadata-only {
     background-color: @accessRightMetadata;
   }
-  
 }
 
+/* font face definitions */
 @font-face {
   font-family: "Source Sans Pro";
-  src: url('./fonts/SourceSansPro/SourceSansPro-Regular.ttf') format('truetype');
+  src: url("./fonts/SourceSansPro/SourceSansPro-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Source Sans Pro";
-  src: url('./fonts/SourceSansPro/SourceSansPro-Italic.ttf') format('truetype');
+  src: url("./fonts/SourceSansPro/SourceSansPro-Italic.ttf") format("truetype");
   font-weight: 400;
   font-style: italic;
 }
-
 
 #alert-content {
   display: block !important;
 }
 
-
-///////////
-/// UI messages
-///////////
+/* UI messages */
 .ui.success.message {
-  background-color: #F8FFFF;
+  background-color: #f8ffff;
   color: #0e576c;
 }
-
 .ui.info.message {
-  background-color: #F8FFFF;
+  background-color: #f8ffff;
   color: #0e576c;
 }
 
-// .ui.button:hover, .ui.search.button:hover, .ui.accordion.styled .title:hover, .ui.accordion.styled .accordion .title:hover {
-//   background-color: #000;
-//   color: @overridePrimary;
-// }
-
-// deposit page accordions
+/* accordion field titles */
 .ui.accordion.invenio-accordion-field .title {
   background-color: @overridePrimary;
   color: @ocerridePlabels !important;
-  // color: #FFFFFF;
-  // padding: 1em;
-  // font-size: 1rem;
-  // border-radius: 0.28571429rem;
-  // margin-bottom: 1rem;
 }
 
-////////////////// 
-///// Buttons
-//////////////////
-
-/// positive
-/// uncomment and override primary button - e.g. Create community
-
-.ui.positive.buttons .button, .ui.positive.button {
+/* button styling */
+.ui.positive.buttons .button,
+.ui.positive.button {
   background-color: @overridePrimaryBt;
-  color: #FFFFFF;
+  color: @greyDark;
 }
 
-// .ui.positive.buttons .button:hover, .ui.positive.button:hover {
-//   background-color: #000;
-//   color: @overridePrimaryBt;
-//   // color: #FFFFFF;
-//   // text-shadow: none;
-// }
+.ui.positive.buttons .button:hover,
+.ui.positive.button:hover {
+  background-color: @hoverOverridePrimaryBt;
+  color: @greyDark;
+}
 
-/// primary button
-.ui.primary.buttons .button, .ui.primary.button {
+.ui.primary.buttons .button,
+.ui.primary.button {
   background-color: @overridePrimary;
   color: @ocerridePlabels !important;
   text-shadow: none;
 }
 
-
-.ui.primary.buttons .button:hover, .ui.primary.button:hover {
+.ui.primary.buttons .button:hover,
+.ui.primary.button:hover {
   background-color: @overrideSecondary;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: none;
 }
 
-.ui.primary.buttons .button:active, .ui.primary.button:active {
+.ui.primary.buttons .button:active,
+.ui.primary.button:active,
+.ui.primary.buttons .button:focus,
+.ui.primary.button:focus {
   background-color: @overrideSecondary;
-  color: #FFFFFF;
+  color: #ffffff;
   text-shadow: none;
 }
 
-.ui.primary.buttons .button:focus, .ui.primary.button:focus {
-  background-color: @overrideSecondary;
-  color: #FFFFFF;
-  text-shadow: none;
-}
-
-// /// warning
-// .ui.warning.button:hover {
-//   background-color: #000;
-//   color: #FBBD08;
-// }
-
-// /// negative
-// .ui.negative.buttons .button:hover, .ui.negative.button:hover {
-//   background-color: #000;
-//   color: #d01919;
-// }
-
-.ui.menu .brand.active.item, .ui.brand.menu .active.item {
+/* brand and label */
+.ui.menu .brand.active.item,
+.ui.brand.menu .active.item {
   border-color: @overridePrimary !important;
   background-color: @overridePrimary;
-  color: #FFFFFF !important;
+  color: #ffffff !important;
 }
 
-
-// Overrided 
 .ui.primary.label {
   background-color: @overridePrimary;
   border-color: @overridePrimary;
@@ -285,12 +202,8 @@ pre {
 }
 
 #skip-to-main {
-  display: none !important;}
-//   background-color: @primaryButton;
-//   &:focus {
-//     background-color: @primaryButtonInverted;
-//   }
-// }
+  display: none !important;
+}
 
 .right-card {
   background-color: #fff;
@@ -299,7 +212,27 @@ pre {
   padding: 20px;
 }
 
-// login sigup button font-size
 .menus {
   font-size: 16.8px;
+}
+
+#records-list .ui.divided.items .item .content h2.header a,
+#records-list .content h2.header a.truncate-lines-2,
+.ui.container .content h2.header a.truncate-lines-2 {
+  color: @greyDark !important;
+}
+
+#records-list .labels-actions .ui.small.horizontal.label.neutral,
+.ui.container .labels-actions .ui.small.horizontal.label.neutral {
+  color: @greyDark !important;
+  border: 1px solid @labelKeywordBackground !important;
+  background-color: @footerBottomBackground !important;
+}
+
+#records-list
+  .labels-actions
+  .ui.small.horizontal.label.access-status.metadata-only {
+  color: @recordText !important;
+  border: 1px solid @outlineRecord !important;
+  background-color: transparent !important;
 }

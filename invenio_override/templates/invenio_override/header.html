@@ -23,12 +23,8 @@
       {%- endblock navbar_header %}
 
       <div class="ui container">
-
         <div class="ui grid stackable container">
-
           <div class="three column row centered" style="padding-bottom: 0;">
-
-
             <div class="two wide column main-menu-entry">
               <div class="ui secondary menu">
                 <a href="/" title="Home" class="ui item no-decoration">
@@ -39,8 +35,6 @@
                 </a>
               </div>
             </div>
-
-
 
             {%- for item in current_menu.submenu('main').children|sort(attribute='order') if item.visible recursive %}
             <div class="two wide column main-menu-entry">
@@ -58,29 +52,21 @@
             </div>
             {% endfor %}
 
-
             {%- for l in current_i18n.get_locales() %}
             {%- if current_i18n.language != l.language %}
             <div class="two wide column main-menu-entry">
               <div class="ui secondary menu">
-            <a class="ui item no-decoration" 
+            <a class="ui item no-decoration"
               href="{{ url_for('invenio_i18n.set_lang', lang_code=l.language) }}">{{ l.get_display_name().upper() [0:2]}}</a>
             </div>
           </div>
             {%- endif %}
             {%- endfor %}
-
-
           </div>
-
           </div>
         </div>
-      
         <div id="margin-divider" class="ui divider main-menu-underline-line"></div>
-
         <div class="spacer"></div>
-    
-
     </nav>
     {%- endblock navbar %}
 

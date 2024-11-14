@@ -11,6 +11,10 @@
 
 from invenio_i18n import gettext as _
 
+OVERRIDE_STATISTICS_URL = "https://repository.tugraz.at/"
+
+OVERRIDE_SERVICE_MAILTO = "rdmsupport@medunigraz.at"
+
 OVERRIDE_FRONTPAGE_RIGHT = False
 """Frontpage right section"""
 

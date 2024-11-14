@@ -1,54 +1,59 @@
-import $ from "jquery";
 import "semantic-ui-css";
+
+import $ from "jquery";
 import { MultipleOptionsSearchBar } from "@js/invenio_search_ui/components";
-import { i18next } from "@translations/invenio_app_rdm/i18next";
-import ReactDOM from "react-dom";
 import React from "react";
+import ReactDOM from "react-dom";
+import { i18next } from "@translations/invenio_app_rdm/i18next";
 
-// // called on document ready
-// $(function () {
-//   importZammadScript();
-// });
-
-// function importZammadScript() {
-//   let scriptNode = document.createElement("hidden"); //needed for zammad script
-//   scriptNode.id = "zammad_form_script";
-//   scriptNode.src = "URL";
-//   document.head.appendChild(scriptNode);
-
-//   $.getScript("URL", () => {
-//     $("#feedback-form").ZammadForm({
-//       messageTitle: "Contact us",
-//       showTitle: true,
-//       messageSubmit: "Submit",
-//       messageThankYou:
-//         "Thank you for your message, (#%s). We will get back to you as quickly as possible!",
-//       modal: true,
-//     });
-//   });
-// }
-
-// used for sticky test instance notification
+/* sticky notification setup for test instance */
 $(".ui.sticky.test-instance").sticky({
   context: "body",
 });
 
-// export function toggleVisibility(id) {
-//   var element = document.getElementById(id);
-//   var isHided = element.style.display === "none";
+/* load Zammad script on document ready
+$(function () {
+  importZammadScript();
+});
+*/
 
-//   element.style.display = isHided ? "block" : "none";
-// }
+/* function to import Zammad script for feedback form
+function importZammadScript() {
+  let scriptNode = document.createElement("hidden");
+  scriptNode.id = "zammad_form_script";
+  scriptNode.src = "URL";
+  document.head.appendChild(scriptNode);
 
-// window.toggleVisibility = toggleVisibility;
+  $.getScript("URL", () => {
+    $("#feedback-form").ZammadForm({
+      messageTitle: "Contact us",
+      showTitle: true,
+      messageSubmit: "Submit",
+      messageThankYou: "Thank you for your message, (#%s). We will get back to you as quickly as possible!",
+      modal: true,
+    });
+  });
+}
+*/
 
-// const headerSearchbar = document.getElementById("header-search-bar");
-// const searchBarOptions = JSON.parse(headerSearchbar.dataset.options);
+/* function to toggle visibility of an element by ID
+export function toggleVisibility(id) {
+  const element = document.getElementById(id);
+  const isHidden = element.style.display === "none";
+  element.style.display = isHidden ? "block" : "none";
+}
+window.toggleVisibility = toggleVisibility;
+*/
 
-// ReactDOM.render(
-//   <MultipleOptionsSearchBar
-//     options={searchBarOptions}
-//     placeholder={i18next.t("Search records...")}
-//   />,
-//   headerSearchbar
-// );
+/* render search bar with multiple options
+const headerSearchbar = document.getElementById("header-search-bar");
+const searchBarOptions = JSON.parse(headerSearchbar.dataset.options);
+
+ReactDOM.render(
+  <MultipleOptionsSearchBar
+    options={searchBarOptions}
+    placeholder={i18next.t("Search records...")}
+  />,
+  headerSearchbar
+);
+*/
