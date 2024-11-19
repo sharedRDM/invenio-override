@@ -75,3 +75,21 @@ def comingsoon():
 def locked(e):
     """Error page for status locked."""
     return render_template("invenio_override/423.html")
+
+
+def generate_search_url(query="", layout="list", page=1, size=10, sort="newest"):
+    """Generate a general search URL with sensible defaults."""
+    return url_for(
+        "invenio_search_ui.search",
+        q=query,
+        l=layout,
+        page=page,
+        size=size,
+        sort=sort,
+    )
+
+
+@blueprint.app_context_processor
+def inject_search_url():
+    """Inject the search URL generator into the template context."""
+    return dict(generate_search_url=generate_search_url)
