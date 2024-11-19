@@ -11,10 +11,24 @@
 
 from invenio_i18n import gettext as _
 
-OVERRIDE_STATISTICS_URL = "https://repository.tugraz.at/"
+# ============================================================================
+# Right Section Configuration
+# ============================================================================
+OVERRIDE_RIGHT_SECTION_TITLE = True
+"""Title for the right section."""
 
-OVERRIDE_SERVICE_MAILTO = "rdmsupport@medunigraz.at"
+OVERRIDE_SHOW_RIGHT_CONTACT_EMAIL = True
+"""Contact Email for the right section."""
 
+OVERRIDE_RIGHT_SECTION_STATISTICS_URL = "https://repository.example.com"
+"""URL for the statistics page displayed in the right section."""
+
+OVERRIDE_RIGHT_SECTION_CONTACT_EMAIL = "support@example.com"
+"""Contact email displayed in the right section."""
+
+# ============================================================================
+# Frontpage and Resource Overview
+# ============================================================================
 OVERRIDE_FRONTPAGE_RIGHT = False
 """Frontpage right section"""
 
@@ -24,12 +38,21 @@ OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
 """Default account base template"""
 
+OVERRIDE_RESOURCE_OVERVIEW = False
+"""Resource overview section"""
+
+# ============================================================================
+# Branding and UI Customization
+# ============================================================================
 OVERRIDE_ICON = "images/icon_use.png"
 """Icon used in login page"""
 
 OVERRIDE_CONTACT_FORM = False
 """Enable/Disable Contact form."""
 
+# ============================================================================
+# Production and Shibboleth Configuration
+# ============================================================================
 OVERRIDE_PRODUCTION = False
 """Production environment.
 
@@ -37,6 +60,9 @@ OVERRIDE_PRODUCTION = False
     has to be 'INVENIO_OVERRIDE_PRODUCTION'.
 """
 
+# ============================================================================
+# Routing Configuration
+# ============================================================================
 OVERRIDE_ROUTES = {
     "index": "/",
     "comingsoon": "/comingsoon",
@@ -52,10 +78,10 @@ OVERRIDE_FAVICON = "favicon.ico"
 OVERRIDE_SHIBBOLETH = False
 """Set True if SAML is configured"""
 
-# Invenio-theme
-# ============
+# ============================================================================
+# Theme and Templates
 # See https://invenio-theme.readthedocs.io/en/latest/configuration.html
-#
+# ============================================================================
 
 THEME_SEARCHBAR = False
 """Enable or disable the header search bar."""
@@ -72,10 +98,10 @@ THEME_HEADER_LOGIN_TEMPLATE = "invenio_override/accounts/header_login.html"
 THEME_FOOTER_TEMPLATE = "invenio_override/footer.html"
 """footer template"""
 
-# Invenio-accounts
-# ============
+# ============================================================================
+# Invenio-Accounts Configuration
 # See https://invenio-accounts.readthedocs.io/en/latest/configuration.html
-
+# ============================================================================
 # COVER_TEMPLATE = 'invenio_override/accounts/accounts_base.html'
 """Cover page template for login and sign up pages."""
 
@@ -85,9 +111,10 @@ SECURITY_LOGIN_USER_TEMPLATE = "invenio_override/accounts/login_user.html"
 SECURITY_REGISTER_USER_TEMPLATE = "invenio_override/accounts/register_user.html"
 """Sigup template"""
 
+# ============================================================================
 # Invenio-app-rdm
-# =============
 # See https://invenio-app-rdm.readthedocs.io/en/latest/configuration.html
+# ============================================================================
 SEARCH_UI_HEADER_TEMPLATE = "invenio_override/header.html"
 """Search page's header template."""
 
@@ -97,8 +124,9 @@ DEPOSITS_HEADER_TEMPLATE = "invenio_override/header.html"
 THEME_FRONTPAGE_TEMPLATE = "invenio_override/frontpage.html"
 """Frontpage template."""
 
+# ============================================================================
 # Invenio-rdm-records
-# =============
+# ============================================================================
 # See https://invenio-rdm-records.readthedocs.io/en/latest/configuration.html
 # Uncomment below to override records landingpage.
 # from invenio_rdm_records.config import RECORDS_UI_ENDPOINTS
@@ -107,26 +135,27 @@ THEME_FRONTPAGE_TEMPLATE = "invenio_override/frontpage.html"
 # )
 """override the default record landing page"""
 
+# ============================================================================
 # Invenio-search-ui
-# =============
+# ============================================================================
 # See https://invenio-search-ui.readthedocs.io/en/latest/configuration.html
 # SEARCH_UI_SEARCH_TEMPLATE = "invenio_override/search.html"
 # """override the default search page"""
 
-
-# Invenio-I18N
-# ============
+# ============================================================================
+# Localization and I18N
 # See https://invenio-i18n.readthedocs.io/en/latest/configuration.html
+# ============================================================================
 BABEL_DEFAULT_LOCALE = "en"
 # Default time zone
 BABEL_DEFAULT_TIMEZONE = "Europe/Vienna"
 # Other supported languages (do not include BABEL_DEFAULT_LOCALE in list).
 I18N_LANGUAGES = [("de", _("German"))]
 
-# Invenio-Mail
-# ===========
+# ============================================================================
+# Mail Configuration
 # See https://invenio-mail.readthedocs.io/en/latest/configuration.html
-
+# ============================================================================
 MAIL_SERVER = "localhost"
 """Domain ip where mail server is running."""
 
@@ -142,11 +171,10 @@ MAIL_SUPPRESS_SEND = True
 
 Set this to False when sending actual emails.
 """
-
-# Invenio-userprofiles
-# ===========
+# ============================================================================
+# Invenio User Profiles
 # See https://invenio-userprofiles.readthedocs.io/en/latest/configuration.html
-
+# ============================================================================
 USERPROFILES_EXTEND_SECURITY_FORMS = True
 """Set True in order to register user_profile.
 
@@ -160,10 +188,10 @@ USERPROFILES_EMAIL_ENABLED = True
 USERPROFILES_READ_ONLY = True
 """Allow users to change profile info (name, email, etc...)."""
 
+# ============================================================================
 # Invenio-saml
-# ===========
 # See https://invenio-saml.readthedocs.io/en/latest/configuration.html
-
+# ============================================================================
 SSO_SAML_IDPS = {}
 """Configuration of IDPS. Actual values can be find in to invenio.cfg file"""
 
@@ -186,10 +214,10 @@ SSO_SAML_DEFAULT_SLO_ROUTE = "/slo/<idp>"
 SSO_SAML_DEFAULT_SLS_ROUTE = "/sls/<idp>"
 """URL route to handle the IdP logout request."""
 
-# Invenio-accounts
-# ===========
+# ============================================================================
+# Invenio Accounts
 # See https://invenio-accounts.readthedocs.io/en/latest/configuration.html
-
+# ============================================================================
 ACCOUNTS_LOCAL_LOGIN_ENABLED = True
 """Allow local login."""
 
@@ -215,9 +243,10 @@ Instead user will get a welcome email.
 SECURITY_LOGIN_WITHOUT_CONFIRMATION = False
 """Require users to confirm email before being able to login."""
 
+# =====================================================================
 # Flask-Security
-# =============
 # See https://pythonhosted.org/Flask-Security/configuration.html
+# =====================================================================
 SECURITY_EMAIL_PLAINTEXT = True
 """Render email content as plaintext."""
 
@@ -238,19 +267,19 @@ then you can remove this condition from header_login.htm:
 to render your overriden login.html
 """
 
+# =====================================================================
 # Accounts
-# ========
 # Actual values can be find in to invenio.cfg file
 #: Recaptcha public key (change to enable).
+# =====================================================================
 RECAPTCHA_PUBLIC_KEY = None
 #: Recaptcha private key (change to enable).
 RECAPTCHA_PRIVATE_KEY = None
 
+# =====================================================================
 # invenio-rdm-records
-# =======
-# See:
-# https://invenio-rdm-records.readthedocs.io/en/latest/configuration.html
-#
+# See https://invenio-rdm-records.readthedocs.io/en/latest/configuration.html
+# =====================================================================
 RDM_RECORDS_USER_FIXTURE_PASSWORDS = {"info@tugraz.at": None}
 """Overrides for the user fixtures' passwords.
 The password set for a user fixture in this dictionary overrides the
@@ -271,7 +300,6 @@ that allows you to harvest record from InvenioRDM in DataCite XML needs
 to be configured with your DataCite data center symbol.
 This is only required if you want your records to be harvestable in DataCite XML format.
 """
-
 
 SQLALCHEMY_ECHO = False
 """Enable to see all SQL queries."""
@@ -335,9 +363,10 @@ reopened regularly.
 See https://docs.sqlalchemy.org/en/latest/core/engines.html.
 """
 
+# ============================================================================
 # Redis (cache)
-# ========
-# Cache or Redis configurations
+# Cache / Redis Configurations
+# ============================================================================
 RATELIMIT_AUTHENTICATED_USER = "25000 per hour;1000 per minute"
 """Increase defaults for authenticated users."""
 
@@ -348,3 +377,4 @@ SESSION_COOKIE_SAMESITE = "Strict"
 """Sets cookie with the samesite flag to 'Strict' by default."""
 
 OVERRIDE_PR = "#2F9128"
+"""Custom primary color."""
