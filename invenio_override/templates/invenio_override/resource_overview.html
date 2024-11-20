@@ -19,7 +19,7 @@
           </div>
           <ul>
             <li>
-              <a href="records/search">{{ _("Search for research results") }}</a>
+              <a href="{{ url_for('invenio_search_ui.search') }}">{{ _("Search for research results") }}</a>
             </li>
             <li>
               <a href="me/uploads">{{ _("Upload research results") }}</a>
@@ -39,7 +39,7 @@
           </div>
           <ul>
             <li>
-              <a href="publications/search">{{ _("Search for publications") }}</a>
+              <a href="{{ url_for('invenio_search_ui.search') }}">{{ _("Search for publications") }}</a>
             </li>
           </ul>
         </div>
@@ -57,10 +57,10 @@
           </div>
           <ul>
             <li>
-              <a href="oer/search">{{ _("Search for educational resources") }}</a>
+              <a href="{{ url_for('invenio_search_ui.search') }}">{{ _("Search for educational resources") }}</a>
             </li>
             <li>
-              <a href="oer/uploads">{{ _("Upload educational resources") }}</a>
+              <a href="{{ url_for('invenio_search_ui.search') }}">{{ _("Upload educational resources") }}</a>
             </li>
           </ul>
         </div>
