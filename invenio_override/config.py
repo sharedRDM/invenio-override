@@ -20,9 +20,6 @@ OVERRIDE_RIGHT_SECTION_TITLE = True
 OVERRIDE_SHOW_RIGHT_CONTACT_EMAIL = True
 """Contact Email for the right section."""
 
-OVERRIDE_RIGHT_SECTION_STATISTICS_URL = "https://repository.example.com"
-"""URL for the statistics page displayed in the right section."""
-
 OVERRIDE_RIGHT_SECTION_CONTACT_EMAIL = "support@example.com"
 """Contact email displayed in the right section."""
 
