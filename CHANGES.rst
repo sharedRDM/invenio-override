@@ -1,5 +1,5 @@
 ..
-    Copyright (C) 2020-2023 Graz University of Technology.
+    Copyright (C) 2020-2024 Graz University of Technology.
     Copyright (C) 2024 Shared RDM.
 
     invenio-override is free software; you can redistribute it and/or
@@ -8,6 +8,10 @@
 
 Changes
 =======
+Version v0.0.4 (release 2024-11-25)
+
+- global: MUG requirements integrated
+
 Version v0.0.3 (release 2024-02-02)
 
 - global: configs naming
