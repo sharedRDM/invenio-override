@@ -13,8 +13,13 @@
             {{ _("Frontpage: Description for research results") }}
           </div>
           <ul>
+            {#
+              <li>
+                <a href="research-results/browse">{{ _("Browse") }}</a>
+              </li>
+              #}
             <li>
-              <a href="{{ url_for('invenio_search_ui.search') }}">{{ _("Search for research results") }}</a>
+              <a href="records/search">{{ _("Search for research results") }}</a>
             </li>
             <li>
               <a href="me/uploads">{{ _("Upload research results") }}</a>
@@ -29,9 +34,16 @@
             {{ _("Frontpage: Description for publications") }}
           </div>
           <ul>
-            <li>
-              <a href="{{ url_for('invenio_search_ui.search') }}">{{ _("Search for publications") }}</a>
-            </li>
+            {%- if config.SHOW_PUBLICATIONS_SEARCH  %}
+            {#
+              <li>
+                <a href="publications/browse">Browse</a>
+              </li>
+              #}
+              <li>
+                <a href="publications/search">{{ _("Search for publications") }}</a>
+              </li>
+            {%- endif %}
           </ul>
         </div>
       </div>
@@ -42,12 +54,19 @@
             {{ _("Frontpage: Description for open educational resources") }}
           </div>
           <ul>
-            <li>
-              <a href="{{ url_for('invenio_search_ui.search') }}">{{ _("Search for educational resources") }}</a>
-            </li>
-            <li>
-              <a href="{{ url_for('invenio_search_ui.search') }}"">{{ _("Upload educational resources") }}</a>
-            </li>
+            {%- if config.SHOW_EDUCATIONAL_RESOURCES %}
+            {#
+              <li>
+                <a href="oer/browse">{{ _("Browse") }}</a>
+              </li>
+              #}
+              <li>
+                <a href="oer/search">{{ _("Search for educational resourses") }}</a>
+              </li>
+              <li>
+                <a href="oer/uploads">{{ _("Upload educational resources") }}</a>
+              </li>
+            {%- endif %}
           </ul>
         </div>
       </div>

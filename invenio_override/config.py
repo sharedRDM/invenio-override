@@ -12,6 +12,15 @@
 from invenio_i18n import gettext as _
 
 # ============================================================================
+# Global Search Configuration
+# ============================================================================
+SHOW_PUBLICATIONS_SEARCH = True
+"""Publication global search"""
+
+SHOW_EDUCATIONAL_RESOURCES = True
+"""Educational resources global search"""
+
+# ============================================================================
 # Right Section Configuration
 # ============================================================================
 OVERRIDE_RIGHT_SECTION_TITLE = True
@@ -224,7 +233,7 @@ SECURITY_CHANGEABLE = False
 SECURITY_RECOVERABLE = False
 """Allow password recovery by users."""
 
-SECURITY_REGISTERABLE = True
+SECURITY_REGISTERABLE = False
 """"Allow users to register.
 
 With this variable set to "False" users will not be

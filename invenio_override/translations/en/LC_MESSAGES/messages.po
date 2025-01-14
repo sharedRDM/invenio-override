@@ -222,7 +222,7 @@ msgstr ""
 msgid "This is the test instance of the Repository."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:33
+#: invenio_override/templates/invenio_override/header.html:47
 msgid "Home"
 msgstr ""
 
