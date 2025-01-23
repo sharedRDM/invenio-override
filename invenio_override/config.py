@@ -10,15 +10,60 @@
 """invenio module for sharedRDM theme."""
 
 from invenio_i18n import gettext as _
+from invenio_rdm_records.services.components import (
+    DefaultRecordsComponents as RDMDefaultRecordsComponents,
+)
+from invenio_records_lom.services.components import (
+    DefaultRecordsComponents as LOMDefaultRecordsComponents,
+)
+from invenio_records_marc21.services.components import (
+    DefaultRecordsComponents as Marc21DefaultRecordsComponents,
+)
+from invenio_global_search.components import (
+    RDMToGlobalSearchComponent,
+    LOMToGlobalSearchComponent,
+    Marc21ToGlobalSearchComponent,
+)
+
+# Combine default components with global search components
+OVERRIDE_RDM_RECORDS_SERVICE_COMPONENTS = RDMDefaultRecordsComponents + [
+    RDMToGlobalSearchComponent
+]
+OVERRIDE_LOM_RECORDS_SERVICE_COMPONENTS = LOMDefaultRecordsComponents + [
+    LOMToGlobalSearchComponent
+]
+OVERRIDE_MARC21_RECORDS_SERVICE_COMPONENTS = Marc21DefaultRecordsComponents + [
+    Marc21ToGlobalSearchComponent
+]
 
 # ============================================================================
 # Global Search Configuration
 # ============================================================================
-SHOW_PUBLICATIONS_SEARCH = True
-"""Publication global search"""
+OVERRIDE_SHOW_PUBLICATIONS_SEARCH = False
+"""Enable or disable the publication global search feature."""
 
-SHOW_EDUCATIONAL_RESOURCES = True
-"""Educational resources global search"""
+OVERRIDE_OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
+"""Enable or disable the educational resources global search feature."""
+
+# Override global search schemas to customize display names.
+# The `name_l10n` values are localized names for UI display and should not
+# be arbitrarily changed as they may affect user experience or consistency
+# across institutions.
+OVERRIDE_GLOBAL_SEARCH_SCHEMAS = {
+    "lom": {
+        "schema": "lom",
+        "name_l10n": _("OER"),
+    },
+    "rdm": {
+        "schema": "rdm",
+        "name_l10n": _("Research Result"),
+    },
+    "marc21": {
+        "schema": "marc21",
+        "name_l10n": _("Publication"),
+    },
+}
+"""Mapping of original schemas for global search."""
 
 # ============================================================================
 # Right Section Configuration
@@ -139,13 +184,16 @@ THEME_FRONTPAGE_TEMPLATE = "invenio_override/frontpage.html"
 # RECORDS_UI_ENDPOINTS["recid"].update(
 #     template="invenio_override/record_landing_page.html"
 # )
-"""override the default record landing page"""
+# """override the default record landing page"""
 
 # ============================================================================
 # Invenio-search-ui
 # ============================================================================
 # See https://invenio-search-ui.readthedocs.io/en/latest/configuration.html
-# SEARCH_UI_SEARCH_TEMPLATE = "invenio_override/search.html"
+# This overrides the default Jinja template for repository.tugraz.at/search.
+# Instead of the RDM records search template, a global search template is used.
+# This ensures that users hitting "Enter" are directed to the global search.
+SEARCH_UI_SEARCH_TEMPLATE = "invenio_override/search.html"
 # """override the default search page"""
 
 # ============================================================================

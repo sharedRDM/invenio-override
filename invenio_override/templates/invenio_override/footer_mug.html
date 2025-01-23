@@ -124,9 +124,14 @@
           <strong>Enabled by</strong>
           <div class="logos-container">
           <a href="https://forschungsdaten.at/en/fair-data-austria/" target="_blank" title="Fair Data Austria">
-            <img src="{{ url_for("static", filename="images/sharedRDM.png") }}"
+            <img src="{{ url_for('invenio-override.static', filename='images/sharedRDM.png') }}"
                  alt="Fair Data Austria"
                  style="display: block; height: auto; margin-top: 10px; width: 200px;">
+          </a>
+          <a href="https://www.tugraz.at/home" target="_blank" title="Fair Data Austria">
+            <img src="{{ url_for('invenio-override.static', filename='images/TUGraz.png') }}"
+                 alt="TU Graz"
+                 style="display: block; height: auto; margin-top: 15px; width: 150px;">
           </a>
         </div>
         </div>

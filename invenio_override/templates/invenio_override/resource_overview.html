@@ -1,6 +1,4 @@
-{#
-  This file contains the resource overview block content.
-#}
+{# This file contains the resource overview block content. #}
 
 <div class="ui container">
   <div class="ui divider hidden"></div>
@@ -9,17 +7,17 @@
       <div class="left aligned column">
         <div class="ui segment image">
           <h2>{{ _("Research Results") }}</h2>
-          <div>
-            {{ _("Frontpage: Description for research results") }}
-          </div>
+          <div>{{ _("Frontpage: Description for research results") }}</div>
           <ul>
             {#
-              <li>
-                <a href="research-results/browse">{{ _("Browse") }}</a>
-              </li>
-              #}
             <li>
-              <a href="records/search">{{ _("Search for research results") }}</a>
+              <a href="research-results/browse">{{ _("Browse") }}</a>
+            </li>
+            #}
+            <li>
+              <a href="records/search"
+                >{{ _("Search for research results") }}</a
+              >
             </li>
             <li>
               <a href="me/uploads">{{ _("Upload research results") }}</a>
@@ -30,19 +28,18 @@
       <div class="left aligned column">
         <div class="ui segment image">
           <h2>{{ _("Publications") }}</h2>
-          <div>
-            {{ _("Frontpage: Description for publications") }}
-          </div>
+          <div>{{ _("Frontpage: Description for publications") }}</div>
           <ul>
-            {%- if config.SHOW_PUBLICATIONS_SEARCH  %}
-            {#
-              <li>
-                <a href="publications/browse">Browse</a>
-              </li>
-              #}
-              <li>
-                <a href="publications/search">{{ _("Search for publications") }}</a>
-              </li>
+            {%- if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %} {#
+            <li>
+              <a href="publications/browse">Browse</a>
+            </li>
+            #}
+            <li>
+              <a href="publications/search"
+                >{{ _("Search for publications") }}</a
+              >
+            </li>
             {%- endif %}
           </ul>
         </div>
@@ -54,18 +51,19 @@
             {{ _("Frontpage: Description for open educational resources") }}
           </div>
           <ul>
-            {%- if config.SHOW_EDUCATIONAL_RESOURCES %}
-            {#
-              <li>
-                <a href="oer/browse">{{ _("Browse") }}</a>
-              </li>
-              #}
-              <li>
-                <a href="oer/search">{{ _("Search for educational resourses") }}</a>
-              </li>
-              <li>
-                <a href="oer/uploads">{{ _("Upload educational resources") }}</a>
-              </li>
+            {%- if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %} {#
+            <li>
+              <a href="oer/browse">{{ _("Browse") }}</a>
+            </li>
+            #}
+            <li>
+              <a href="oer/search"
+                >{{ _("Search for educational resourses") }}</a
+              >
+            </li>
+            <li>
+              <a href="oer/uploads">{{ _("Upload educational resources") }}</a>
+            </li>
             {%- endif %}
           </ul>
         </div>

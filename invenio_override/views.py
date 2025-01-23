@@ -21,7 +21,7 @@ from opensearch_dsl.utils import AttrDict
 from .search import FrontpageRecordsSearch
 
 blueprint = Blueprint(
-    "invenio_override",
+    "invenio-override",
     __name__,
     template_folder="templates",
     static_folder="static",
@@ -96,3 +96,11 @@ def comingsoon():
 def locked(e):
     """Error page for status locked."""
     return render_template("invenio_override/423.html")
+
+
+@blueprint.route("/records/search")
+def records_search():
+    """Search page UI.
+    This adds a new endpoint at repository.tugraz.at/records/search,
+    serving as the dedicated search page for RDM records (Research Results)."""
+    return render_template("invenio_app_rdm/records/search.html")

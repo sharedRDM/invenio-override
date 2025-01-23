@@ -9,6 +9,7 @@
 
 {% set options = [] %}
 
+{# Define the base option for Research Results #}
 {% set base_option = {
     "key": "rdm",
     "text": _("Research Results"),
@@ -17,8 +18,8 @@
 } %}
 {% set options = options + [base_option] %}
 
-{# add Publications if SHOW_PUBLICATIONS_SEARCH is True #}
-{% if config.SHOW_PUBLICATIONS_SEARCH %}
+{# Add publications if OVERRIDE_SHOW_PUBLICATIONS_SEARCH is enabled #}
+{% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
   {% set pub_option = {
       "key": "marc21",
       "text": _("Publications"),
@@ -28,8 +29,8 @@
   {% set options = options + [pub_option] %}
 {% endif %}
 
-{# add Educational Resources if SHOW_EDUCATIONAL_RESOURCES is True #}
-{% if config.SHOW_EDUCATIONAL_RESOURCES %}
+{# Add educational resources if OVERRIDE_SHOW_EDUCATIONAL_RESOURCES is enabled #}
+{% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
   {% set edu_option = {
       "key": "lom",
       "text": _("Educational Resources"),
@@ -41,61 +42,19 @@
 
 <div class="ui container">
   <div class="short-menu" id="all-menu-top-table">
-    <div class="short-menu-left">
-      <div id="all-menu-top-left-item">
-        <div class="short-menu-left-search">
-          <div style="display: inline-block;">
-            <div class="item p-0 search-bar rel-mr-1">
-              <div id="header-search-bar" data-options='{{ options | tojson }}'></div>
-            </div>
-          </div>
-
-          <div class="short-menu-left-lang">
-            {%- for l in current_i18n.get_locales() %}
-              {%- if current_i18n.language != l.language %}
-                <a href="{{ url_for("invenio_i18n.set_lang", lang_code=l.language) }}"
-                   class="no-decoration">
-                  {{ l.get_display_name().upper()[0:2] }}
-                </a>
-              {%- endif %}
-            {%- endfor %}
+    <div class="ui secondary menu">
+      <a href="/" title="Home" class="no-decoration" style="margin-top: 10px;">
+        <img height="100" id="int-header-logo-img" src="{{ url_for('static', filename=config.OVERRIDE_LOGO) }}">
+      </a>
+      <div class="right menu">
+        <div class="item">
+          <div class="ui icon input">
+            <div id="header-search-bar" data-options='{{ options | tojson }}'></div>
           </div>
         </div>
-      </div>
-    </div>
-
-    <div class="short-menu-right">
-      {%- block navbar_right %}
+        {%- block navbar_right %}
         {%- include config.THEME_HEADER_LOGIN_TEMPLATE %}
-      {%- endblock navbar_right %}
-    </div>
-  </div>
-
-  <div class="ui grid" id="main-logo">
-    <!-- Left -->
-    <div class="left floated left aligned six wide column" id="repo-logo">
-      <div class="inline-elements">
-        <div class="repo-img">
-          <a href="/" title="Home" class="no-decoration" style="margin-top: 10px;">
-            <img height="60" id="int-header-logo-img" src="{{ url_for('static', filename=config.OVERRIDE_LOGO) }}">
-          </a>
-        </div>
-        <div class="affiliation-text">
-        </div>
-      </div>
-    </div>
-    <div class="right floated right aligned six wide column">
-      <div class="affiliation-logo" id="int-header-logo">
-        <a href="https://www.tugraz.at" title="TU Graz Home" target="_blank" class="no-decoration">
-          <div class="affiliation-logo-claim">
-            <div class="affiliation-logo-claim-single">{{ _("SCIENCE") }}</div>
-            <div class="affiliation-logo-claim-single">{{ _("PASSION") }}</div>
-            <div class="affiliation-logo-claim-single">{{ _("TECHNOLOGY") }}</div>
-          </div>
-          <a href="https://www.tugraz.at/home" target="_blank" title="Fair Data Austria">
-            <img height="51" src="{{ url_for("static", filename="images/TUGraz.png") }}" alt="TU Graz">
-          </a>
-        </a>
+        {%- endblock navbar_right %}
       </div>
     </div>
   </div>
