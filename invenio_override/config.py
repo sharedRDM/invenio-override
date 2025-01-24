@@ -9,6 +9,11 @@
 
 """invenio module for sharedRDM theme."""
 
+from invenio_global_search.components import (
+    LOMToGlobalSearchComponent,
+    Marc21ToGlobalSearchComponent,
+    RDMToGlobalSearchComponent,
+)
 from invenio_i18n import gettext as _
 from invenio_rdm_records.services.components import (
     DefaultRecordsComponents as RDMDefaultRecordsComponents,
@@ -18,11 +23,6 @@ from invenio_records_lom.services.components import (
 )
 from invenio_records_marc21.services.components import (
     DefaultRecordsComponents as Marc21DefaultRecordsComponents,
-)
-from invenio_global_search.components import (
-    RDMToGlobalSearchComponent,
-    LOMToGlobalSearchComponent,
-    Marc21ToGlobalSearchComponent,
 )
 
 # Combine default components with global search components

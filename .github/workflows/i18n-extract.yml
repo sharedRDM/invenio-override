@@ -15,7 +15,7 @@ jobs:
   i18n-extract:
     runs-on: ubuntu-20.04
     env:
-      PYTHON-VERSION: 3.9
+      PYTHON-VERSION: 3.12
       NODE-VERSION: 14.x
     steps:
       - name: Checkout
