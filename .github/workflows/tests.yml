@@ -50,6 +50,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
+      - name: Install setuptools
+        run: |
+          pip install --upgrade pip setuptools wheel
+
       - name: Generate dependencies
         run: |
           pip install wheel requirements-builder
