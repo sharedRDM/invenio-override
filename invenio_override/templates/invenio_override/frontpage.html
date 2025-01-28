@@ -39,7 +39,7 @@
     {% block main_column %}
     <div class="ten wide column">
       {% block main_column_content %}
-      {{ records_list() }}
+      {% include "invenio_override/recent_uploads.html" %}
       {% endblock main_column_content %}
     </div>
     {% endblock main_column %}

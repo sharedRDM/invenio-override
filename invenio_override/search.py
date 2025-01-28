@@ -10,7 +10,6 @@
 """Frontpage records."""
 
 from invenio_search.api import RecordsSearch
-from invenio_search.engine import dsl
 
 
 class FrontpageRecordsSearch(RecordsSearch):
@@ -19,8 +18,4 @@ class FrontpageRecordsSearch(RecordsSearch):
     class Meta:
         """Default index and filter for frontpage search."""
 
-        index = "rdmrecords-records"
-        default_filter = dsl.Q(
-            "query_string",
-            query=("access.record:public " "AND versions.is_latest:true"),
-        )
+        index = "global-search"

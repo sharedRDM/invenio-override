@@ -1,84 +1,100 @@
 /*
- *   copyright (c) 2020-2023 graz university of technology.
- *   copyright (c) 2024 shared rdm.
+ *   Copyright (C) 2020-2023 Graz University of Technology.
+ *   Copyright (C) 2025 Shared RDM.
  *
  * invenio-override is free software; you can redistribute it and/or modify it
- * under the terms of the mit license; see license file for more details.
+ * under the terms of the MIT License; see LICENSE file for more details.
  */
 
-/* badge colors, accessibility */
+/* ======================================
+   Default Colors
+====================================== */
+
+/* Accessibility-related badge colors */
 @accessRight             : #e9711c;
 @accessRightOpen         : @accessRight;
-@accessRightRestricted   : #ff7f45;
+@accessRightRestricted   : #fbbd08;
 @accessRightEmbargoed    : #db2828;
 @accessRightClosed       : @accessRightEmbargoed;
-@accessRightMetadata     : #ff7f45;
+@accessRightMetadata     : #2185D0;
 
-/* primary colors */
-@overridePrimary         : #007934;
-@overrideSecondary       : #34b233;
-@ocerridePlabels         : #ffffff;
-@overridePrimaryBt       : #dbdce0; /* override primary button - e.g. create community */
+/* Primary colors */
+@overridePrimary         : #0377CD;  /* Primary color */
+@overrideSecondary       : #058af0;  /* Secondary color */
+@ocerridePlabels         : #ffffff;  /* Label color */
+@overridePrimaryBt       : #dbdce0;  /* Primary button color */
+@hoverOverridePrimaryBt  : #bfc0c2;  /* Hover state for primary button */
 
-/* general */
-@primaryBackground       : #fff;
-@primaryText             : #000;
+/* General colors */
+@primaryBackground       : #ffffff;
+@primaryText             : #000000;
 
-/* mug palette */
-@mugSearch               : @overridePrimary;
-@outlineRecord           : @accessRightMetadata;
-@recordText              : #6b6d74;
-@hoverOverridePrimaryBt  : #bfc0c2;
-@recordLightText         : #94959a;
-
-/* accent colors */
+/* Accent colors */
 @greyDark                : #393b41;
 @greyLight               : #e0e1e2;
 @labelKeywordBackground  : #e8e8e8;
 
-/* ui message colors */
+/* MUG-specific palette */
+@mugSearch               : @overridePrimary;  /* Search bar color */
+@outlineRecord           : @accessRightMetadata;
+@recordText              : #6b6d74;
+@recordLightText         : #94959a;
+
+/* ======================================
+   UI-specific Colors
+====================================== */
+
+/* Message styling */
 @uiMsgBc                 : #fcfff5;
 @uiMsgGc                 : @overridePrimary;
 
-/* link and button colors */
-@primaryLinkInverted           : @primaryText;
-@primaryLinkBackgroundInverted : @primaryBackground;
+/* Link and button colors */
 @primaryLink                   : @primaryBackground;
 @primaryLinkHoverBackground    : @primaryText;
+@primaryLinkInverted           : @primaryText;
+@primaryLinkBackgroundInverted : @primaryBackground;
 @primaryButton                 : @primaryBackground;
 @primaryButtonHoverBackground  : @primaryText;
 @primaryButtonInverted         : @primaryText;
 
-/* account-specific (signin, signup) */
+/* Account-specific styling (signin, signup) */
 @primaryFormAccounts           : @primaryBackground;
 @formAccountsInputPlaceholder  : silver;
-@fieldInputSelectionBackground : #a7dabc;
+@fieldInputSelectionBackground : #50A2CE;
 @signInBackground              : #6b6d74;
-
-/* footer specific */
+/* Footer-specific styling */
 @footerGrey                    : #5e5e5e;
 @footerBottomBackground        : #f2f2f2;
 
-/* record specific */
+/* Record-specific styling */
 @recordVersionBackground       : #f2f2f2;
 @randomRecordsFrontpageArticle : rgba(34, 36, 38, 0.15);
 
-/* input styling */
-@outlineColor                  : #a7dabc;
+/* ======================================
+   Input and Notification Styling
+====================================== */
 
-/* notification styling */
+@outlineColor                  : #85B7D9;
 @notificationBackground        : #fffaf3;
 @notificationBorder            : #e2d5c2;
 
-/* home stroke */
-.home-stroke {
-   stroke: @overridePrimary;
-   stroke-linecap: square;
-   stroke-width: 4;
-   fill: none;
+/* ======================================
+   Specific Component Styling
+====================================== */
+
+/* Home stroke SVG styling */
+.home-stroke polyline {
+  stroke: @overridePrimary;
+  stroke-linecap: square;
+  stroke-width: 4;
+  fill: none;
 }
 
-/* hyperlink hover color */
+/* ======================================
+   Hyperlink Styling
+====================================== */
+
+/* Hyperlink hover and focus */
 a:focus,
 a:hover {
   color: @recordText;
