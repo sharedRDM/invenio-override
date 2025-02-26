@@ -48,3 +48,42 @@
   width: 380px !important;
   padding: 14px !important;
 }
+
+.frontpage-search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100% !important;
+}
+
+.ui.fluid.input input,
+.ui.fluid.input button {
+  font-size: 16px !important;
+  height: 50px !important;
+  border-radius: 0 !important;
+}
+
+.ui.fluid.input input {
+  width: 600px !important;
+}
+
+@media (max-width: 1024px) {
+  .ui.fluid.input input {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ui.fluid.input input {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .ui.fluid.input input,
+  .ui.fluid.input button {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+}

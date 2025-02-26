@@ -9,7 +9,7 @@
 
 {% set options = [] %}
 
-{# Define the base option for Research Results #}
+{# Ensure at least one default option exists #}
 {% set base_option = {
     "key": "rdm",
     "text": _("Research Results"),
@@ -18,27 +18,38 @@
 } %}
 {% set options = options + [base_option] %}
 
-{# Add publications if OVERRIDE_SHOW_PUBLICATIONS_SEARCH is enabled #}
 {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
-  {% set pub_option = {
-      "key": "marc21",
-      "text": _("Publications"),
-      "value": url_for("invenio_records_marc21.search"),
-      "title": _("Publication"),
-  } %}
-  {% set options = options + [pub_option] %}
+    {% set pub_option = {
+        "key": "marc21",
+        "text": _("Publications"),
+        "value": url_for("invenio_records_marc21.search"),
+        "title": _("Publication"),
+    } %}
+    {% set options = options + [pub_option] %}
 {% endif %}
 
-{# Add educational resources if OVERRIDE_SHOW_EDUCATIONAL_RESOURCES is enabled #}
 {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
-  {% set edu_option = {
-      "key": "lom",
-      "text": _("Educational Resources"),
-      "value": url_for("invenio_records_lom.search"),
-      "title": _("OER"),
-  } %}
-  {% set options = options + [edu_option] %}
+    {% set edu_option = {
+        "key": "lom",
+        "text": _("Educational Resources"),
+        "value": url_for("invenio_records_lom.search"),
+        "title": _("OER"),
+    } %}
+    {% set options = options + [edu_option] %}
 {% endif %}
+
+{% if options | length > 1 %}
+    {% set all_option = {
+        "key": "records",
+        "text": _("All"),
+        "value": url_for("invenio_search_ui.search"),
+        "title": "repo",
+    } %}
+    {% set options = [all_option] + options %}
+{% endif %}
+
+{# Ensure options is not None or Undefined #}
+{% set options_json = options | tojson if options is not none else "[]" %}
 
 <div class="ui container">
   <div class="short-menu" id="all-menu-top-table">
