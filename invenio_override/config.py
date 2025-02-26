@@ -16,7 +16,7 @@ from invenio_i18n import gettext as _
 OVERRIDE_SHOW_PUBLICATIONS_SEARCH = False
 """Enable or disable the publication global search feature."""
 
-OVERRIDE_OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
+OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 """Enable or disable the educational resources global search feature."""
 
 # ============================================================================

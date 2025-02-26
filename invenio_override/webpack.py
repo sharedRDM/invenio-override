@@ -20,7 +20,7 @@ theme = WebpackThemeBundle(
                 "invenio-override-js": "./js/invenio_override/theme.js",
             },
             dependencies={
-                # add any additional npm dependencies here...
+                "jquery": "^3.2.1",
             },
         )
     },

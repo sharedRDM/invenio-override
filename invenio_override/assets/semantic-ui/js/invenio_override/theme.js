@@ -45,15 +45,21 @@ export function toggleVisibility(id) {
 window.toggleVisibility = toggleVisibility;
 */
 
-/* render search bar with multiple options
-const headerSearchbar = document.getElementById("header-search-bar");
-const searchBarOptions = JSON.parse(headerSearchbar.dataset.options);
+document.addEventListener("DOMContentLoaded", function () {
 
-ReactDOM.render(
-  <MultipleOptionsSearchBar
-    options={searchBarOptions}
-    placeholder={i18next.t("Search records...")}
-  />,
-  headerSearchbar
-);
-*/
+  const frontpageSearchbar = document.getElementById("frontpage-search-bar");
+
+  if (frontpageSearchbar) {
+    const searchBarOptions = JSON.parse(frontpageSearchbar.dataset.options);
+
+    ReactDOM.render(
+      <div className="ui fluid input frontpage-search-container">
+        <MultipleOptionsSearchBar
+          options={searchBarOptions}
+          placeholder={i18next.t("Search records...")}
+        />
+      </div>,
+      frontpageSearchbar
+    );
+  }
+});
