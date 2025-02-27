@@ -14,18 +14,18 @@
 {# Ensure at least one default option exists #}
 {% set base_option = {
     "key": "rdm",
-    "text": _("Research Results"),
+    "text": "Research Results",
     "value": "/records/search",
-    "title": _("Research Data"),
+    "title": "Research Data",
 } %}
 {% set options = options + [base_option] %}
 
 {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
     {% set pub_option = {
         "key": "marc21",
-        "text": _("Publications"),
+        "text": "Publications",
         "value": url_for("invenio_records_marc21.search"),
-        "title": _("Publication"),
+        "title": "Publication",
     } %}
     {% set options = options + [pub_option] %}
 {% endif %}
@@ -33,9 +33,9 @@
 {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
     {% set edu_option = {
         "key": "lom",
-        "text": _("Educational Resources"),
+        "text": "Educational Resources",
         "value": url_for("invenio_records_lom.search"),
-        "title": _("OER"),
+        "title": "OER",
     } %}
     {% set options = options + [edu_option] %}
 {% endif %}
@@ -43,7 +43,7 @@
 {% if options | length > 1 %}
     {% set all_option = {
         "key": "records",
-        "text": _("All"),
+        "text": "All",
         "value": url_for("invenio_search_ui.search"),
         "title": "repo",
     } %}

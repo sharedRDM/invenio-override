@@ -8,7 +8,21 @@
 # details.
 
 """invenio module for sharedRDM theme."""
+from invenio_global_search.components import (
+    LOMToGlobalSearchComponent,
+    Marc21ToGlobalSearchComponent,
+    RDMToGlobalSearchComponent,
+)
 from invenio_i18n import gettext as _
+from invenio_rdm_records.services.components import (
+    DefaultRecordsComponents as RDMDefaultRecordsComponents,
+)
+from invenio_records_lom.services.components import (
+    DefaultRecordsComponents as LOMDefaultRecordsComponents,
+)
+from invenio_records_marc21.services.components import (
+    DefaultRecordsComponents as Marc21DefaultRecordsComponents,
+)
 
 # ============================================================================
 # Global Search Configuration
@@ -18,6 +32,16 @@ OVERRIDE_SHOW_PUBLICATIONS_SEARCH = False
 
 OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 """Enable or disable the educational resources global search feature."""
+
+RDM_RECORDS_SERVICE_COMPONENTS = RDMDefaultRecordsComponents + [
+    RDMToGlobalSearchComponent
+]
+LOM_RECORDS_SERVICE_COMPONENTS = LOMDefaultRecordsComponents + [
+    LOMToGlobalSearchComponent
+]
+MARC21_RECORDS_SERVICE_COMPONENTS = Marc21DefaultRecordsComponents + [
+    Marc21ToGlobalSearchComponent
+]
 
 # ============================================================================
 # Right Section Configuration
@@ -73,7 +97,7 @@ OVERRIDE_ROUTES = {
     "comingsoon": "/comingsoon",
 }
 
-OVERRIDE_LOGO = "images/invenioRDM.svg"
+OVERRIDE_LOGO = "images/inveniordm-tail.svg"
 """override logo"""
 
 # TODO: fix it
