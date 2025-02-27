@@ -1,73 +1,54 @@
 {# This file contains the resource overview block content. #}
 
-<div class="ui container">
-  <div class="ui divider hidden"></div>
-  <div class="sixteen wide column random-records-frontpage">
-    <div class="center aligned ui equal height stretched grid">
-      <div class="left aligned column">
-        <div class="ui segment image">
-          <h2>{{ _("Research Results") }}</h2>
-          <div>{{ _("Frontpage: Description for research results") }}</div>
-          <ul>
-            {#
-            <li>
-              <a href="research-results/browse">{{ _("Browse") }}</a>
-            </li>
-            #}
-            <li>
-              <a href="records/search"
-                >{{ _("Search for research results") }}</a
-              >
-            </li>
-            <li>
-              <a href="me/uploads">{{ _("Upload research results") }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="left aligned column">
-        <div class="ui segment image">
-          <h2>{{ _("Publications") }}</h2>
-          <div>{{ _("Frontpage: Description for publications") }}</div>
-          <ul>
-            {%- if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %} {#
-            <li>
-              <a href="publications/browse">Browse</a>
-            </li>
-            #}
-            <li>
-              <a href="publications/search"
-                >{{ _("Search for publications") }}</a
-              >
-            </li>
-            {%- endif %}
-          </ul>
-        </div>
-      </div>
-      <div class="left aligned column">
-        <div class="ui segment image">
-          <h2>{{ _("Educational Resources") }}</h2>
-          <div>
-            {{ _("Frontpage: Description for open educational resources") }}
+{% set show_publications = config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
+{% set show_educational = config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
+
+{% set active_sections = [show_publications, show_educational] | select | list %}
+{% set columns = active_sections | length + 1 %} {# +1 for Research Results, always shown #}
+
+{% if columns > 0 %}
+  <div class="ui container">
+    <div class="ui divider hidden"></div>
+    <div class="sixteen wide column random-records-frontpage">
+    <div class="center aligned ui equal height stretched grid resource-container resource-columns-{{ columns }}">
+
+        <div class="left aligned column">
+          <div class="ui segment image">
+            <h2>{{ _("Research Results") }}</h2>
+            <div>{{ _("Frontpage: Description for research results") }}</div>
+            <ul>
+              <li><a href="records/search">{{ _("Search for research results") }}</a></li>
+              <li><a href="me/uploads">{{ _("Upload research results") }}</a></li>
+            </ul>
           </div>
-          <ul>
-            {%- if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %} {#
-            <li>
-              <a href="oer/browse">{{ _("Browse") }}</a>
-            </li>
-            #}
-            <li>
-              <a href="oer/search"
-                >{{ _("Search for educational resourses") }}</a
-              >
-            </li>
-            <li>
-              <a href="oer/uploads">{{ _("Upload educational resources") }}</a>
-            </li>
-            {%- endif %}
-          </ul>
         </div>
+
+        {%- if show_publications %}
+        <div class="left aligned column">
+          <div class="ui segment image">
+            <h2>{{ _("Publications") }}</h2>
+            <div>{{ _("Frontpage: Description for publications") }}</div>
+            <ul>
+              <li><a href="publications/search">{{ _("Search for publications") }}</a></li>
+            </ul>
+          </div>
+        </div>
+        {%- endif %}
+
+        {%- if show_educational %}
+        <div class="left aligned column">
+          <div class="ui segment image">
+            <h2>{{ _("Educational Resources") }}</h2>
+            <div>{{ _("Frontpage: Description for open educational resources") }}</div>
+            <ul>
+              <li><a href="oer/search">{{ _("Search for educational resources") }}</a></li>
+              <li><a href="oer/uploads">{{ _("Upload educational resources") }}</a></li>
+            </ul>
+          </div>
+        </div>
+        {%- endif %}
+
       </div>
     </div>
   </div>
-</div>
+{% endif %}
