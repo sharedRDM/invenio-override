@@ -70,6 +70,9 @@ OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
 OVERRIDE_RESOURCE_OVERVIEW = False
 """Resource overview section"""
 
+OVERRIDE_ENABLE_EDUCATIONAL_RESOURCES = False
+"""Enable or disable Educational Resources (OER)"""
+
 # ============================================================================
 # Branding and UI Customization
 # ============================================================================

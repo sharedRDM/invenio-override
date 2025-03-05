@@ -13,8 +13,8 @@
   {% if not records %}
     <div class="ui centered grid">
       <p style="font-size: medium;">
-        {% if not config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH and not config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
-          {{ _("Explore Research Results available in the repository.") }}
+  {% if not config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH or not config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
+      {{ _("Explore Research Results available in the repository.") }}
         {% else %}
           {{ _("There are no public records to show.") }}
         {% endif %}

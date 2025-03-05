@@ -9,13 +9,17 @@
 
 """invenio module for sharedRDM theme."""
 
+from functools import wraps
 from typing import Dict, Optional
 
-from flask import Blueprint, current_app, render_template
+from flask import Blueprint, current_app, g, redirect, render_template, url_for
+from flask_login import current_user, login_required
+from invenio_rdm_records.proxies import current_rdm_records
 from invenio_rdm_records.resources.serializers import UIJSONSerializer
 from invenio_records_global_search.resources.serializers import (
     GlobalSearchJSONSerializer,
 )
+from invenio_users_resources.proxies import current_user_resources
 from opensearch_dsl.utils import AttrDict
 
 from .search import FrontpageRecordsSearch
@@ -26,6 +30,22 @@ blueprint = Blueprint(
     template_folder="templates",
     static_folder="static",
 )
+
+
+@blueprint.route("/me/overview")
+@login_required
+def overview():
+    """Render the user overview dashboard."""
+    url = current_user_resources.users_service.links_item_tpl.expand(
+        g.identity, current_user
+    )["avatar"]
+    is_authenticated = current_identity_is_authenticated()
+
+    return render_template(
+        "invenio_override/overview.html",
+        is_authenticated=is_authenticated,
+        user_avatar=url,
+    )
 
 
 def records_serializer(records=None) -> list:
@@ -125,3 +145,21 @@ def records_search():
     serving as the dedicated search page for RDM records.
     """
     return render_template("invenio_app_rdm/records/search.html")
+
+
+def current_identity_is_authenticated() -> bool:
+    """Check whether the current identity is authenticated via remote auth."""
+    rdm_service = current_rdm_records.records_service
+    return rdm_service.check_permission(g.identity, "authenticated")
+
+
+def require_authenticated(view_func):
+    """Decorator to guard views against unauthenticated users."""
+
+    @wraps(view_func)
+    def decorated_view(*args, **kwargs):
+        if not current_identity_is_authenticated():
+            return redirect(url_for("invenio-override.overview"))
+        return view_func(*args, **kwargs)
+
+    return decorated_view
