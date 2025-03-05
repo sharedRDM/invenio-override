@@ -30,7 +30,7 @@ from invenio_records_marc21.services.components import (
 OVERRIDE_SHOW_PUBLICATIONS_SEARCH = False
 """Enable or disable the publication global search feature."""
 
-OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
+OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = True
 """Enable or disable the educational resources global search feature."""
 
 RDM_RECORDS_SERVICE_COMPONENTS = RDMDefaultRecordsComponents + [
@@ -69,6 +69,9 @@ OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
 
 OVERRIDE_RESOURCE_OVERVIEW = False
 """Resource overview section"""
+
+OVERRIDE_OVERVIEW_EDUCATIONAL_RESOURCES = False
+"""Enable or disable Educational Resources (OER)"""
 
 # ============================================================================
 # Branding and UI Customization
