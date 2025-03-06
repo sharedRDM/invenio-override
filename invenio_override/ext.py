@@ -52,15 +52,19 @@ def finalize_app(app):
 
 
 def modify_user_dashboard(app):
-    """Modify user dashboard."""
+    """Modify user dashboard.
+
+    To modify the dashboard menu, access the user_dashboard_menu
+    through root_menu.submenu("dashboard").
+    """
     root_menu = app.extensions["menu"].root_node
 
     user_dashboard_menu = root_menu.submenu("dashboard")
 
     if "uploads" in user_dashboard_menu._child_entries:
-        user_dashboard_menu.submenu("uploads")._text = _("Research Results")
+        user_dashboard_menu.submenu("uploads")._text = text = "Research Results"
 
-    if not app.config.get("OVERRIDE_OVERVIEW_EDUCATIONAL_RESOURCES"):
+    if not app.config.get("OVERRIDE_SHOW_EDUCATIONAL_RESOURCES", False):
         if "OER" in user_dashboard_menu._child_entries:
             del user_dashboard_menu._child_entries["OER"]
 
@@ -73,8 +77,8 @@ def modify_user_dashboard(app):
 
     root_menu.submenu("actions.deposit").register(
         "invenio-override.overview",
-        "Dashboard",
-        order=0,
+        _("My dashboard"),
+        order=1,
     )
 
 

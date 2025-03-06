@@ -226,6 +226,52 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
+#: invenio_override/templates/invenio_override/overview.html:31
+msgid "Research Results"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/overview.html:36
+#, fuzzy
+#| msgid "Overview: Description for research result"
+msgid "Overview: Description for research results"
+msgstr "Research results gives the base on which publications are built."
+
+#: invenio_override/templates/invenio_override/overview.html:42
+msgid "Communities"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/overview.html:47
+msgid "Overview: Description of Communities"
+msgstr ""
+"Grow a community of individuals to sustain the platform going forward and "
+"thereby organize, curate and collaborate on records for your institution, "
+"project, topic or event."
+
+#: invenio_override/templates/invenio_override/overview.html:66
+msgid "Publications"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/overview.html:71
+msgid "Overview: Description for publications"
+msgstr "Publications are the synthesized result of research."
+
+#: invenio_override/templates/invenio_override/overview.html:53
+msgid "Requests"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/views.py:53
+msgid "Requests"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/overview.html:12
+#: invenio_override/ext.py:74
+msgid "Overview"
+msgstr "Overview"
+
+#: invenio_override/ext.py:80
+msgid "My dashboard"
+msgstr "Dashboard"
+
 #: invenio_override/templates/invenio_override/header_frontpage.html:26
 #: invenio_override/templates/invenio_override/header_frontpage.html:27
 msgid "Search"
