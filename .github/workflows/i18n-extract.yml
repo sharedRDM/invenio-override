@@ -33,9 +33,11 @@ jobs:
           pip install -e ".[tests,opensearch2]"
 
       # extract backend messages
-      - name: Extract backend messages
+      - name: Extract backend messages & update .po changes
         run: |
           python setup.py extract_messages
+          python setup.py update_catalog -l en
+          python setup.py update_catalog -l de
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
