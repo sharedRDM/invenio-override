@@ -1,4 +1,4 @@
-# Translations template for invenio-override.
+# English translations for invenio-override.
 # Copyright (C) 2024 sharedRDM
 # This file is distributed under the same license as the invenio-override
 # project.
@@ -9,22 +9,33 @@ msgid ""
 msgstr ""
 "Project-Id-Version: invenio-override 0.0.3\n"
 "Report-Msgid-Bugs-To: mojib.wali@tugraz.at\n"
-"POT-Creation-Date: 2024-11-22 10:31+0100\n"
+"POT-Creation-Date: 2025-03-10 09:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Language-Team: en <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.16.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: invenio_override/config.py:153
+#: invenio_override/config.py:185
 msgid "German"
 msgstr ""
 
-#: invenio_override/config.py:166
+#: invenio_override/config.py:198
 msgid "Welcome to The Repository!"
 msgstr ""
+
+#: invenio_override/ext.py:74
+#: invenio_override/templates/invenio_override/overview.html:12
+msgid "Overview"
+msgstr "Overview"
+
+#: invenio_override/ext.py:80
+msgid "My dashboard"
+msgstr "Dashboard"
 
 #: invenio_override/templates/invenio_override/423.html:13
 msgid "Locked"
@@ -35,7 +46,7 @@ msgid "The resource that is being accessed is locked."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/accounts/accounts_base.html:27
-#: invenio_override/templates/invenio_override/accounts/login_user.html:25
+#: invenio_override/templates/invenio_override/accounts/login_user.html:24
 #: invenio_override/templates/invenio_override/base.html:27
 msgid "Invenio"
 msgstr ""
@@ -105,6 +116,7 @@ msgid "All uploads display standards compliant usage statistics"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/benefits.html:13
+#: invenio_override/templates/invenio_override/recent_uploads.html:92
 msgid "More"
 msgstr ""
 
@@ -140,75 +152,75 @@ msgstr ""
 msgid "Find individual solutions."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:37
+#: invenio_override/templates/invenio_override/footer_mug.html:41
 msgid "Repository"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:41
+#: invenio_override/templates/invenio_override/footer_mug.html:45
 msgid "Documentation"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:46
+#: invenio_override/templates/invenio_override/footer_mug.html:50
 msgid "Reference Guide"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:51
+#: invenio_override/templates/invenio_override/footer_mug.html:55
 msgid "Search Guide"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:56
+#: invenio_override/templates/invenio_override/footer_mug.html:60
 msgid "Data Protection"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:61
+#: invenio_override/templates/invenio_override/footer_mug.html:65
 msgid "Terms and Conditions"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:68
+#: invenio_override/templates/invenio_override/footer_mug.html:72
 msgid "Features"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:70
+#: invenio_override/templates/invenio_override/footer_mug.html:74
 msgid "Scalability"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:71
+#: invenio_override/templates/invenio_override/footer_mug.html:75
 msgid "Institutional integration"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:72
+#: invenio_override/templates/invenio_override/footer_mug.html:76
 msgid "Next Generation Repository"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:73
+#: invenio_override/templates/invenio_override/footer_mug.html:77
 msgid "Repository Profiles"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:74
+#: invenio_override/templates/invenio_override/footer_mug.html:78
 msgid "Resilient"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:79
+#: invenio_override/templates/invenio_override/footer_mug.html:83
 msgid "Connected Services"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:93
+#: invenio_override/templates/invenio_override/footer_mug.html:97
 msgid "Research Data Management"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:100
+#: invenio_override/templates/invenio_override/footer_mug.html:104
 msgid "Accessibility"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:102
+#: invenio_override/templates/invenio_override/footer_mug.html:106
 msgid "Tipp:"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:103
+#: invenio_override/templates/invenio_override/footer_mug.html:107
 msgid "Use Ctrl + and Crtl -"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/footer_mug.html:104
+#: invenio_override/templates/invenio_override/footer_mug.html:108
 msgid "to change the font size."
 msgstr ""
 
@@ -222,103 +234,52 @@ msgstr ""
 msgid "This is the test instance of the Repository."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:47
+#: invenio_override/templates/invenio_override/header.html:32
 msgid "Home"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:26
-#: invenio_override/templates/invenio_override/header_frontpage.html:27
-msgid "Search"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/navbar.html:13
-msgid "All"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:11
-msgid "Research Results"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:13
-msgid "Frontpage: Description for research results"
-msgstr ""
-"Research results is the collective term for all the results of a research "
-"project. They describe the data, source code and all digital objects on "
-"which publication results are based. These include the tools used to collect "
-"and process the research data. The following links offer the possibility to "
-"add research results to the repository, but also to search for the results "
-"of other people."
-
-#: invenio_override/templates/invenio_override/resource_overview.html:29
-msgid "Frontpage: Description for publications"
-msgstr ""
-"The section of publications covers citations from several areas. Open Access "
-"papers are imported from Pure. Publications from Open Access publishers are "
-"shared. Digital copies are offered. University publications are made "
-"available to a wide range of people.  The following link offers the "
-"possibility to search among publications."
-
-#: invenio_override/templates/invenio_override/resource_overview.html:42
-msgid "Frontpage: Description for open educational resources"
-msgstr ""
-"In this area, you can upload your openly licensed educational content (OER, "
-"Open Educational Resources) and search for educational resources uploaded by "
-"others. Your uploaded content will be automatically transferred to the <a "
-"href=\"https://oerhub.at/en\" target=\"_blank\">OERhub.at</a>. To upload "
-"something in this area, an OER certificate and activation of your account is "
-"required."
-
-
-#: invenio_override/templates/invenio_override/resource_overview.html:22
-msgid "Search for research results"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:25
-msgid "Upload research results"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:32
-msgid "Publications"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:42
-msgid "Search for publications"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:49
-msgid "Educational Resources"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:60
-msgid "Search for educational resources"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:63
-msgid "Upload educational resources"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/overview.html:31
-msgid "Research Results"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/overview.html:36
-#, fuzzy
-#| msgid "Overview: Description for research result"
-msgid "Overview: Description for research results"
-msgstr "Research results gives the base on which publications are built."
-
+#: invenio_override/templates/invenio_override/header.html:38
 #: invenio_override/templates/invenio_override/overview.html:42
 msgid "Communities"
 msgstr ""
 
+#: invenio_override/templates/invenio_override/header.html:41
+#, fuzzy
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: invenio_override/templates/invenio_override/overview.html:31
+#: invenio_override/templates/invenio_override/resource_overview.html:17
+msgid "Research Results"
+msgstr ""
+
+# | msgid "Overview: Description for research result"
+#: invenio_override/templates/invenio_override/overview.html:36
+#, fuzzy
+msgid "Overview: Description for research results"
+msgstr "Research results gives the base on which publications are built."
+
 #: invenio_override/templates/invenio_override/overview.html:47
 msgid "Overview: Description of Communities"
 msgstr ""
-"Grow a community of individuals to sustain the platform going forward and "
-"thereby organize, curate and collaborate on records for your institution, "
-"project, topic or event."
+"Grow a community of individuals to sustain the platform going forward and"
+" thereby organize, curate and collaborate on records for your "
+"institution, project, topic or event."
+
+#: invenio_override/templates/invenio_override/overview.html:53
+msgid "Requests"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/overview.html:58
+#, fuzzy
+msgid "Overview: Description of Requests"
+msgstr ""
+"Grow a community of individuals to sustain the platform going forward and"
+" thereby organize, curate and collaborate on records for your "
+"institution, project, topic or event."
 
 #: invenio_override/templates/invenio_override/overview.html:66
+#: invenio_override/templates/invenio_override/resource_overview.html:29
 msgid "Publications"
 msgstr ""
 
@@ -326,27 +287,81 @@ msgstr ""
 msgid "Overview: Description for publications"
 msgstr "Publications are the synthesized result of research."
 
-#: invenio_override/templates/invenio_override/overview.html:53
-msgid "Requests"
+#: invenio_override/templates/invenio_override/recent_uploads.html:11
+msgid "Recent uploads"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/views.py:53
-msgid "Requests"
+#: invenio_override/templates/invenio_override/recent_uploads.html:17
+msgid "Explore Research Results available in the repository."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/overview.html:12
-#: invenio_override/ext.py:74
-msgid "Overview"
-msgstr "Overview"
+#: invenio_override/templates/invenio_override/recent_uploads.html:19
+msgid "There are no public records to show."
+msgstr ""
 
-#: invenio_override/ext.py:80
-msgid "My dashboard"
-msgstr "Dashboard"
+#: invenio_override/templates/invenio_override/recent_uploads.html:32
+msgid "Publication date"
+msgstr ""
 
-#: invenio
+#: invenio_override/templates/invenio_override/recent_uploads.html:38
+msgid "Resource type"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/resource_overview.html:18
+msgid "Frontpage: Description for research results"
+msgstr ""
+"Research results is the collective term for all the results of a research"
+" project. They describe the data, source code and all digital objects on "
+"which publication results are based. These include the tools used to "
+"collect and process the research data. The following links offer the "
+"possibility to add research results to the repository, but also to search"
+" for the results of other people."
+
+#: invenio_override/templates/invenio_override/resource_overview.html:20
+msgid "Search for research results"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/resource_overview.html:21
+msgid "Upload research results"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/resource_overview.html:30
+msgid "Frontpage: Description for publications"
+msgstr ""
+"The section of publications covers citations from several areas. Open "
+"Access papers are imported from Pure. Publications from Open Access "
+"publishers are shared. Digital copies are offered. University "
+"publications are made available to a wide range of people.  The following"
+" link offers the possibility to search among publications."
+
+#: invenio_override/templates/invenio_override/resource_overview.html:32
+msgid "Search for publications"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/resource_overview.html:41
+msgid "Educational Resources"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/resource_overview.html:42
+msgid "Frontpage: Description for open educational resources"
+msgstr ""
+"In this area, you can upload your openly licensed educational content "
+"(OER, Open Educational Resources) and search for educational resources "
+"uploaded by others. Your uploaded content will be automatically "
+"transferred to the <a href=\"https://oerhub.at/en\" "
+"target=\"_blank\">OERhub.at</a>. To upload something in this area, an OER"
+" certificate and activation of your account is required."
+
+#: invenio_override/templates/invenio_override/resource_overview.html:44
+msgid "Search for educational resources"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/resource_overview.html:45
+msgid "Upload educational resources"
+msgstr ""
 
 #: invenio_override/templates/invenio_override/accounts/header_login.html:11
-#: invenio_override/templates/invenio_override/accounts/login_user.html:84
+#: invenio_override/templates/invenio_override/accounts/login_user.html:82
 #: invenio_override/templates/invenio_override/accounts/register_user.html:87
 msgid "Sign up"
 msgstr ""
@@ -359,34 +374,29 @@ msgstr ""
 msgid "Sign out"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:26
+#: invenio_override/templates/invenio_override/accounts/login_user.html:25
 msgid "Log in to"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:40
-#, python-format
-msgid "Log in with %(title)s"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/accounts/login_user.html:48
+#: invenio_override/templates/invenio_override/accounts/login_user.html:43
 #: invenio_override/templates/invenio_override/accounts/register_user.html:52
 msgid "Or"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:59
+#: invenio_override/templates/invenio_override/accounts/login_user.html:51
 msgid "Log in with repository credentials"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:69
+#: invenio_override/templates/invenio_override/accounts/login_user.html:66
 msgid "Log In"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:83
+#: invenio_override/templates/invenio_override/accounts/login_user.html:78
 #, python-format
 msgid "New to %(sitename)s?"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:94
+#: invenio_override/templates/invenio_override/accounts/login_user.html:91
 msgid "Forgot password?"
 msgstr ""
 
@@ -431,4 +441,13 @@ msgstr ""
 #: invenio_override/templates/invenio_override/accounts/register_user.html:66
 msgid "Sign up with repository credentials"
 msgstr ""
+
+#~ msgid "Search"
+#~ msgstr ""
+
+#~ msgid "All"
+#~ msgstr ""
+
+#~ msgid "Log in with %(title)s"
+#~ msgstr ""
 
