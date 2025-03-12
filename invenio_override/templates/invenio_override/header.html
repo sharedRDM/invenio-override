@@ -41,6 +41,14 @@ details.
               <a role="menuitem" href="/me/overview" class="no-decoration">{{ _("Dashboard") }}</a>
             </div>
 
+          {% set ns = namespace(admin_menu=False) %}
+          {%- for item in current_menu.submenu('profile-admin').children if item.visible %}
+            {% set ns.admin_menu = True %}
+            <div class="two wide column main-menu-entry">
+              <a role="menuitem" href="{{ item.url }}"" class="no-decoration">{{ item.text[26:]|safe }}</a>
+            </div>
+          {%- endfor %}
+
             {%- for l in current_i18n.get_locales() %}
             {%- if current_i18n.language != l.language %}
             <div class="two wide column main-menu-entry">
@@ -49,37 +57,7 @@ details.
 
             </div>
           </div>
-          {% endfor %}
-
-          {% for item in current_menu.submenu('actions').children|sort(attribute='order') if item.visible recursive %}
-          <div class="two wide column main-menu-entry">
-            <div class="ui secondary menu">
-              <a class="ui item no-decoration" href="{{ item.url }}">{{ item.text|safe }}</a>
-            </div>
-          </div>
-          {% endfor %}
-         
-         {% set ns = namespace(admin_menu=False) %}
-          {%- for item in current_menu.submenu('profile-admin').children if item.visible %}
-            {% set ns.admin_menu = True %}
-            <div class="two wide column main-menu-entry">
-              <div class="ui secondary menu">
-                <a class="ui item no-decoration" href="{{ item.url }}">{{ item.text|safe }}</a>
-              </div>
-            </div>
-          {%- endfor %}
-
-          {%- for l in current_i18n.get_locales() %}
-          {%- if current_i18n.language != l.language %}
-          <div class="two wide column main-menu-entry">
-            <div class="ui secondary menu">
-          <a class="ui item no-decoration"
-            href="{{ url_for('invenio_i18n.set_lang', lang_code=l.language) }}">{{ l.get_display_name().upper() [0:2]}}</a>
-          </div>
-        </div>
-          {%- endif %}
-          {%- endfor %}
-        </div>
+          <div id="margin-divider" class="ui divider main-menu-underline-line"></div>
         </div>
       </div>
       {%- endif %}
