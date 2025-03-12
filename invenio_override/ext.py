@@ -9,7 +9,6 @@
 
 """invenio module for sharedRDM theme."""
 
-import sys
 from flask_login import login_required
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
