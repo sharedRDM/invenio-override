@@ -52,6 +52,7 @@ def finalize_app(app):
     guard_view_functions(app)
     modify_admin_menu()
 
+
 def modify_user_dashboard(app):
     """Modify user dashboard.
 
@@ -107,7 +108,6 @@ def modify_admin_menu():
     Because the original admin submenu has an icon embedded, here that is
     overriden to display only the text.
     """
-    for item in current_menu.submenu('profile-admin').children:
-        if "Administration" in item._text :
+    for item in current_menu.submenu("profile-admin").children:
+        if "Administration" in item._text:
             item._text = "Administration"
-
