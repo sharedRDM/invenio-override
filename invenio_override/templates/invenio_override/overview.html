@@ -11,6 +11,31 @@
 {%- set active_dashboard_menu_item = "overview" %}
 {%- set title = _("Overview") %}
 
+{%- block css %}
+{{ webpack['invenio-override-theme.css'] }}
+<style>
+  @media (max-width: 1224px) { 
+    .adjusted-font {
+      font-size: 1.1rem;
+    }
+  }
+
+  .ui.segment {
+    height: 480px
+  }
+
+  @media (max-width: 1224px) { 
+    .ui.segment {
+        height: 320px;
+        width: 150px;
+        & h {
+          font-size: 1.0rem;
+        }
+    }  
+  }
+</style>
+{%- endblock %}
+
 {% block javascript %}
   {{ super() }}
 {% endblock javascript %}
@@ -27,8 +52,8 @@
       {% if is_authenticated %}
       {# 3 columns: Research-Uploads, Communities, and Requests #}
       <div class="column">
-        <div class="ui segment" style="height: 480px">
-          <h2>{{ _("Research Results") }}</h2>
+        <div class="ui segment">
+          <h2 class="adjusted-font">{{ _("Research Results") }}</h2>
           <a class="ui left floated image" href="/me/uploads">
             <img width="400px" alt="Research Results" src="{{ url_for("static", filename="images/diamond.svg") }}">
           </a>
@@ -38,8 +63,8 @@
         </div>
       </div>
       <div class="column">
-        <div class="ui segment" style="height: 480px">
-          <h2>{{ _("Communities") }}</h2>
+        <div class="ui segment">
+          <h2 class="adjusted-font">{{ _("Communities") }}</h2>
           <a class="ui left floated image" href="/me/communities">
             <img width="400px" alt="Communities" src="{{ url_for("static", filename="images/group-discussion.svg") }}">
           </a>
@@ -49,8 +74,8 @@
         </div>
       </div>
       <div class="column">
-        <div class="ui segment" style="height: 480px">
-          <h2>{{ _("Requests") }}</h2>
+        <div class="ui segment">
+          <h2 class="adjusted-font">{{ _("Requests") }}</h2>
           <a class="ui left floated image" href="/me/requests">
             <img width="400px" alt="Requests" src="{{ url_for("static", filename="images/umbrella.svg") }}">
           </a>
@@ -63,7 +88,7 @@
       {% if can_view_marc21 %}
       <div class="column">
         <div class="ui segment" style="height: 480px">
-          <h2>{{ _("Publications") }}</h2>
+          <h2 class="adjusted-font">{{ _("Publications") }}</h2>
           <a class="ui left floated image" href="/publications/uploads">
             <img width="400px" alt="Publications" src="{{ url_for("static", filename="images/library-book-svgrepo-com.svg") }}">
           </a>
