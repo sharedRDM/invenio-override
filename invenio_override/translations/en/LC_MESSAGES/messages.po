@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: invenio-override 0.0.3\n"
 "Report-Msgid-Bugs-To: mojib.wali@tugraz.at\n"
-"POT-Creation-Date: 2025-03-17 14:45+0100\n"
+"POT-Creation-Date: 2025-03-18 09:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -264,39 +264,26 @@ msgid "Research results gives the base on which publications are built."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/overview.html:48
-msgid "Overview: Description of Communities"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/overview.html:49
 msgid ""
 "Grow a community of individuals to sustain the platform going forward and"
 " thereby organize, curate and collaborate on records for your "
 "institution, project, topic or event."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/overview.html:55
+#: invenio_override/templates/invenio_override/overview.html:54
 msgid "Requests"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/overview.html:60
-#, fuzzy
-msgid "Overview: Description of Requests"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/overview.html:61
+#: invenio_override/templates/invenio_override/overview.html:59
 msgid "Check for incoming notifications and community assignments or inquiries."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/overview.html:69
-#: invenio_override/templates/invenio_override/resource_overview.html:30
+#: invenio_override/templates/invenio_override/overview.html:67
+#: invenio_override/templates/invenio_override/resource_overview.html:29
 msgid "Publications"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/overview.html:74
-msgid "Overview: Description for publications"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/overview.html:75
+#: invenio_override/templates/invenio_override/overview.html:72
 msgid "Publications are the synthesized result of research."
 msgstr ""
 
@@ -321,10 +308,6 @@ msgid "Resource type"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/resource_overview.html:18
-msgid "Frontpage: Description for research results"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:19
 msgid ""
 "Research results is the collective term for all the results of a research"
 " project. They describe the data, source code and all digital objects on "
@@ -334,19 +317,15 @@ msgid ""
 " for the results of other people."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:21
+#: invenio_override/templates/invenio_override/resource_overview.html:20
 msgid "Search for research results"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:22
+#: invenio_override/templates/invenio_override/resource_overview.html:21
 msgid "Upload research results"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:31
-msgid "Frontpage: Description for publications"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:32
+#: invenio_override/templates/invenio_override/resource_overview.html:30
 msgid ""
 "The section of publications covers citations from several areas. Open "
 "Access papers are imported from Pure. Publications from Open Access "
@@ -355,19 +334,15 @@ msgid ""
 "link offers the possibility to search among publications."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:34
+#: invenio_override/templates/invenio_override/resource_overview.html:32
 msgid "Search for publications"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:43
+#: invenio_override/templates/invenio_override/resource_overview.html:41
 msgid "Educational Resources"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:44
-msgid "Frontpage: Description for open educational resources"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/resource_overview.html:45
+#: invenio_override/templates/invenio_override/resource_overview.html:42
 msgid ""
 "In this area, you can upload your openly licensed educational content "
 "(OER, Open Educational Resources) and search for educational resources "
@@ -377,11 +352,11 @@ msgid ""
 " certificate and activation of your account is required."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:47
+#: invenio_override/templates/invenio_override/resource_overview.html:42
 msgid "Search for educational resources"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/resource_overview.html:48
+#: invenio_override/templates/invenio_override/resource_overview.html:43
 msgid "Upload educational resources"
 msgstr ""
 
@@ -490,4 +465,5 @@ msgstr ""
 #~ " your account is required.\n"
 #~ "  "
 #~ msgstr ""
+
 

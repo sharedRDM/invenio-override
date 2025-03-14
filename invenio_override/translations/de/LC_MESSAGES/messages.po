@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: invenio-override 0.0.3\n"
 "Report-Msgid-Bugs-To: mojib.wali@tugraz.at\n"
-"POT-Creation-Date: 2025-03-17 14:45+0100\n"
+"POT-Creation-Date: 2025-03-18 09:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: de\n"
@@ -282,17 +282,6 @@ msgid "Research results gives the base on which publications are built."
 msgstr "Die Forschungsergebnisse bilden die Grundlage für Veröffentlichungen."
 
 #: invenio_override/templates/invenio_override/overview.html:48
-#, fuzzy
-msgid "Overview: Description of Communities"
-msgstr ""
-"Der Bereich Publikationen umfasst Zitate aus verschiedenen Bereichen. "
-"Open-Access-Publikationen werden von Pure importiert. Veröffentlichungen "
-"von Open-Access-Verlagen werden freigegeben. Digitale Kopien werden "
-"angeboten. Die Veröffentlichungen der Universität werden einem breiten "
-"Publikum zugänglich gemacht.  Der folgende Link bietet die Möglichkeit, "
-"unter den Publikationen zu suchen."
-
-#: invenio_override/templates/invenio_override/overview.html:49
 msgid ""
 "Grow a community of individuals to sustain the platform going forward and"
 " thereby organize, curate and collaborate on records for your "
@@ -300,41 +289,25 @@ msgid ""
 msgstr ""
 "Bauen Sie eine Gemeinschaft von Einzelpersonen auf, um die Plattform "
 "weiterzuführen und so Datensätze für Ihre Institution, Ihr Projekt, Ihr "
-"Thema oder Ihre Veranstaltung zu organisieren, zu kuratieren und gemeinsam "
-"zu bearbeiten."
+"Thema oder Ihre Veranstaltung zu organisieren, zu kuratieren und "
+"gemeinsam zu bearbeiten."
 
-#: invenio_override/templates/invenio_override/overview.html:55
+#: invenio_override/templates/invenio_override/overview.html:54
 msgid "Requests"
 msgstr "Anfragen"
 
-#: invenio_override/templates/invenio_override/overview.html:60
-#, fuzzy
-msgid "Overview: Description of Requests"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/overview.html:61
+#: invenio_override/templates/invenio_override/overview.html:59
 msgid "Check for incoming notifications and community assignments or inquiries."
 msgstr ""
-"Prüfen Sie auf eingehende Benachrichtigungen und Gemeinschaftsaufgaben oder -"
-"anfragen."
+"Prüfen Sie auf eingehende Benachrichtigungen und Gemeinschaftsaufgaben "
+"oder -anfragen."
 
-#: invenio_override/templates/invenio_override/overview.html:69
-#: invenio_override/templates/invenio_override/resource_overview.html:30
+#: invenio_override/templates/invenio_override/overview.html:67
+#: invenio_override/templates/invenio_override/resource_overview.html:29
 msgid "Publications"
 msgstr "Publikationen"
 
-#: invenio_override/templates/invenio_override/overview.html:74
-#, fuzzy
-msgid "Overview: Description for publications"
-msgstr ""
-"Der Bereich Publikationen umfasst Zitate aus verschiedenen Bereichen. "
-"Open-Access-Publikationen werden von Pure importiert. Veröffentlichungen "
-"von Open-Access-Verlagen werden freigegeben. Digitale Kopien werden "
-"angeboten. Die Veröffentlichungen der Universität werden einem breiten "
-"Publikum zugänglich gemacht.  Der folgende Link bietet die Möglichkeit, "
-"unter den Publikationen zu suchen."
-
-#: invenio_override/templates/invenio_override/overview.html:75
+#: invenio_override/templates/invenio_override/overview.html:72
 msgid "Publications are the synthesized result of research."
 msgstr "Die Veröffentlichungen sind das zusammengefasste Ergebnis der Forschung."
 
@@ -360,17 +333,6 @@ msgid "Resource type"
 msgstr "Art der Veröffentlichung"
 
 #: invenio_override/templates/invenio_override/resource_overview.html:18
-msgid "Frontpage: Description for research results"
-msgstr ""
-"Forschungsergebnisse ist der Sammelbegriff für alle Ergebnisse eines "
-"Forschungsprojekts. Sie beschreiben die Daten, den Quellcode und alle "
-"digitalen Objekte, auf denen die Publikationsergebnisse beruhen. Dazu "
-"gehören auch die Werkzeuge, die zur Erhebung und Verarbeitung der "
-"Forschungsdaten verwendet wurden. Die folgenden Links bieten die "
-"Möglichkeit, Forschungsergebnisse zum Repository hinzuzufügen, aber auch "
-"nach den Ergebnissen anderer Personen zu suchen."
-
-#: invenio_override/templates/invenio_override/resource_overview.html:19
 msgid ""
 "Research results is the collective term for all the results of a research"
 " project. They describe the data, source code and all digital objects on "
@@ -387,16 +349,21 @@ msgstr ""
 "Möglichkeit, Forschungsergebnisse zum Repository hinzuzufügen, aber auch "
 "nach den Ergebnissen anderer Personen zu suchen."
 
-#: invenio_override/templates/invenio_override/resource_overview.html:21
+#: invenio_override/templates/invenio_override/resource_overview.html:20
 msgid "Search for research results"
 msgstr "Nach Forschungsergebnissen suchen"
 
-#: invenio_override/templates/invenio_override/resource_overview.html:22
+#: invenio_override/templates/invenio_override/resource_overview.html:21
 msgid "Upload research results"
 msgstr "Forschungsergebnisse hochladen"
 
-#: invenio_override/templates/invenio_override/resource_overview.html:31
-msgid "Frontpage: Description for publications"
+#: invenio_override/templates/invenio_override/resource_overview.html:30
+msgid ""
+"The section of publications covers citations from several areas. Open "
+"Access papers are imported from Pure. Publications from Open Access "
+"publishers are shared. Digital copies are offered. University "
+"publications are made available to a wide range of people. The following "
+"link offers the possibility to search among publications."
 msgstr ""
 "Der Bereich Publikationen umfasst Zitate aus verschiedenen Bereichen. "
 "Open-Access-Publikationen werden von Pure importiert. Veröffentlichungen "
@@ -406,30 +373,21 @@ msgstr ""
 "unter den Publikationen zu suchen."
 
 #: invenio_override/templates/invenio_override/resource_overview.html:32
-msgid ""
-"The section of publications covers citations from several areas. Open "
-"Access papers are imported from Pure. Publications from Open Access "
-"publishers are shared. Digital copies are offered. University "
-"publications are made available to a wide range of people. The following "
-"link offers the possibility to search among publications."
-msgstr ""
-"Der Bereich Publikationen umfasst Zitate aus verschiedenen Bereichen. Open-"
-"Access-Publikationen werden von Pure importiert. Veröffentlichungen von Open-"
-"Access-Verlagen werden freigegeben. Digitale Kopien werden angeboten. Die "
-"Veröffentlichungen der Universität werden einem breiten Publikum zugänglich "
-"gemacht.  Der folgende Link bietet die Möglichkeit, unter den Publikationen "
-"zu suchen."
-
-#: invenio_override/templates/invenio_override/resource_overview.html:34
 msgid "Search for publications"
 msgstr "Nach Publikationen suchen"
 
-#: invenio_override/templates/invenio_override/resource_overview.html:43
+#: invenio_override/templates/invenio_override/resource_overview.html:41
 msgid "Educational Resources"
 msgstr "Bildungsressourcen"
 
-#: invenio_override/templates/invenio_override/resource_overview.html:44
-msgid "Frontpage: Description for open educational resources"
+#: invenio_override/templates/invenio_override/resource_overview.html:42
+msgid ""
+"In this area, you can upload your openly licensed educational content "
+"(OER, Open Educational Resources) and search for educational resources "
+"uploaded by others. Your uploaded content will be automatically "
+"transferred to the <a href=\"https://oerhub.at/en\" "
+"target=\"_blank\">OERhub.at</a>. To upload something in this area, an OER"
+" certificate and activation of your account is required."
 msgstr ""
 "In diesem Bereich können Sie Ihre offen lizenzierten Bildungsinhalte "
 "(OER, Open Educational Resources) hochladen und nach Bildungsressourcen "
@@ -439,27 +397,11 @@ msgstr ""
 "hochzuladen, ist ein OER-Zertifikat und die Aktivierung Ihres Accounts "
 "erforderlich."
 
-#: invenio_override/templates/invenio_override/resource_overview.html:45
-msgid ""
-"In this area, you can upload your openly licensed educational content "
-"(OER, Open Educational Resources) and search for educational resources "
-"uploaded by others. Your uploaded content will be automatically "
-"transferred to the <a href=\"https://oerhub.at/en\" "
-"target=\"_blank\">OERhub.at</a>. To upload something in this area, an OER"
-" certificate and activation of your account is required."
-msgstr ""
-"In diesem Bereich können Sie Ihre offen lizenzierten Bildungsinhalte (OER, "
-"Open Educational Resources) hochladen und nach Bildungsressourcen suchen, "
-"die von anderen hochgeladen wurden. Ihre hochgeladenen Inhalte werden "
-"automatisch auf den <a href=\"https://oerhub.at\" target=\"_blank\">OERhub."
-"at</a> übertragen. Um etwas in diesem Bereich hochzuladen, ist ein OER-"
-"Zertifikat und die Aktivierung Ihres Accounts erforderlich."
-
-#: invenio_override/templates/invenio_override/resource_overview.html:47
+#: invenio_override/templates/invenio_override/resource_overview.html:42
 msgid "Search for educational resources"
 msgstr "Nach Bildungsressourcen suchen"
 
-#: invenio_override/templates/invenio_override/resource_overview.html:48
+#: invenio_override/templates/invenio_override/resource_overview.html:43
 msgid "Upload educational resources"
 msgstr "Bildungsressourcen hochladen"
 
