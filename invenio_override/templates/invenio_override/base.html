@@ -73,8 +73,10 @@
     {%- endblock page_body %}
 
     {%- block page_footer %}
-{% include config.THEME_FOOTER_TEMPLATE %}
-    {%- endblock page_footer %}
+    <footer id="rdm-footer-element">
+        {% include config.THEME_FOOTER_TEMPLATE %}
+    </footer>
+  {%- endblock page_footer %}
 
     {%- endblock body_inner %}
     {%- block javascript %}
