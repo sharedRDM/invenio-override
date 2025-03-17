@@ -39,5 +39,61 @@ Features:
 * Custom contact template.
 * Overriden theme.
 
+Configuration fields with the **default** values available to enable/disable these package's feature on a custom instance:
+
+* Global search
+
+.. code-block:: python
+
+    # Publications - Enable or disable the publication global search feature.
+    OVERRIDE_SHOW_PUBLICATIONS_SEARCH = False
+
+    # OER - Enable or disable the educational resources global search feature.
+    OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
+
+* Frontpage and its right section
+
+.. code-block:: python
+
+    # Enable or disable a section on the frontpage that adds shortcuts to search and uploads
+    OVERRIDE_RESOURCE_OVERVIEW = False
+
+    # Enable or disable the right section of the frontpage (Contact us, Benefits)
+    OVERRIDE_FRONTPAGE_RIGHT = False 
+
+    # If section Benefits is displayed, option to click on More and go to Statistics page for more info
+    OVERRIDE_RIGHT_SECTION_TITLE = True
+
+    # Contact Email for the Contact us feature in the right section
+    OVERRIDE_SHOW_RIGHT_CONTACT_EMAIL = True
+
+    # Contact email displayed in the right section
+    OVERRIDE_RIGHT_SECTION_CONTACT_EMAIL = "support@example.com"
+
+    # feedback form used in right section
+    OVERRIDE_CONTACT_FORM = False
+
+* Branding and UI
+
+.. code-block:: python
+
+    # Icon and Logo displayed on the webiste
+    # list of available options: ["icon_use.png", "TUG.png", "KFU.svg", "MUG.svg", "invenio-override-default.svg", "sharedRDM.png"]
+    OVERRIDE_ICON = "images/icon_use.png"
+
+    OVERRIDE_LOGO = "images/inveniordm-tail.svg"
+
+    # favicon for shortcuts
+    # list of available options: ["kfu.ico", "mug.ico", "tug.ico"]
+    OVERRIDE_FAVICON = "favicon.ico"
+
+* Differentiate between production and testing instance
+
+.. code-block:: python
+
+    # Production environment. Can also be set in .env as 'INVENIO_OVERRIDE_PRODUCTION'
+    OVERRIDE_PRODUCTION = False 
+    
+
 Further documentation is available on
 https://invenio-override.readthedocs.io/
