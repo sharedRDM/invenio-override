@@ -11,31 +11,6 @@
 {%- set active_dashboard_menu_item = "overview" %}
 {%- set title = _("Overview") %}
 
-{%- block css %}
-{{ webpack['invenio-override-theme.css'] }}
-<style>
-  @media (max-width: 1224px) { 
-    .adjusted-font {
-      font-size: 1.1rem;
-    }
-  }
-
-  .ui.segment {
-    height: 480px
-  }
-
-  @media (max-width: 1224px) { 
-    .ui.segment {
-        height: 320px;
-        width: 150px;
-        & h {
-          font-size: 1.0rem;
-        }
-    }  
-  }
-</style>
-{%- endblock %}
-
 {% block javascript %}
   {{ super() }}
 {% endblock javascript %}
