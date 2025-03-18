@@ -14,6 +14,8 @@
 
 #}
 
+{%- set main_column_width = "ten" if config.OVERRIDE_FRONTPAGE_RIGHT else "fifteen" %}
+
 {%- block javascript %}
 {{ webpack['invenio-override-js.js'] }}
 {%- endblock javascript %}
@@ -25,8 +27,6 @@
 {%- block page_header%} {%- include "invenio_override/header_frontpage.html" %}
 {%- endblock page_header %}
 
-{%- if config.OVERRIDE_FRONTPAGE_RIGHT %}
-
 {%- block grid_section %}
 <div class="ui container">
   {%- if config.OVERRIDE_RESOURCE_OVERVIEW %}
@@ -37,21 +37,22 @@
 
   <div class="ui stackable grid">
     {% block main_column %}
-    <div class="ten wide column">
+
+    <div class="{{ main_column_width }} wide column">
       {% block main_column_content %}
       {% include "invenio_override/recent_uploads.html" %}
       {% endblock main_column_content %}
     </div>
     {% endblock main_column %}
 
+    {%- if config.OVERRIDE_FRONTPAGE_RIGHT %}
+
     <div class="six wide column">
       {% include "invenio_override/contact_us.html" %}
       {% include "invenio_override/benefits.html" %}
     </div>
   </div>
-
+  {%- endif %}
 
 </div>
 {%- endblock grid_section %}
-
-{%- endif %}
