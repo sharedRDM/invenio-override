@@ -167,6 +167,14 @@ svg:not(:root) {
 
 /***********MAIN menu*************/
 
+#main-menu-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important;
+  margin-top: 10px;
+  padding-bottom: 0;
+}
+
 .main-menu-entry {
   text-align: center !important;
   & a {
@@ -174,14 +182,6 @@ svg:not(:root) {
     padding: 5px 8px;
   }
 }
-
-@media (max-width: 1224px) { 
-  .main-menu-entry a {
-    font-size: 1.0rem;
-    padding: 5px 2px;
-  }
-}
-
 
 .main-menu-entry a:hover {
   background-color: @primaryLinkHoverBackground;
@@ -263,4 +263,8 @@ span.home-inline{
   background-color: @notificationBackground;
   border: solid @notificationBorder 1px;
   z-index: 100000;
+}
+
+.spacer {
+  display: flex !important;
 }
