@@ -29,8 +29,8 @@
       <div id="custom-column" class="column">
         <div id="custom-segment" class="ui segment">
           <h2>{{ _("Research Results") }}</h2>
-          <a class="ui left floated image" href="/me/uploads">
-            <img width="300px" alt="Research Results" src="{{ url_for("static", filename="images/diamond.svg") }}">
+          <a class="ui left floated image";" href="/me/uploads">
+            <img id="overview-img" alt="Research Results" src="{{ url_for("static", filename="images/diamond.svg") }}">
           </a>
           <div class="ui right floated text">
             {{ _("Overview: Description for research results") }}
@@ -42,7 +42,7 @@
         <div id="custom-segment" class="ui segment">
           <h2>{{ _("Communities") }}</h2>
           <a class="ui left floated image" href="/me/communities">
-            <img width="300px" alt="Communities" src="{{ url_for("static", filename="images/group-discussion.svg") }}">
+            <img id="overview-img" alt="Communities" src="{{ url_for("static", filename="images/group-discussion.svg") }}">
           </a>
           <div>
             {{_("Grow a community of individuals to sustain the platform going forward and thereby organize, curate and collaborate on records for your institution, project, topic or event.")}}
@@ -53,7 +53,7 @@
         <div id="custom-segment" class="ui segment">
           <h2>{{ _("Requests") }}</h2>
           <a class="ui left floated image" href="/me/requests">
-            <img width="300px" alt="Requests" src="{{ url_for("static", filename="images/umbrella.svg") }}">
+            <img id="overview-img" alt="Requests" src="{{ url_for("static", filename="images/umbrella.svg") }}">
           </a>
           <div>
             {{_("Check for incoming notifications and community assignments or inquiries.")}}
@@ -66,7 +66,7 @@
         <div id="custom-segment" class="ui segment">
           <h2>{{ _("Publications") }}</h2>
           <a class="ui left floated image" href="/publications/uploads">
-            <img width="300px" alt="Publications" src="{{ url_for("static", filename="images/library-book-svgrepo-com.svg") }}">
+            <img id="overview-img" alt="Publications" src="{{ url_for("static", filename="images/library-book-svgrepo-com.svg") }}">
           </a>
           <div>
             {{_("Publications are the synthesized result of research.")}}

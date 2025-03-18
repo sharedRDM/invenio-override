@@ -123,7 +123,19 @@
 
 #custom-segment {
   display: flex !important;
-  justify-content: center !important;
+  justify-content: space-between !important;
   flex-wrap: wrap !important;
+  flex-direction: column;
   height: 480px;
 }
+
+#overview-img{
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  #overview-img{
+    width: 150px;
+  }
+}
+
