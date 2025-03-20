@@ -167,6 +167,14 @@ svg:not(:root) {
 
 /***********MAIN menu*************/
 
+#main-menu-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: space-evenly !important;
+  margin-top: 10px;
+  padding-bottom: 0;
+}
+
 .main-menu-entry {
   text-align: center !important;
   & a {
@@ -255,4 +263,8 @@ span.home-inline{
   background-color: @notificationBackground;
   border: solid @notificationBorder 1px;
   z-index: 100000;
+}
+
+.spacer {
+  display: flex !important;
 }

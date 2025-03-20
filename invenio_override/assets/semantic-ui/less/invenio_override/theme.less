@@ -50,6 +50,10 @@
 }
 
 .ui.fluid.input input {
+  width: 0.6rem;
+}
+
+.ui.fluid.input.frontpage-search-container input {
   width: 600px !important;
 }
 
@@ -107,3 +111,43 @@
     font-size: 14px !important;
   }
 }
+
+#custom-overview{
+  display: flex !important;
+}
+
+#custom-column {
+  display: flex !important;
+  justify-content: space-between !important;
+  max-width: 100%;
+}
+
+
+@media (min-width: 768px) and (max-width: 1298px) {
+  #custom-column{
+      display: flex !important;
+      justify-content: space-between !important;
+      width: 200px;
+      max-width: 100%;
+  }
+}
+
+#custom-segment {
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
+  flex-direction: column;
+  width: 620px;
+  height: 480px;
+}
+
+#overview-img{
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  #overview-img{
+    width: 150px;
+  }
+}
+
