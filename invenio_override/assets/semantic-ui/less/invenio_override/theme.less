@@ -118,7 +118,18 @@
 
 #custom-column {
   display: flex !important;
-  justify-content: center !important;
+  justify-content: space-between !important;
+  max-width: 100%;
+}
+
+
+@media (min-width: 768px) and (max-width: 1298px) {
+  #custom-column{
+      display: flex !important;
+      justify-content: space-between !important;
+      width: 200px;
+      max-width: 100%;
+  }
 }
 
 #custom-segment {
@@ -126,6 +137,7 @@
   justify-content: space-between !important;
   flex-wrap: wrap !important;
   flex-direction: column;
+  width: 620px;
   height: 480px;
 }
 

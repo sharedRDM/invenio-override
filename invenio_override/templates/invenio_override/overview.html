@@ -28,8 +28,8 @@
       {# 3 columns: Research-Uploads, Communities, and Requests #}
       <div id="custom-column" class="column">
         <div id="custom-segment" class="ui segment">
-          <h2>{{ _("Research Results") }}</h2>
-          <a class="ui left floated image";" href="/me/uploads">
+          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Research Results") }}</h2>
+          <a class="ui left floated image" style="margin: auto;" href="/me/uploads">
             <img id="overview-img" alt="Research Results" src="{{ url_for("static", filename="images/diamond.svg") }}">
           </a>
           <div class="ui right floated text">
@@ -40,8 +40,8 @@
       </div>
       <div id="custom-column" class="column">
         <div id="custom-segment" class="ui segment">
-          <h2>{{ _("Communities") }}</h2>
-          <a class="ui left floated image" href="/me/communities">
+          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Communities") }}</h2>
+          <a class="ui left floated image" style="margin: auto;" href="/me/communities">
             <img id="overview-img" alt="Communities" src="{{ url_for("static", filename="images/group-discussion.svg") }}">
           </a>
           <div>
@@ -51,8 +51,8 @@
       </div>
       <div id="custom-column" class="column">
         <div id="custom-segment" class="ui segment">
-          <h2>{{ _("Requests") }}</h2>
-          <a class="ui left floated image" href="/me/requests">
+          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Requests") }}</h2>
+          <a class="ui left floated image" style="margin: auto;" href="/me/requests">
             <img id="overview-img" alt="Requests" src="{{ url_for("static", filename="images/umbrella.svg") }}">
           </a>
           <div>
@@ -64,8 +64,8 @@
       {% if can_view_marc21 %}
       <div id="custom-column" class="column">
         <div id="custom-segment" class="ui segment">
-          <h2>{{ _("Publications") }}</h2>
-          <a class="ui left floated image" href="/publications/uploads">
+          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Publications") }}</h2>
+          <a class="ui left floated image" style="margin: auto;" href="/publications/uploads">
             <img id="overview-img" alt="Publications" src="{{ url_for("static", filename="images/library-book-svgrepo-com.svg") }}">
           </a>
           <div>
