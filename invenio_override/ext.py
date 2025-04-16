@@ -50,7 +50,6 @@ def finalize_app(app):
     """Finalize app."""
     modify_user_dashboard(app)
     guard_view_functions(app)
-    modify_admin_menu()
 
 
 def modify_user_dashboard(app):
@@ -100,14 +99,3 @@ def guard_view_functions(app):
         view_func = login_required(require_authenticated(view_func))
 
         app.view_functions[endpoint] = view_func
-
-
-def modify_admin_menu():
-    """Modify admin menu.
-
-    Because the original admin submenu has an icon embedded, here that is
-    overriden to display only the text.
-    """
-    for item in current_menu.submenu("profile-admin").children:
-        if "Administration" in item._text:
-            item._text = "Administration"
