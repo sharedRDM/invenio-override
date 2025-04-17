@@ -371,11 +371,11 @@ reopened regularly.
 ... code-block:: python
 
     SQLALCHEMY_ENGINE_OPTIONS = dict(
-        # enable the connection pool “pre-ping” feature that tests connections
+        # enable the connection pool "pre-ping" feature that tests connections
         # for liveness upon each checkout.
         pool_pre_ping=True,
 
-        # the number of connections to allow in connection pool “overflow”,
+        # the number of connections to allow in connection pool "overflow",
         # that is connections that can be opened above and beyond the
         # pool_size setting
         max_overflow=10,

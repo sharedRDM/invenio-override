@@ -33,6 +33,7 @@ class InvenioOverride(object):
         self.init_config(app)
         app.register_error_handler(423, locked)
         app.config["THEME_LOGO"] = app.config.get("OVERRIDE_LOGO")
+        app.config["OVERRIDE_SHOW_EDUCATIONAL_RESOURCES"] = False
         app.extensions["invenio-override"] = self
 
         @app.context_processor
@@ -59,15 +60,15 @@ def modify_user_dashboard(app):
     through root_menu.submenu("dashboard").
     """
     root_menu = app.extensions["menu"].root_node
-
     user_dashboard_menu = root_menu.submenu("dashboard")
 
     if "uploads" in user_dashboard_menu._child_entries:
         user_dashboard_menu.submenu("uploads")._text = text = "Research Results"
 
-    if not app.config.get("OVERRIDE_SHOW_EDUCATIONAL_RESOURCES", False):
-        if "OER" in user_dashboard_menu._child_entries:
-            del user_dashboard_menu._child_entries["OER"]
+    if "OER" in user_dashboard_menu._child_entries:
+        del user_dashboard_menu._child_entries["OER"]
+
+    app.config["OVERRIDE_SHOW_EDUCATIONAL_RESOURCES"] = False
 
     if "overview" not in user_dashboard_menu.children:
         user_dashboard_menu.submenu("overview").register(
