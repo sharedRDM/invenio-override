@@ -66,7 +66,7 @@
 
       <p class="hidden-xs">
         <a href="{{ record_url }}" class="no-decoration">
-          {{ r.metadata.descriptions | join(" ") | striptags | truncate(300) }}
+          {{ r.metadata.descriptions | join(" ") | striptags | safe | truncate(300) }}
         </a>
       </p>
 
