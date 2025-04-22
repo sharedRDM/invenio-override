@@ -15,6 +15,7 @@ from invenio_i18n import lazy_gettext as _
 from invenio_records_marc21.ui.theme import current_identity_can_view
 
 from . import config
+from .lom import InvenioOverrideLOM
 from .views import index, locked, require_authenticated
 
 
@@ -50,6 +51,7 @@ def finalize_app(app):
     """Finalize app."""
     modify_user_dashboard(app)
     guard_view_functions(app)
+    InvenioOverrideLOM(app)
 
 
 def modify_user_dashboard(app):
@@ -59,15 +61,10 @@ def modify_user_dashboard(app):
     through root_menu.submenu("dashboard").
     """
     root_menu = app.extensions["menu"].root_node
-
     user_dashboard_menu = root_menu.submenu("dashboard")
 
     if "uploads" in user_dashboard_menu._child_entries:
         user_dashboard_menu.submenu("uploads")._text = text = "Research Results"
-
-    if not app.config.get("OVERRIDE_SHOW_EDUCATIONAL_RESOURCES", False):
-        if "OER" in user_dashboard_menu._child_entries:
-            del user_dashboard_menu._child_entries["OER"]
 
     if "overview" not in user_dashboard_menu.children:
         user_dashboard_menu.submenu("overview").register(
@@ -75,6 +72,11 @@ def modify_user_dashboard(app):
             text=_("Overview"),
             order=0,
         )
+
+    if "OER" in user_dashboard_menu._child_entries:
+        del user_dashboard_menu._child_entries["OER"]
+
+    app.config["OVERRIDE_SHOW_EDUCATIONAL_RESOURCES"] = False
 
     root_menu.submenu("actions.deposit").register(
         "invenio-override.overview",
