@@ -15,6 +15,7 @@ from invenio_i18n import lazy_gettext as _
 from invenio_records_marc21.ui.theme import current_identity_can_view
 
 from . import config
+from .lom import InvenioOverrideLOM
 from .views import index, locked, require_authenticated
 
 
@@ -33,7 +34,6 @@ class InvenioOverride(object):
         self.init_config(app)
         app.register_error_handler(423, locked)
         app.config["THEME_LOGO"] = app.config.get("OVERRIDE_LOGO")
-        app.config["OVERRIDE_SHOW_EDUCATIONAL_RESOURCES"] = False
         app.extensions["invenio-override"] = self
 
         @app.context_processor
@@ -51,6 +51,7 @@ def finalize_app(app):
     """Finalize app."""
     modify_user_dashboard(app)
     guard_view_functions(app)
+    InvenioOverrideLOM(app)
 
 
 def modify_user_dashboard(app):
