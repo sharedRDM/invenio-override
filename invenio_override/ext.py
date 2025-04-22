@@ -65,17 +65,17 @@ def modify_user_dashboard(app):
     if "uploads" in user_dashboard_menu._child_entries:
         user_dashboard_menu.submenu("uploads")._text = text = "Research Results"
 
-    if "OER" in user_dashboard_menu._child_entries:
-        del user_dashboard_menu._child_entries["OER"]
-
-    app.config["OVERRIDE_SHOW_EDUCATIONAL_RESOURCES"] = False
-
     if "overview" not in user_dashboard_menu.children:
         user_dashboard_menu.submenu("overview").register(
             "invenio-override.overview",
             text=_("Overview"),
             order=0,
         )
+
+    if "OER" in user_dashboard_menu._child_entries:
+        del user_dashboard_menu._child_entries["OER"]
+
+    app.config["OVERRIDE_SHOW_EDUCATIONAL_RESOURCES"] = False
 
     root_menu.submenu("actions.deposit").register(
         "invenio-override.overview",
