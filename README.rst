@@ -51,6 +51,19 @@ Configuration fields with the **default** values available to enable/disable the
     # OER - Enable or disable the educational resources global search feature.
     OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 
+
+**Note**: in order to fully disable *Educational Resources*, there is an extra step to configure in your instance. This is an extreme workaround and should be reverted once global search packages are decoupled.
+
+.. code-block:: python
+
+    import invenio_records_lom.ext
+
+    def register_lom_dashboard_tab():
+        pass
+
+    invenio_records_lom.ext.register_lom_dashboard_tab = register_lom_dashboard_tab
+
+
 * Frontpage and its right section
 
 .. code-block:: python
