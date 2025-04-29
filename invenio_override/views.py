@@ -12,7 +12,14 @@
 from functools import wraps
 from typing import Dict, Optional
 
-from flask import Blueprint, current_app, g, redirect, render_template, url_for
+from flask import (
+    Blueprint,
+    current_app,
+    g,
+    redirect,
+    render_template,
+    url_for,
+)
 from flask_login import current_user, login_required
 from invenio_rdm_records.proxies import current_rdm_records
 from invenio_rdm_records.resources.serializers import UIJSONSerializer
@@ -72,16 +79,6 @@ def index():
     )
 
 
-def default_error_handler(e: Exception) -> tuple:
-    """
-    Handle unhandled errors.
-
-    :param e: Exception raised.
-    :returns: Rendered error page with HTTP 500 status.
-    """
-    return render_template(current_app.config["THEME_500_TEMPLATE"]), 500
-
-
 @blueprint.app_template_filter("make_dict_like")
 def make_dict_like(value: str, key: str) -> Dict[str, str]:
     """
@@ -105,13 +102,8 @@ def cast_to_dict(attr_dict: AttrDict) -> dict:
     return AttrDict.to_dict(attr_dict)
 
 
-def ui_blueprint(app) -> Blueprint:
-    """
-    Create a UI blueprint for routes and resources.
-
-    :param app: Flask app instance.
-    :returns: Configured blueprint.
-    """
+def ui_blueprint(app):
+    """Register UI blueprint and error handlers."""
     routes = app.config.get("OVERRIDE_ROUTES")
     blueprint.add_url_rule(routes["index"], view_func=index)
     return blueprint
