@@ -24,7 +24,7 @@
 
 .. image:: https://readthedocs.org/projects/invenio-override/badge/?version=latest
         :target: https://invenio-override.readthedocs.io/en/latest/?badge=latest
-        
+
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
 
@@ -77,7 +77,7 @@ Enabling the OVERRIDE configurations without their respective library might lead
     OVERRIDE_RESOURCE_OVERVIEW = False
 
     # Enable or disable the right section of the frontpage (Contact us, Benefits)
-    OVERRIDE_FRONTPAGE_RIGHT = False 
+    OVERRIDE_FRONTPAGE_RIGHT = False
 
     # If section Benefits is displayed, option to click on More and go to Statistics page for more info
     OVERRIDE_RIGHT_SECTION_TITLE = True
@@ -105,13 +105,21 @@ Enabling the OVERRIDE configurations without their respective library might lead
     # list of available options: ["kfu.ico", "mug.ico", "tug.ico"]
     OVERRIDE_FAVICON = "favicon.ico"
 
+    # Override the Uploads menu title
+    USER_DASHBOARD_MENU_OVERRIDES = {
+      "uploads": {
+        "text": _("Research Results"),
+      },
+    }
+
+
 * Differentiate between production and testing instance
 
 .. code-block:: python
 
     # Production environment. Can also be set in .env as 'INVENIO_OVERRIDE_PRODUCTION'
-    OVERRIDE_PRODUCTION = False 
-    
+    OVERRIDE_PRODUCTION = False
+
 
 Further documentation is available on
 https://invenio-override.readthedocs.io/
