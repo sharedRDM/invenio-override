@@ -15,7 +15,11 @@ from invenio_i18n import lazy_gettext as _
 from invenio_records_marc21.ui.theme import current_identity_can_view
 
 from . import config
-from .views import index, locked, require_authenticated
+from .permissions import LenientMarc21PermissionPolicy
+from .views import (
+    index,
+    require_authenticated,
+)
 
 
 class InvenioOverride(object):
@@ -31,13 +35,16 @@ class InvenioOverride(object):
         # https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.add_url_rule
         app.add_url_rule("/", "index", index)
         self.init_config(app)
-        app.register_error_handler(423, locked)
+
         app.config["THEME_LOGO"] = app.config.get("OVERRIDE_LOGO")
-        app.extensions["invenio-override"] = self
+
+        app.config["MARC21_PERMISSION_POLICY"] = LenientMarc21PermissionPolicy
 
         @app.context_processor
         def inject_visibility():
             return {"can_view_marc21": current_identity_can_view()}
+
+        app.extensions["invenio-override"] = self
 
     def init_config(self, app):
         """Initialize configuration."""
@@ -90,5 +97,4 @@ def guard_view_functions(app):
             continue
 
         view_func = login_required(require_authenticated(view_func))
-
         app.view_functions[endpoint] = view_func
