@@ -24,7 +24,7 @@
 
 .. image:: https://readthedocs.org/projects/invenio-override/badge/?version=latest
         :target: https://invenio-override.readthedocs.io/en/latest/?badge=latest
-        
+
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
     :target: https://github.com/psf/black
 
@@ -52,7 +52,7 @@ Configuration fields with the **default** values available to enable/disable the
     OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 
 
-**Note**: in order to fully disable *Educational Resources*, there is an extra step to configure in your instance. This is an extreme workaround and should be reverted once global search packages are decoupled.
+**Note**: in order to fully disable *Educational Resources* or  *Publications*, there is an extra step to configure in your instance. This is an extreme workaround and should be reverted once global search packages are decoupled.
 
 .. code-block:: python
 
@@ -62,7 +62,15 @@ Configuration fields with the **default** values available to enable/disable the
         pass
 
     invenio_records_lom.ext.register_lom_dashboard_tab = register_lom_dashboard_tab
+    """Force disable educational resources from the dashboard menu."""
 
+    import invenio_records_marc21.ext
+
+    def register_marc21_dashboard_tab()
+        pass
+
+    invenio_records_lom.ext.register_marc21_dashboard_tab = register_marc21_dashboard_tab
+     """Force disable publications from the dashboard menu."""
 
 * Frontpage and its right section
 
@@ -72,7 +80,7 @@ Configuration fields with the **default** values available to enable/disable the
     OVERRIDE_RESOURCE_OVERVIEW = False
 
     # Enable or disable the right section of the frontpage (Contact us, Benefits)
-    OVERRIDE_FRONTPAGE_RIGHT = False 
+    OVERRIDE_FRONTPAGE_RIGHT = False
 
     # If section Benefits is displayed, option to click on More and go to Statistics page for more info
     OVERRIDE_RIGHT_SECTION_TITLE = True
@@ -100,13 +108,21 @@ Configuration fields with the **default** values available to enable/disable the
     # list of available options: ["kfu.ico", "mug.ico", "tug.ico"]
     OVERRIDE_FAVICON = "favicon.ico"
 
+    # Override the Uploads menu title
+    USER_DASHBOARD_MENU_OVERRIDES = {
+      "uploads": {
+        "text": _("Research Results"),
+      },
+    }
+
+
 * Differentiate between production and testing instance
 
 .. code-block:: python
 
     # Production environment. Can also be set in .env as 'INVENIO_OVERRIDE_PRODUCTION'
-    OVERRIDE_PRODUCTION = False 
-    
+    OVERRIDE_PRODUCTION = False
+
 
 Further documentation is available on
 https://invenio-override.readthedocs.io/
