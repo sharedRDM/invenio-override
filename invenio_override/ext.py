@@ -12,10 +12,14 @@
 from flask_login import login_required
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
-from invenio_records_marc21.ui.theme import current_identity_can_view
+
+try:
+    from invenio_records_marc21.ui.theme import current_identity_can_view
+except ImportError:
+    current_identity_can_view = lambda: False
 
 from . import config
-from .views import index, locked, require_authenticated
+from .views import blueprint, index, locked, require_authenticated
 
 
 class InvenioOverride(object):
@@ -34,6 +38,8 @@ class InvenioOverride(object):
         app.register_error_handler(423, locked)
         app.config["THEME_LOGO"] = app.config.get("OVERRIDE_LOGO")
         app.extensions["invenio-override"] = self
+        routes = app.config.get("OVERRIDE_ROUTES")
+        blueprint.add_url_rule(routes["index"], view_func=index)
 
         @app.context_processor
         def inject_visibility():

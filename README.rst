@@ -52,16 +52,21 @@ Configuration fields with the **default** values available to enable/disable the
     OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 
 
-**Note**: in order to fully disable *Educational Resources*, there is an extra step to configure in your instance. This is an extreme workaround and should be reverted once global search packages are decoupled.
+**Note**: by default invenio-override does not requiere **OER** or **Publications** packages. To install one or both, specify them as extras:
+    
+.. code-block::
 
-.. code-block:: python
+    pip install invenio-override[lom, marc21]
 
-    import invenio_records_lom.ext
 
-    def register_lom_dashboard_tab():
-        pass
+or just
 
-    invenio_records_lom.ext.register_lom_dashboard_tab = register_lom_dashboard_tab
+.. code-block::
+
+    pip install invenio-override[marc21]
+
+
+Enabling the OVERRIDE configurations without their respective library might lead to unexpected errors. More details about working with global-search packages here: https://github.com/tu-graz-library/invenio-global-search
 
 
 * Frontpage and its right section
