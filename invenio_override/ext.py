@@ -66,7 +66,6 @@ def modify_user_dashboard(app):
     """
     root_menu = app.extensions["menu"].root_node
     user_dashboard_menu = root_menu.submenu("dashboard")
-    user_dashboard_menu.submenu("uploads")._text = text = "Research Results"
 
     if "overview" not in user_dashboard_menu.children:
         user_dashboard_menu.submenu("overview").register(
