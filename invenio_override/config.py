@@ -17,12 +17,20 @@ from invenio_i18n import gettext as _
 from invenio_rdm_records.services.components import (
     DefaultRecordsComponents as RDMDefaultRecordsComponents,
 )
-from invenio_records_lom.services.components import (
-    DefaultRecordsComponents as LOMDefaultRecordsComponents,
-)
-from invenio_records_marc21.services.components import (
-    DefaultRecordsComponents as Marc21DefaultRecordsComponents,
-)
+
+try:
+    from invenio_records_lom.services.components import (
+        DefaultRecordsComponents as LOMDefaultRecordsComponents,
+    )
+except ImportError:
+    LOMDefaultRecordsComponents = None
+try:
+    from invenio_records_marc21.services.components import (
+        DefaultRecordsComponents as Marc21DefaultRecordsComponents,
+    )
+except ImportError:
+    Marc21DefaultRecordsComponents = None
+
 
 # ============================================================================
 # Global Search Configuration
@@ -36,12 +44,20 @@ OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 RDM_RECORDS_SERVICE_COMPONENTS = RDMDefaultRecordsComponents + [
     RDMToGlobalSearchComponent
 ]
-LOM_RECORDS_SERVICE_COMPONENTS = LOMDefaultRecordsComponents + [
-    LOMToGlobalSearchComponent
-]
-MARC21_RECORDS_SERVICE_COMPONENTS = Marc21DefaultRecordsComponents + [
-    Marc21ToGlobalSearchComponent
-]
+
+if LOMDefaultRecordsComponents is not None:
+    LOM_RECORDS_SERVICE_COMPONENTS = LOMDefaultRecordsComponents + [
+        LOMToGlobalSearchComponent
+    ]
+else:
+    LOM_RECORDS_SERVICE_COMPONENTS = [LOMToGlobalSearchComponent]
+
+if Marc21DefaultRecordsComponents is not None:
+    MARC21_RECORDS_SERVICE_COMPONENTS = Marc21DefaultRecordsComponents + [
+        Marc21ToGlobalSearchComponent
+    ]
+else:
+    MARC21_RECORDS_SERVICE_COMPONENTS = [Marc21ToGlobalSearchComponent]
 
 # ============================================================================
 # Right Section Configuration

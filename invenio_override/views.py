@@ -105,18 +105,6 @@ def cast_to_dict(attr_dict: AttrDict) -> dict:
     return AttrDict.to_dict(attr_dict)
 
 
-def ui_blueprint(app) -> Blueprint:
-    """
-    Create a UI blueprint for routes and resources.
-
-    :param app: Flask app instance.
-    :returns: Configured blueprint.
-    """
-    routes = app.config.get("OVERRIDE_ROUTES")
-    blueprint.add_url_rule(routes["index"], view_func=index)
-    return blueprint
-
-
 def comingsoon() -> str:
     """
     Render the coming soon page.
