@@ -7,6 +7,11 @@
 
 Changes
 =======
+Version v0.0.6 (release 2025-05-20)
+
+- i18n: fix typo on fuzzy
+- ci: update publish dependencies
+
 Version v0.0.5 (release 2025-05-20)
 
 - ui: improvements and bug fixes
