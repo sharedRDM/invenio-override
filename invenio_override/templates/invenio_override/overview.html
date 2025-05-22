@@ -23,57 +23,73 @@
   <div class="ui container rel-mt-2">
     <h2>Overview</h2>
 
-    <div id="custom-overview" class="ui five column stackable grid overview">
-      {% if is_authenticated %}
-      {# 3 columns: Research-Uploads, Communities, and Requests #}
-      <div id="custom-column" class="column">
-        <div id="custom-segment" class="ui segment">
-          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Research Results") }}</h2>
-          <a class="ui left floated image" style="margin: auto;" href="/me/uploads">
-            <img id="overview-img" alt="Research Results" src="{{ url_for("static", filename="images/diamond.svg") }}">
-          </a>
-          <div class="ui right floated text">
-            {{ _("Overview: Description for research results") }}
-            {{_("Research results gives the base on which publications are built.")}}
+    <div class="ui stackable grid">
+      <div class="row">
+        {% if is_authenticated %}
+        <div class="four wide column">
+          <div class="ui raised segment">
+            <h2 class="ui header centered">{{ _("Research Results") }}</h2>
+            <div class="content text-center">
+              <a href="/me/uploads">
+                <img class="overview-icon" alt="Research Results" 
+                     src="{{ url_for('static', filename='images/diamond.svg') }}">
+              </a>
+              <p class="description">
+                {{ _("Overview: Description for research results") }}
+                {{ _("Research results gives the base on which publications are built.") }}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="custom-column" class="column">
-        <div id="custom-segment" class="ui segment">
-          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Communities") }}</h2>
-          <a class="ui left floated image" style="margin: auto;" href="/me/communities">
-            <img id="overview-img" alt="Communities" src="{{ url_for("static", filename="images/group-discussion.svg") }}">
-          </a>
-          <div>
-            {{_("Grow a community of individuals to sustain the platform going forward and thereby organize, curate and collaborate on records for your institution, project, topic or event.")}}
+
+        <div class="four wide column">
+          <div class="ui raised segment">
+            <h2 class="ui header centered">{{ _("Communities") }}</h2>
+            <div class="content text-center">
+              <a href="/me/communities">
+                <img class="overview-icon" alt="Communities" 
+                     src="{{ url_for('static', filename='images/group-discussion.svg') }}">
+              </a>
+              <p class="description">
+                {{ _("Grow a community of individuals to sustain the platform going forward and thereby organize, curate and collaborate on records for your institution, project, topic or event.") }}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div id="custom-column" class="column">
-        <div id="custom-segment" class="ui segment">
-          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Requests") }}</h2>
-          <a class="ui left floated image" style="margin: auto;" href="/me/requests">
-            <img id="overview-img" alt="Requests" src="{{ url_for("static", filename="images/umbrella.svg") }}">
-          </a>
-          <div>
-            {{_("Check for incoming notifications and community assignments or inquiries.")}}
+
+        <div class="four wide column">
+          <div class="ui raised segment">
+            <h2 class="ui header centered">{{ _("Requests") }}</h2>
+            <div class="content text-center">
+              <a href="/me/requests">
+                <img class="overview-icon" alt="Requests" 
+                     src="{{ url_for('static', filename='images/umbrella.svg') }}">
+              </a>
+              <p class="description">
+                {{ _("Check for incoming notifications and community assignments or inquiries.") }}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      {% endif %}
-      {% if can_view_marc21 %}
-      <div id="custom-column" class="column">
-        <div id="custom-segment" class="ui segment">
-          <h2 style="margin-left: auto; margin-right: auto;">{{ _("Publications") }}</h2>
-          <a class="ui left floated image" style="margin: auto;" href="/publications/uploads">
-            <img id="overview-img" alt="Publications" src="{{ url_for("static", filename="images/library-book-svgrepo-com.svg") }}">
-          </a>
-          <div>
-            {{_("Publications are the synthesized result of research.")}}
+        {% endif %}
+
+        {% if can_view_marc21 %}
+        <div class="four wide column">
+          <div class="ui raised segment">
+            <h2 class="ui header centered">{{ _("Publications") }}</h2>
+            <div class="content text-center">
+              <a href="/publications/uploads">
+                <img class="overview-icon" alt="Publications" 
+                     src="{{ url_for('static', filename='images/library-book-svgrepo-com.svg') }}">
+              </a>
+              <p class="description">
+                {{ _("Publications are the synthesized result of research.") }}
+              </p>
+            </div>
           </div>
         </div>
+        {% endif %}
       </div>
-      {% endif %}
     </div>
   </div>
-{%- endblock %}
+{% endblock %}
