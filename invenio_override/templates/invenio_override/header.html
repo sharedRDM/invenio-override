@@ -40,48 +40,45 @@ details.
             <div class="two wide column main-menu-entry">
               <a role="menuitem" href="/me/overview" class="no-decoration">{{ _("Dashboard") }}</a>
             </div>
-            
+
             <!--Please refer to https://github.com/inveniosoftware/invenio-app-rdm/blob/master/invenio_app_rdm/theme/templates/semantic-ui/invenio_app_rdm/header_login.html
               for future changes to the admin button.-->
             {% set ns = namespace(admin_menu=False) %}
             {%- for item in current_menu.submenu('profile-admin').children if item.visible %}
-              {% set ns.admin_menu = True %}
-              {% set admin_text = item.text|safe %}
-              {% if 'Administration' in item.text|safe %}
-                {% set admin_text =  _ ("Administration")%}
-              {%- endif %}
-              <div class="two wide column main-menu-entry">
-                <a role="menuitem" href="{{ item.url }}"" class="no-decoration">{{ admin_text }}</a>
-              </div>
+            {% set ns.admin_menu = True %}
+            {% set admin_text = item.text|safe %}
+            {% if 'Administration' in item.text|safe %}
+            {% set admin_text = _ ("Administration")%}
+            {%- endif %}
+            <div class="two wide column main-menu-entry">
+              <a role="menuitem" href="{{ item.url }}"" class=" no-decoration">{{ admin_text }}</a>
+            </div>
             {%- endfor %}
 
-            {%- for l in current_i18n.get_locales() %}
-            {%- if current_i18n.language != l.language %}
+            {%- set other_langs = current_i18n.get_locales() | selectattr("language", "ne", current_i18n.language) |
+            list %}
+            {%- for l in other_langs %}
             <div class="two wide column main-menu-entry">
-              <a class="ui item no-decoration" href="{{ url_for('invenio_i18n.set_lang', lang_code=l.language) }}">{{
-                l.get_display_name().upper() [0:2]}}</a>
-
+              <a class="ui item no-decoration" href="{{ url_for('invenio_i18n.set_lang', lang_code=l.language) }}">
+                {{ l.get_display_name().upper()[0:2] }}
+              </a>
             </div>
+            {%- endfor %}
+            <div id="margin-divider" class="ui divider main-menu-underline-line"></div>
+            <div class="spacer"></div>
           </div>
-          <div id="margin-divider" class="ui divider main-menu-underline-line"></div>
-        </div>
-      </div>
-      {%- endif %}
-      {%- endfor %}
-      <div class="spacer"></div>
-</div>
-</nav>
-{%- endblock navbar %}
+    </nav>
+    {%- endblock navbar %}
 
-{%- block flashmessages %}
-{%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
-{{ flashed_messages() }}
-{%- endblock %}
-</header>
+    {%- block flashmessages %}
+    {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
+    {{ flashed_messages() }}
+    {%- endblock %}
+  </header>
 
-{#
-{%- block breadcrumbs %}
-{%- include "invenio_theme/breadcrumbs.html" %}
-{%- endblock breadcrumbs %}
-#}
+  {#
+  {%- block breadcrumbs %}
+  {%- include "invenio_theme/breadcrumbs.html" %}
+  {%- endblock breadcrumbs %}
+  #}
 </div>

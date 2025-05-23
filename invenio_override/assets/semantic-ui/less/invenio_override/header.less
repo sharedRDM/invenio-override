@@ -17,6 +17,7 @@
 .affiliation-logo {
   vertical-align: middle;
   white-space: nowrap;
+
   & a {
     fill: @overridePrimary;
   }
@@ -87,6 +88,7 @@
   margin: 12px 0 6px 9px;
   padding: 5px;
 }
+
 .short-menu-right-button a:hover {
   text-decoration: none;
 }
@@ -96,6 +98,7 @@
   margin-right: 10px;
   font-size: 17px !important;
   font-weight: 300;
+
   & a {
     padding: 5px;
     background-color: transparent;
@@ -114,10 +117,12 @@
 
 .search-icon-header {
   display: inline-block;
+
   & a {
     background-color: transparent;
     padding: 5px;
     text-decoration: none;
+
     & svg {
       & g {
         stroke-linejoin: round;
@@ -134,6 +139,7 @@
   & a {
     background-color: @primaryLinkHoverBackground;
     text-decoration: none;
+
     & svg {
       & g {
         stroke: @primaryLink;
@@ -177,6 +183,7 @@ svg:not(:root) {
 
 .main-menu-entry {
   text-align: center !important;
+
   & a {
     font-size: 1.2rem;
     padding: 5px 8px;
@@ -199,9 +206,15 @@ svg:not(:root) {
   background-color: @greyLight;
 }
 
-// #margin-divider{
-//   margin-left: 155px; margin-right: 155px;
-// }
+#margin-divider {
+  margin-left: 155px;
+  margin-right: 155px;
+  width: 100%;
+}
+
+#main-menu-container.no-lang {
+  justify-content: center !important;
+}
 
 .affiliation-text a:hover {
   background-color: @primaryLinkHoverBackground;
@@ -229,36 +242,41 @@ svg:not(:root) {
 .col a {
   cursor: pointer;
 }
+
 @media screen and (max-width: 767.9px) {
   #int-header-logo-img {
     width: 200px;
     height: 75px;
   }
+
   #main-logo {
     padding: 30px 0;
     text-align: center;
     display: block;
   }
 
-  #repo-logo{
+  #repo-logo {
     display: none;
   }
+
   .affiliation-logo-claim {
     display: none;
   }
 }
-.repo-img{
+
+.repo-img {
   margin-right: 5px;
 }
-.inline-elements{
+
+.inline-elements {
   display: flex;
 }
 
-span.home-inline{
+span.home-inline {
   white-space: nowrap;
 }
 
-.test-instance{
+.test-instance {
   text-align: center;
   background-color: @notificationBackground;
   border: solid @notificationBorder 1px;
