@@ -13,17 +13,12 @@
   {% if not records %}
     <div class="ui centered grid">
       <p style="font-size: medium;">
-  {% if not config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH or not config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
-      {{ _("Explore Research Results available in the repository.") }}
-        {% else %}
-          {{ _("There are no public records to show.") }}
-        {% endif %}
+        {{ _("Explore Research Results available in the repository.") }}
       </p>
     </div>
   {% endif %}
 
   {%- for r in records %}
-    {%- set creation_date = r.created | from_isodatetime -%}
     {%- set record_url = r.original.view %}
 
     <article>
@@ -45,10 +40,6 @@
               data-inverted="">
           <i class="icon {{ r.access_status.icon }}"></i>
           {{ r.access_status.title_l10n }}
-        </span>
-
-        <span class="ui label schema" data-tooltip="Schema Type" data-inverted="">
-          {{ r.original.schema_l10n }}
         </span>
       </div>
 
