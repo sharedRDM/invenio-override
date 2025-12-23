@@ -41,6 +41,9 @@ OVERRIDE_SHOW_PUBLICATIONS_SEARCH = False
 OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 """Enable or disable the educational resources global search feature."""
 
+OVERRIDE_SHOW_RDM_SEARCH = False
+"""Force UI to show only Research Results (RDM) in search/overview components."""
+
 RDM_RECORDS_SERVICE_COMPONENTS = RDMDefaultRecordsComponents + [
     RDMToGlobalSearchComponent
 ]
