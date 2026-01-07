@@ -8,6 +8,7 @@
 #}
 
 {% set options = [] %}
+{% set only_rdm = config.OVERRIDE_SHOW_RDM_SEARCH %}
 
 {# Ensure at least one default option exists #}
 {% set base_option = {
@@ -18,7 +19,7 @@
 } %}
 {% set options = options + [base_option] %}
 
-{% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
+{% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH and not only_rdm %}
     {% set pub_option = {
         "key": "marc21",
         "text": "Publications",
@@ -28,7 +29,7 @@
     {% set options = options + [pub_option] %}
 {% endif %}
 
-{% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
+{% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES and not only_rdm %}
     {% set edu_option = {
         "key": "lom",
         "text": "Educational Resources",
@@ -60,7 +61,7 @@
       <div class="right menu">
         <div class="item">
           <div class="ui icon input">
-            <div id="header-search-bar" data-options='{{ options | tojson }}'></div>
+            <div id="header-search-bar" data-options='{{ options_json }}'></div>
           </div>
         </div>
         {%- block navbar_right %}

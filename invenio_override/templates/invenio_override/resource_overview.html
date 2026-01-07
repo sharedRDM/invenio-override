@@ -1,7 +1,8 @@
 {# This file contains the resource overview block content. #}
 
-{% set show_publications = config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
-{% set show_educational = config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
+{% set only_rdm = config.OVERRIDE_SHOW_RDM_SEARCH %}
+{% set show_publications = config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH and not only_rdm %}
+{% set show_educational = config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES and not only_rdm %}
 
 {% set active_sections = [show_publications, show_educational] | select | list %}
 {% set columns = active_sections | length + 1 %} {# +1 for Research Results, always shown #}
@@ -39,7 +40,9 @@
         <div class="left aligned column">
           <div class="ui segment image">
             <h2>{{ _("Educational Resources") }}</h2>
-              <p>{{ _("In this area, you can upload your openly licensed educational content (OER, Open Educational Resources) and search for educational resources uploaded by others. Your uploaded content will be automatically transferred to the <a href=\"https://oerhub.at/en\" target=\"_blank\">OERhub.at</a>. To upload something in this area, an OER certificate and activation of your account is required.") | safe }}</p>              <li><a href="oer/search">{{ _("Search for educational resources") }}</a></li>
+              <p>{{ _("In this area, you can upload your openly licensed educational content (OER, Open Educational Resources) and search for educational resources uploaded by others. Your uploaded content will be automatically transferred to the <a href=\"https://oerhub.at/en\" target=\"_blank\">OERhub.at</a>. To upload something in this area, an OER certificate and activation of your account is required.") | safe }}</p>
+            <ul>
+              <li><a href="oer/search">{{ _("Search for educational resources") }}</a></li>
               <li><a href="oer/uploads">{{ _("Upload educational resources") }}</a></li>
             </ul>
           </div>
