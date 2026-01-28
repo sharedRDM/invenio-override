@@ -31,3 +31,4 @@ class CustomCommunitiesPermissionPolicy(CommunityPermissionPolicy):
     ]
 
     can_include_directly = [Administration(), SystemProcess()]
+
