@@ -6,6 +6,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { i18next } from "@translations/invenio_app_rdm/i18next";
 
+// Import curation components
+// (Only used if curation is enabled in configuration)
+import { DepositBox } from "@js/invenio_curations/deposit/DepositBox";
+import { curationComponentOverrides } from "@js/invenio_curations/requests";
+
 /* sticky notification setup for test instance */
 $(".ui.sticky.test-instance").sticky({
   context: "body",
@@ -63,3 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   }
 });
+
+/**
+ * Export curation component overrides for integration with InvenioRDM
+ * These overrides are used when curation is enabled in configuration
+ */
+export const overriddenComponents = {
+  ...curationComponentOverrides,
+  "InvenioAppRdm.Deposit.CardDepositStatusBox.container": DepositBox,
+};
