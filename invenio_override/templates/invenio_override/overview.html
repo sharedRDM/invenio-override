@@ -73,7 +73,7 @@
         </div>
         {% endif %}
 
-        {% if can_view_marc21 %}
+        {% if can_view_marc21 and config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
         <div class="four wide column">
           <div class="ui raised segment">
             <h2 class="ui header centered">{{ _("Publications") }}</h2>
