@@ -7,6 +7,15 @@
 
 Changes
 =======
+Version v0.0.7 (release 2025-02-11)
+
+- refactor: overview responsiveness on the front page
+- fix: footer_mug search guide
+- fix: issues header when no lang
+- ui: tailor navbar/frontpage to Research Results
+- add restriction to admins
+- Set ENV in overview section
+
 Version v0.0.6 (release 2025-05-20)
 
 - i18n: fix typo on fuzzy
