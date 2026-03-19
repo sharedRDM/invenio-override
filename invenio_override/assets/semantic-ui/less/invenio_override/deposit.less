@@ -1,0 +1,168 @@
+/*
+ * Copyright (C) 2025 Shared RDM.
+ *
+ * invenio-override is free software; you can redistribute it and/or modify
+ * it under the terms of the MIT License; see LICENSE file for more details.
+ */
+
+/* ======================================
+   Deposit page — wider container
+====================================== */
+#rdm-deposit-form {
+  max-width: 1350px !important;
+  width: 95% !important;
+}
+
+/* ======================================
+   Deposit form — accordion sections (card style)
+====================================== */
+#deposit-form .ui.accordion.invenio-accordion-field {
+  background: #ffffff;
+  border: @borderSubtle;
+  border-radius: @radiusCardLarge;
+  box-shadow: @cardShadowRest;
+  margin-bottom: 1rem !important;
+  /* No overflow:hidden — it clips dropdown menus inside the accordion */
+
+  /* Title — grey header with rounded top corners matching the card */
+  > .title {
+    background-color: #f5f5f5 !important;
+    color: @primaryText !important;
+    border-radius: @radiusCardLarge @radiusCardLarge 0 0 !important;
+    margin-bottom: 0 !important;
+    padding: 0.85rem 1.25rem !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    font-weight: 600;
+    font-size: 0.95rem;
+
+    /* Chevron / icon — keep it subtle */
+    i.icon {
+      color: @recordText;
+    }
+  }
+
+  /* Content area */
+  > .content {
+    padding: 1.25rem 1.5rem !important;
+  }
+}
+
+/* Error state — red border on accordion card */
+#deposit-form .ui.accordion.invenio-accordion-field.error {
+  border-color: rgba(159, 58, 56, 0.45) !important;
+
+  > .title {
+    background-color: #fff5f5 !important;
+    color: #9b1c1c !important;
+  }
+}
+
+/* ======================================
+   Deposit form — group fields (nested repeated fields)
+====================================== */
+#deposit-form .invenio-group-field.fields {
+  background-color: rgba(0, 0, 0, 0.02) !important;
+  border: 1px solid rgba(0, 0, 0, 0.07) !important;
+  border-radius: @radiusCard !important;
+  padding: 1rem !important;
+}
+
+/* ======================================
+   Deposit form — right sidebar cards
+====================================== */
+#deposit-form .deposit-sidebar {
+
+  /* Each card in the sidebar gets the same card style as search result cards */
+  .ui.card {
+    width: 100% !important;
+    background: #ffffff !important;
+    border: @borderSubtle !important;
+    border-radius: @radiusCardLarge !important;
+    box-shadow: @cardShadowRest !important;
+    margin-bottom: 1rem !important;
+    overflow: visible !important;
+  }
+
+  /* Card content sections — keep Semantic UI defaults, just ensure no clipping */
+  .ui.card > .content {
+    padding: 1.25rem 1.5rem !important;
+  }
+
+  /* Sidebar action buttons — stack neatly */
+  .sidebar-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .ui.button {
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+  }
+}
+
+/* ======================================
+   Deposit form — save/validation toast notification
+====================================== */
+
+/* Override the full-width top-attached banner → inline card before the form grid */
+#deposit-form .ui.message.flashed.top.attached,
+.ui.message.flashed.top.attached[id$="-feedback-div"] {
+  /* Flow naturally in the DOM — sits between page title and .ui.grid.mt-25 */
+  position: relative !important;
+  top: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  left: auto !important;
+
+  display: block !important;
+  width: auto !important;
+  max-width: 68.75% !important; /* matches computer={11} out of 16 columns */
+
+  border-radius: @radiusCardLarge !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.10) !important;
+  border: @borderSubtle !important;
+  padding: 1rem 1.5rem !important;
+  margin: 0 0 1.25rem 0 !important;
+
+  z-index: auto;
+  animation: depositToastIn 0.25s ease;
+
+  /* Remove Semantic UI's attached flat look */
+  &::before { display: none !important; }
+
+  /* Inner grid — neutralise Semantic UI container width so it fills the message */
+  .ui.grid,
+  .ui.container.grid {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .ui.grid > .column,
+  .ui.container.grid > .column {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}
+
+/* ======================================
+   Deposit form — responsive
+====================================== */
+@media (max-width: 991px) {
+  /* On tablet/mobile the column is 16-wide (full width) */
+  #deposit-form .ui.message.flashed.top.attached,
+  .ui.message.flashed.top.attached[id$="-feedback-div"] {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 767px) {
+  #deposit-form .ui.accordion.invenio-accordion-field {
+    margin-bottom: 0.75rem !important;
+  }
+
+  #deposit-form .deposit-sidebar .ui.card {
+    margin-bottom: 0.75rem !important;
+  }
+}

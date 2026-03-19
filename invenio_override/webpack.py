@@ -18,9 +18,15 @@ theme = WebpackThemeBundle(
             entry={
                 "invenio-override-theme": "./less/invenio_override/theme.less",
                 "invenio-override-js": "./js/invenio_override/theme.js",
+                "invenio-override-dashboard": "./js/invenio_override/dashboard/index.js",
+                "invenio-override-communities": "./js/invenio_override/communities/index.js",
             },
             dependencies={
                 "jquery": "^3.2.1",
+                # Peer dependencies required by react-searchkit 3.x
+                "@visx/scale": "^3.12.0",
+                "@visx/shape": "^3.12.0",
+                "@visx/responsive": "^3.12.0",
             },
         )
     },

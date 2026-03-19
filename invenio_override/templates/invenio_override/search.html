@@ -1,0 +1,23 @@
+{#
+  Copyright (C) 2020-2023 Graz University of Technology.
+  Copyright (C) 2026 Shared RDM.
+
+  invenio-override is free software; you can redistribute it and/or
+  modify it under the terms of the MIT License; see LICENSE file for more
+  details.
+#}
+
+{%- set title = _("Research Results") %}
+{%- set page_description = _("Search and discover research outputs, datasets, publications, and more.") %}
+{%- extends config.BASE_TEMPLATE %}
+
+{%- block javascript %}
+    {{ super() }}
+    {{ webpack['invenio-app-rdm-search.js'] }}
+{%- endblock %}
+
+{%- block page_body %}
+<div class="ui container">
+  <div data-invenio-search-config='{{ search_app_rdm_config(app_id="InvenioAppRdm.Search") | tojson }}'></div>
+</div>
+{%- endblock page_body %}

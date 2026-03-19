@@ -7,11 +7,17 @@
  * under the terms of the MIT License; see LICENSE file for more details.
  */
 
+/* ======================================
+   Cover page / background
+====================================== */
 .cover-page {
-  //text-align: center;
+  /* text-align: center; */
   background-color: #ffffff;
 }
 
+/* ======================================
+   Accounts link and button styles
+====================================== */
 .accounts-link {
   margin: 5%;
   color: @primaryLink;
@@ -41,6 +47,9 @@
   background-color: @primaryButtonHoverBackground !important;
 }
 
+/* ======================================
+   Form accounts (sign-in / sign-up form)
+====================================== */
 .form-accounts {
   margin: 15%;
   text-align: left !important;
@@ -81,15 +90,18 @@
   font-weight: 300 !important;
 }
 
-/***
-login and sign-up pages form background color
-*/
+/* ======================================
+   Login / sign-up page — form background
+====================================== */
 .sign-form {
   background-color: @signInBackground !important;
   padding: 0 !important;
   height: 100%;
 }
 
+/* ======================================
+   Login page buttons and links
+====================================== */
 .tug-button-login {
   display: flex;
   align-items: center;
@@ -98,6 +110,7 @@ login and sign-up pages form background color
 .tug-button-login :hover {
   fill: @primaryButtonHoverBackground;
 }
+
 .login-page-button {
   margin: 5%;
   text-align: center !important;
@@ -125,9 +138,9 @@ login and sign-up pages form background color
   font-size: initial;
 }
 
-/***
-allowing to switch columns on the sign-up page on the small screen
-*/
+/* ======================================
+   Responsive — column order on small screens
+====================================== */
 .switch-grid {
   display: flex;
 }

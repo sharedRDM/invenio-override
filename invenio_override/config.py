@@ -77,8 +77,54 @@ OVERRIDE_RIGHT_SECTION_CONTACT_EMAIL = "support@example.com"
 # ============================================================================
 # Frontpage and Resource Overview
 # ============================================================================
-OVERRIDE_FRONTPAGE_RIGHT = False
+OVERRIDE_FRONTPAGE_RIGHT = True
 """Frontpage right section"""
+
+OVERRIDE_FRONTPAGE_SUBTITLE = ""
+"""Subtitle displayed below the frontpage title in the hero section."""
+
+OVERRIDE_REASONS_PARTNER = "CERN"
+"""Trusted partner name shown in the 'Why use X?' reasons strip on the frontpage."""
+
+OVERRIDE_REASONS_BG = None
+"""CSS background for the 'Why use X?' reasons strip (e.g. 'linear-gradient(120deg, #5e5e5e 0%, #727272 100%)'). None = use Less variable @footerBottomBackground."""
+
+OVERRIDE_FOOTER_BACKGROUND = None
+"""CSS background color for the footer (e.g. '#4a4a4a'). None = use @footerBottomBackground from variables.less."""
+
+OVERRIDE_FOOTER_FG_COLOR = None
+"""CSS text/foreground color for the footer (e.g. '#ffffff'). None = use @footerGrey from variables.less."""
+
+OVERRIDE_FOOTER_LOGO_FILTER = None
+"""CSS filter applied to partner logos in the footer bottom bar.
+None = no filter (logos display with natural colors).
+Use 'brightness(0) invert(1)' for white logos on dark backgrounds.
+"""
+
+OVERRIDE_FOOTER_DIVIDER_COLOR = None
+"""CSS color for the horizontal divider in the footer bottom bar. None = rgba(0,0,0,0.1)."""
+
+OVERRIDE_FOOTER_LOGOS = None
+"""Partner logos shown in the footer bottom bar.
+None = show the default SharedRDM partner logos.
+Set to a list of dicts to override: [{url, src (static path), alt, [title], [large (bool)]}]
+"""
+
+OVERRIDE_FOOTER_LINKS = {}
+"""Footer link columns. Dict of column_title -> list of link dicts.
+
+Each link dict has keys: label, url (optional), title (optional),
+external (optional bool), icon (optional str).
+
+Example::
+
+    OVERRIDE_FOOTER_LINKS = {
+        "Repository": [
+            {"label": "Documentation", "url": "https://docs.example.com", "external": True},
+            {"label": "Search Guide", "url": "/help/search"},
+        ],
+    }
+"""
 
 OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 """Default base template"""
