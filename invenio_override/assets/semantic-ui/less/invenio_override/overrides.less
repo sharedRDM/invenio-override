@@ -18,7 +18,7 @@ login & signup page title
   color: @primaryText;
 }
 .cover-page {
-  background-color: @primaryBackground;
+  background-color: #f0f0f0;
 }
 .panel-free-title {
   color: @primaryText;
@@ -457,4 +457,26 @@ html {
 
 .ui.pagination.menu .item:hover {
   background-color: fade(@overridePrimary, 8%);
+}
+
+/* ======================================
+   Login / signup — modern card
+====================================== */
+.ui.padded.segments.large.form {
+  border-radius: @radiusCardLarge !important;
+  box-shadow: @cardShadowHover !important;
+  border: @borderSubtle !important;
+  overflow: hidden;
+  max-width: 460px;
+  width: 100%;
+}
+
+.ui.padded.segments.large.form > .ui.segment {
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: none !important;
+}
+
+.ui.padded.segments.large.form > .ui.segment:first-child {
+  border-top: none !important;
 }
