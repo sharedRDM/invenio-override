@@ -73,12 +73,6 @@
 
     {%- block navbar_header %}
     {%- include "invenio_override/navbar.html" %}
-    <!--Flask messages for accounts-->
-    {%- block flashmessages %}
-    {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
-    {{ flashed_messages() }}
-
-    {%- endblock %}
     {%- endblock navbar_header %}
     
     {#
@@ -87,9 +81,11 @@
           {%- endblock page_header %}
       #}
 
+    <div class="invenio-page-body" style="flex: 1; background-color: #f0f0f0;">
     {%- block page_body %}
 {% include "invenio_theme/body.html" %}
     {%- endblock page_body %}
+    </div>
     {%- endblock body_inner %}
     {%- block javascript %}
 {% include config.THEME_JAVASCRIPT_TEMPLATE %}

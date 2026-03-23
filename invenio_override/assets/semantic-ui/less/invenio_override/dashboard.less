@@ -407,6 +407,15 @@
 }
 
 /* ======================================
+   Hide duplicate "New upload" button from InvenioRDM empty-state
+   (we have our own circle button on desktop and mobile action bar on small screens)
+====================================== */
+.uploads-search-app .ui.placeholder.segment .ui.positive.button,
+.uploads-search-app .ui.segment.placeholder .ui.positive.button {
+  display: none !important;
+}
+
+/* ======================================
    Dashboard filter row — vertical alignment + equal height
 ====================================== */
 .uploads-search-app .row.computer.only,
@@ -484,6 +493,75 @@
 /* ======================================
    Responsive
 ====================================== */
+
+/* Mobile action bar — shown on tablet/mobile, hidden on desktop */
+.dashboard-mobile-action-bar {
+  display: none;
+  justify-content: flex-end;
+  padding: 0.5rem 0 0.75rem;
+}
+
+/* ======================================
+   Mobile/tablet search row (React renders .row.mobile.tablet.only)
+   — constrain action input so button stays icon-width, input fills rest
+====================================== */
+.uploads-search-app .row.mobile.tablet.only,
+.requests-search-app .row.mobile.tablet.only {
+
+  /* Prevent the search column from overflowing its grid cell */
+  > .column {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .ui.action.input {
+    display: flex !important;
+    width: 100% !important;
+    height: 42px !important;
+
+    /* Input grows to fill all available space */
+    > input {
+      flex: 1 1 auto !important;
+      width: 0 !important;       /* let flex-grow take over */
+      min-width: 0 !important;
+      height: 42px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Button stays exactly as wide as its icon — does not grow */
+    > .button:last-child,
+    > .buttons:last-child > .button {
+      flex: 0 0 auto !important;
+      width: auto !important;
+      height: 42px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 0 1rem !important;
+    }
+  }
+
+  .ui.input {
+    display: flex !important;
+    width: 100% !important;
+    height: 42px !important;
+
+    > input {
+      flex: 1 1 auto !important;
+      min-width: 0 !important;
+      height: 42px !important;
+      box-sizing: border-box !important;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  /* Show mobile action bar (upload / new community button) */
+  .dashboard-mobile-action-bar {
+    display: flex;
+  }
+}
+
 @media (max-width: 767px) {
   .dashboard-section-header {
     flex-direction: column;
@@ -493,5 +571,21 @@
 
   .dashboard-cards {
     grid-template-columns: 1fr;
+  }
+
+  /* Slightly smaller font on mobile search input */
+  .uploads-search-app .row.mobile.tablet.only input,
+  .requests-search-app .row.mobile.tablet.only input {
+    font-size: 14px !important;
+  }
+
+  /* Upload circle: scale down on mobile */
+  .upload-new-circle {
+    width: 70px;
+    height: 70px;
+
+    i.icon {
+      font-size: 1.6rem;
+    }
   }
 }

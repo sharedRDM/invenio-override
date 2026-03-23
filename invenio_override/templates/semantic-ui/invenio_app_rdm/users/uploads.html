@@ -20,6 +20,22 @@
 {%- endblock javascript %}
 
 {%- block user_dashboard_body %}
+
+  {# Mobile/tablet: upload button shown above results on small screens #}
+  <div class="dashboard-mobile-action-bar">
+    <div class="upload-new-wrap">
+      <a href="{{ url_for('invenio_app_rdm_records.deposit_create') }}"
+         class="upload-new-circle"
+         title="{{ _('New upload') }}">
+        <i class="upload icon"></i>
+      </a>
+      <div class="upload-new-label-wrap">
+        <span class="upload-new-title">{{ _("New upload") }}</span>
+        <span class="upload-new-desc">{{ _("Share your research") }}</span>
+      </div>
+    </div>
+  </div>
+
   <div
     id="invenio-search-config"
     class="uploads-search-app"
@@ -27,7 +43,7 @@
   >
   </div>
 
-  {# Upload button — injected into the search/tabs row by JS after React renders #}
+  {# Desktop: Upload button injected into the search/tabs row by JS after React renders #}
   <div id="upload-new-circle" class="upload-new-wrap" style="display:none;">
     <a href="{{ url_for('invenio_app_rdm_records.deposit_create') }}"
        class="upload-new-circle"

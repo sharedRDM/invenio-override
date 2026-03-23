@@ -20,6 +20,24 @@
 {%- endblock javascript %}
 
 {%- block user_dashboard_body %}
+
+  {# Mobile/tablet: new community button shown above results on small screens #}
+  {% if can_create_community %}
+  <div class="dashboard-mobile-action-bar">
+    <div class="upload-new-wrap">
+      <a href="{{ url_for('invenio_communities.communities_new') }}"
+         class="upload-new-circle"
+         title="{{ _('New community') }}">
+        <i class="plus icon"></i>
+      </a>
+      <div class="upload-new-label-wrap">
+        <span class="upload-new-title">{{ _("New community") }}</span>
+        <span class="upload-new-desc">{{ _("Create a shared space") }}</span>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
   <div
     id="invenio-search-config"
     data-invenio-search-config='{{ search_app_rdm_user_communities_config(app_id="InvenioAppRdm.DashboardCommunities") | tojson }}'
@@ -28,7 +46,7 @@
   </div>
 
   {% if can_create_community %}
-  {# New community button — injected into the search/tabs row by JS after React renders #}
+  {# Desktop: new community button injected into the search/tabs row by JS after React renders #}
   <div id="new-community-circle" class="upload-new-wrap" style="display:none;">
     <a href="{{ url_for('invenio_communities.communities_new') }}"
        class="upload-new-circle"

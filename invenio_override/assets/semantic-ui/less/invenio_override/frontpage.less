@@ -213,7 +213,9 @@ h2 {
 /* ======================================
    Frontpage search — dropdown width covers full bar incl. red button
 ====================================== */
-.frontpage-search-wrapper .ui.search > .results {
+.frontpage-search-wrapper .ui.search > .results,
+.frontpage-search-wrapper .ui.search > .results.visible,
+.frontpage-search-wrapper .ui.search > .results.transition {
   width: 100% !important;
   border-color: @overridePrimary !important;
   border-radius: 0 0 1.5rem 1.5rem !important;
@@ -221,9 +223,14 @@ h2 {
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   overflow: hidden !important;
+  /* Force GPU compositing so border-radius is preserved during transition */
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 }
 
-.frontpage-search-wrapper .ui.search > .results .result:last-child {
+.frontpage-search-wrapper .ui.search > .results .result:last-child,
+.frontpage-search-wrapper .ui.search > .results .result:last-child:hover,
+.frontpage-search-wrapper .ui.search > .results .result:last-child.active {
   border-radius: 0 0 1.5rem 1.5rem !important;
 }
 
