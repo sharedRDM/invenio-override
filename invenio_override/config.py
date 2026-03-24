@@ -8,6 +8,7 @@
 # details.
 
 """invenio module for sharedRDM theme."""
+
 from invenio_global_search.components import (
     LOMToGlobalSearchComponent,
     Marc21ToGlobalSearchComponent,
