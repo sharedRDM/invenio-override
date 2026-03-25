@@ -8,6 +8,7 @@
 # details.
 
 """invenio module for sharedRDM theme."""
+
 from invenio_global_search.components import (
     LOMToGlobalSearchComponent,
     Marc21ToGlobalSearchComponent,
@@ -44,7 +45,7 @@ OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 OVERRIDE_SHOW_RDM_SEARCH = False
 """Force UI to show only Research Results (RDM) in search/overview components."""
 
-RDM_RECORDS_SERVICE_COMPONENTS = RDMDefaultRecordsComponents + [
+OVERRIDE_RDM_RECORDS_SERVICE_COMPONENTS = RDMDefaultRecordsComponents + [
     RDMToGlobalSearchComponent
 ]
 

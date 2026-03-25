@@ -20,6 +20,7 @@ class CommunityCreator(Generator):
     """
 
     def needs(self, record=None, **kwargs):
+        """Override needs."""
         roles = current_app.config.get(
             "OVERRIDE_COMMUNITIES_CREATE_ROLES", ["community-creator"]
         )
