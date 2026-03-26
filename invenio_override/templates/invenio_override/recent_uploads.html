@@ -34,17 +34,17 @@
 
     <article class="record-card">
       <div class="badges">
-        <span class="ui label blue" data-tooltip="{{ _("Publication date") }}" data-inverted="">
+        <span class="ui small horizontal label primary theme-primary" data-tooltip="{{ _("Publication date") }}" data-inverted="">
           {{ r.created_date_l10n_long }}
         </span>
 
         {% if r.metadata.types | length > 0 %}
-          <span class="ui label grey" data-tooltip="{{ _("Resource type") }}" data-inverted="">
+          <span class="ui small horizontal label neutral" data-tooltip="{{ _("Resource type") }}" data-inverted="">
             {{ r.metadata.types[0] }}
           </span>
         {% endif %}
 
-        <span class="ui label access-status {{ r.access_status.id }}"
+        <span class="ui small horizontal label access-status {{ r.access_status.id }}"
               data-tooltip="{{ r.access_status.description_l10n }}"
               data-inverted="">
           <i class="icon {{ r.access_status.icon }}"></i>
@@ -52,7 +52,7 @@
         </span>
 
         {%- if not config.OVERRIDE_SHOW_RDM_SEARCH %}
-        <span class="ui label schema" data-tooltip="Schema Type" data-inverted="">
+        <span class="ui small horizontal label schema" data-tooltip="Schema Type" data-inverted="">
           {{ r.original.schema_l10n }}
         </span>
         {%- endif %}
