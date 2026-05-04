@@ -778,6 +778,13 @@ h2 {
     text-align: center;
   }
 
+  .frontpage-search-wrapper {
+    max-width: 600px !important;
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .frontpage-search-hint {
     text-align: center;
   }
@@ -814,6 +821,24 @@ h2 {
 }
 
 @media screen and (max-width: 767.9px) {
+  .frontpage-search-wrapper .ui.icon.input > input {
+    font-size: @font-size-sm !important;
+    padding-top: 0.75em !important;
+    padding-bottom: 0.75em !important;
+  }
+
+  .frontpage-search-wrapper .ui.search.button {
+    padding-left: 0.9em !important;
+    padding-right: 0.9em !important;
+  }
+
+  .frontpage-search-wrapper .ui.search > .results,
+  .frontpage-search-wrapper .ui.search > .results.visible {
+    width: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+  }
+
   .frontpage-hero-section {
     padding: 3rem 1rem 2rem;
     min-height: auto;

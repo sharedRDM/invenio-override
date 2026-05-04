@@ -23,19 +23,17 @@
   {{ webpack['invenio-app-rdm-user-communities.js'] }}
 {%- endblock javascript %}
 {%- block user_dashboard_body %}
-  {# Mobile/tablet: new community button shown above results on small screens #}
   {% if can_create_community %}
+    {# Mobile/tablet: new community button shown above results on small screens #}
     <div class="dashboard-mobile-action-bar">
-      <div class="upload-new-wrap">
-        <a href="{{ url_for('invenio_communities.communities_new') }}"
-           class="upload-new-circle"
-           title="{{ _('New community') }}">
-          <i class="plus icon"></i>
-        </a>
-        <div class="upload-new-label-wrap">
-          <span class="upload-new-title">{{ _('New community') }}</span>
-          <span class="upload-new-desc">{{ _("Create a shared space") }}</span>
-        </div>
+      <a href="{{ invenio_url_for('invenio_communities.communities_new') }}"
+         class="upload-new-circle"
+         title="{{ _('New community') }}">
+        <i class="plus icon"></i>
+      </a>
+      <div class="upload-new-label-wrap">
+        <span class="upload-new-title">{{ _('New community') }}</span>
+        <span class="upload-new-desc">{{ _("Create a shared space") }}</span>
       </div>
     </div>
   {% endif %}
@@ -48,7 +46,7 @@
     <div id="new-community-circle"
          class="upload-new-wrap"
          style="display:none">
-      <a href="{{ url_for('invenio_communities.communities_new') }}"
+      <a href="{{ invenio_url_for('invenio_communities.communities_new') }}"
          class="upload-new-circle"
          title="{{ _('New community') }}">
         <i class="plus icon"></i>
@@ -67,6 +65,9 @@
       if (!filterRow) return;
       var firstCol = filterRow.querySelector('.column:first-child');
       if (!firstCol) return;
+      firstCol.style.display = 'flex';
+      firstCol.style.alignItems = 'center';
+      firstCol.style.justifyContent = 'flex-start';
       circle.style.display = 'inline-flex';
       firstCol.appendChild(circle);
     }

@@ -6,12 +6,18 @@ import $ from "jquery";
 
 const STORAGE_KEY = "search-switcher-q";
 
-function saveQuery(q) {
-  try { sessionStorage.setItem(STORAGE_KEY, q); } catch (_) {}
+function saveQuery(query) {
+  try {
+    sessionStorage.setItem(STORAGE_KEY, query);
+  } catch (_) {}
 }
 
 function getStoredQuery() {
-  try { return sessionStorage.getItem(STORAGE_KEY) || ""; } catch (_) { return ""; }
+  try {
+    return sessionStorage.getItem(STORAGE_KEY) || "";
+  } catch (_) {
+    return "";
+  }
 }
 
 function queryFromURL(urlStr) {
@@ -25,59 +31,86 @@ function queryFromURL(urlStr) {
 
 export function initSearchSwitcher() {
   const form = document.getElementById("search-switcher-form");
-  if (!form) return;
+  if (!form) {
+    return;
+  }
 
-  const sel = document.getElementById("search-switcher-type");
-  const inp = document.getElementById("search-switcher-input");
-  const clr = document.getElementById("search-switcher-clear");
-  const $sel = $(sel);
+  const typeDropdown  = document.getElementById("search-switcher-type");
+  const searchInput   = document.getElementById("search-switcher-input");
+  const clearButton   = document.getElementById("search-switcher-clear");
+  const $typeDropdown = $(typeDropdown);
 
-  function getValue() { return $sel.dropdown("get value") || ""; }
-  function syncAction() { form.action = getValue(); }
-  function syncClear() { clr.style.display = inp.value ? "flex" : "none"; }
+  function getValue() {
+    return $typeDropdown.dropdown("get value") || "";
+  }
+
+  function syncAction() {
+    form.action = getValue();
+  }
+
+  function syncClear() {
+    clearButton.style.display = searchInput.value ? "flex" : "none";
+  }
 
   function syncFromURL(urlStr) {
-    const q = queryFromURL(urlStr);
-    inp.value = q;
-    saveQuery(q);
+    const query = queryFromURL(urlStr);
+    searchInput.value = query;
+    saveQuery(query);
     syncClear();
   }
 
-  if (!inp.value) inp.value = getStoredQuery();
+  if (!searchInput.value) {
+    searchInput.value = getStoredQuery();
+  }
 
   let initializing = true;
-  $sel.dropdown({
+  $typeDropdown.dropdown({
     onChange: function (value) {
-      if (initializing) return;
+      if (initializing) {
+        return;
+      }
       form.action = value;
-      saveQuery(inp.value);
+      saveQuery(searchInput.value);
       form.submit();
     },
   });
 
-  const activeItem = sel.querySelector(".item.active");
-  const firstItem  = sel.querySelector(".item");
+  const activeItem = typeDropdown.querySelector(".item.active");
+  const firstItem  = typeDropdown.querySelector(".item");
   const initValue  = (activeItem || firstItem || {}).dataset.value;
-  if (initValue) $sel.dropdown("set selected", initValue);
+  if (initValue) {
+    $typeDropdown.dropdown("set selected", initValue);
+  }
   initializing = false;
 
   const origPushState = history.pushState.bind(history);
   history.pushState = function (state, title, url) {
     origPushState(state, title, url);
-    if (url) syncFromURL(url);
+    if (url) {
+      syncFromURL(url);
+    }
   };
-  window.addEventListener("popstate", function () { syncFromURL(location.href); });
 
-  form.addEventListener("submit", function () { saveQuery(inp.value); syncAction(); });
+  window.addEventListener("popstate", function () {
+    syncFromURL(location.href);
+  });
 
-  clr.addEventListener("click", function () {
-    inp.value = "";
+  form.addEventListener("submit", function () {
+    saveQuery(searchInput.value);
+    syncAction();
+  });
+
+  clearButton.addEventListener("click", function () {
+    searchInput.value = "";
     saveQuery("");
     syncAction();
     form.submit();
   });
 
-  inp.addEventListener("input", function () { saveQuery(inp.value); syncClear(); });
+  searchInput.addEventListener("input", function () {
+    saveQuery(searchInput.value);
+    syncClear();
+  });
 
   syncAction();
   syncClear();

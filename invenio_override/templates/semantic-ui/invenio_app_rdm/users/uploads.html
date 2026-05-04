@@ -25,16 +25,14 @@
 {%- block user_dashboard_body %}
   {# Mobile/tablet: upload button shown above results on small screens #}
   <div class="dashboard-mobile-action-bar">
-    <div class="upload-new-wrap">
-      <a href="{{ url_for('invenio_app_rdm_records.deposit_create') }}"
-         class="upload-new-circle"
-         title="{{ _('New upload') }}">
-        <i class="upload icon"></i>
-      </a>
-      <div class="upload-new-label-wrap">
-        <span class="upload-new-title">{{ _('New upload') }}</span>
-        <span class="upload-new-desc">{{ _("Share your research") }}</span>
-      </div>
+    <a href="{{ url_for('invenio_app_rdm_records.deposit_create') }}"
+       class="upload-new-circle"
+       title="{{ _('New upload') }}">
+      <i class="upload icon"></i>
+    </a>
+    <div class="upload-new-label-wrap">
+      <span class="upload-new-title">{{ _('New upload') }}</span>
+      <span class="upload-new-desc">{{ _("Share your research") }}</span>
     </div>
   </div>
   <div id="invenio-search-config"
@@ -62,6 +60,9 @@
       if (!filterRow) return;
       var firstCol = filterRow.querySelector('.column:first-child');
       if (!firstCol) return;
+      firstCol.style.display = 'flex';
+      firstCol.style.alignItems = 'center';
+      firstCol.style.justifyContent = 'flex-start';
       circle.style.display = 'inline-flex';
       firstCol.appendChild(circle);
     }
