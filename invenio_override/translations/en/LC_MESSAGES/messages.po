@@ -454,6 +454,12 @@ msgstr ""
 msgid "Educational Resources"
 msgstr ""
 
+msgid "All Resources"
+msgstr ""
+
+msgid "Search and discover across all research results, publications, and educational resources."
+msgstr ""
+
 #: build/lib/invenio_override/templates/invenio_override/resource_overview.html:42
 #: invenio_override/templates/invenio_override/resource_overview.html:49
 msgid ""

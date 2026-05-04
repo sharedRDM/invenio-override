@@ -5,16 +5,17 @@
   modify it under the terms of the MIT License; see LICENSE file for more
   details.
 #}
-{%- set title = _("Research Results") %}
-{%- set page_description = _("Search and discover research outputs, datasets, publications, and more.") %}
-{%- extends config.BASE_TEMPLATE %}
+{%- set title = _("Publications") %}
+{%- set page_description = _("Search and discover scientific publications.") %}
+{%- extends config.MARC21_BASE_TEMPLATE %}
 {%- block javascript %}
   {{ super() }}
-  {{ webpack['invenio-app-rdm-search.js'] }}
+  {{ webpack['invenio-records-marc21-search.js'] }}
 {%- endblock %}
 {%- block page_body %}
   <div class="ui container">
     {%- include "invenio_override/search_nav.html" %}
-    <div data-invenio-search-config='{{ search_app_rdm_config(app_id="InvenioAppRdm.Search") | tojson }}'></div>
+    <div id="invenio-search-marc21-config"
+         data-invenio-search-config='{{ search_app_marc21_config() | tojson }}'></div>
   </div>
 {%- endblock page_body %}

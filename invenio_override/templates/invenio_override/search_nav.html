@@ -1,0 +1,75 @@
+{#
+  Copyright (C) 2020-2026 Graz University of Technology.
+
+  invenio-override is free software; you can redistribute it and/or
+  modify it under the terms of the MIT License; see LICENSE file for more
+  details.
+#}
+{#
+  Renders a multi-type search bar above search results.
+  Shows only when more than one search type is configured.
+#}
+{%- set _sw_options = [] %}
+{%- set _sw_options = _sw_options + [{"text": _("Research Results"), "value": "/records/search"}] %}
+{%- if config.get('OVERRIDE_SHOW_PUBLICATIONS_SEARCH') %}
+  {%- set _sw_options = _sw_options + [{"text": _("Publications"), "value": url_for("invenio_records_marc21.search")}] %}
+{%- endif %}
+{%- if config.get('OVERRIDE_SHOW_EDUCATIONAL_RESOURCES') %}
+  {%- set _sw_options = _sw_options + [{"text": _("Educational Resources"), "value": url_for("invenio_records_lom.search")}] %}
+{%- endif %}
+{%- if _sw_options | length > 1 %}
+  {%- set _sw_options = [{"text": _("All"), "value": url_for("invenio_search_ui.search")}] + _sw_options %}
+{%- endif %}
+{%- if _sw_options | length > 1 %}
+  <div class="search-type-switcher rel-mb-2" role="search">
+    <form id="search-switcher-form"
+          class="search-switcher-form"
+          method="GET"
+          novalidate>
+      <div class="search-switcher-inner">
+        <div id="search-switcher-type"
+             class="ui inline dropdown search-switcher-dropdown"
+             aria-label="{{ _('Search type') }}">
+          <span class="text"></span>
+          <i class="dropdown icon"></i>
+          <div class="menu">
+            {%- for opt in _sw_options %}
+              <div class="item{% if request.path == opt.value.split('?')[0] %} active selected{% endif %}"
+                   data-value="{{ opt.value }}">{{ opt.text }}</div>
+            {%- endfor %}
+          </div>
+        </div>
+        <div class="search-switcher-input-wrap">
+          <input id="search-switcher-input"
+                 type="text"
+                 name="q"
+                 class="search-switcher-input"
+                 placeholder="{{ _('Search...') }}"
+                 value="{{ request.args.get('q', '') }}"
+                 autocomplete="off"
+                 aria-label="{{ _('Search') }}">
+          <button type="button"
+                  id="search-switcher-clear"
+                  class="search-switcher-clear"
+                  aria-label="{{ _('Clear search') }}">&#x2715;</button>
+        </div>
+        <button type="submit"
+                class="search-switcher-btn"
+                aria-label="{{ _('Search') }}">
+          <svg viewBox="0 0 24 24"
+               fill="none"
+               stroke="currentColor"
+               stroke-width="2.5"
+               stroke-linecap="round"
+               stroke-linejoin="round"
+               width="15"
+               height="15"
+               aria-hidden="true">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+{%- endif %}

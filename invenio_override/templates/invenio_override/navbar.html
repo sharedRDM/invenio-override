@@ -14,7 +14,7 @@
   {% set pub_option = {
       "key": "marc21",
       "text": "Publications",
-      "value": url_for("invenio_records_marc21.search"),
+      "value": invenio_url_for("invenio_records_marc21.search"),
       "title": "Publication",
     } %}
   {% set options = options + [pub_option] %}
@@ -23,7 +23,7 @@
   {% set edu_option = {
       "key": "lom",
       "text": "Educational Resources",
-      "value": url_for("invenio_records_lom.search"),
+      "value": invenio_url_for("invenio_records_lom.search"),
       "title": "OER",
     } %}
   {% set options = options + [edu_option] %}
@@ -32,7 +32,7 @@
   {% set all_option = {
       "key": "records",
       "text": "All",
-      "value": url_for("invenio_search_ui.search"),
+      "value": invenio_url_for("invenio_search_ui.search"),
       "title": "repo",
     } %}
   {% set options = [all_option] + options %}
@@ -58,14 +58,14 @@
         {% if config.get('OVERRIDE_HEADER_TEXT_LINE1') %}
           <div class="affiliation-text">
             <a title="Home" href="/" class="no-decoration">
-              {{ config.OVERRIDE_HEADER_TEXT_LINE1 }}
+              {{ _(config.OVERRIDE_HEADER_TEXT_LINE1) }}
               {% if config.get('OVERRIDE_HEADER_TEXT_LINE2') %}
                 <br>
-                {{ config.OVERRIDE_HEADER_TEXT_LINE2 }}
+                {{ _(config.OVERRIDE_HEADER_TEXT_LINE2) }}
               {% endif %}
               {% if config.get('OVERRIDE_HEADER_TEXT_LINE3') %}
                 <br>
-                {{ config.OVERRIDE_HEADER_TEXT_LINE3 }}
+                {{ _(config.OVERRIDE_HEADER_TEXT_LINE3) }}
               {% endif %}
             </a>
           </div>
@@ -80,7 +80,7 @@
           {% if config.get('OVERRIDE_HEADER_CLAIM_WORDS') %}
             <div class="affiliation-logo-claim">
               {% for word in config.OVERRIDE_HEADER_CLAIM_WORDS %}
-                <div class="affiliation-logo-claim-single">{{ word }}</div>
+                <div class="affiliation-logo-claim-single">{{ _(word) }}</div>
               {% endfor %}
             </div>
           {% endif %}
@@ -98,10 +98,10 @@
     </div>
   </div>
 </div>
-{# ====== ROW 2: Dark top nav bar ====== #}
+{# ====== ROW 2: Top nav bar ====== #}
 <div class="header-topbar">
   <div class="ui container">
-    <div class="header-topbar-inner" style="background: #ffffff;">
+    <div class="header-topbar-inner">
       <a href="/" title="Home" class="header-topbar-link">
         <span class="home-inline">
           <svg shape-rendering="geometricPrecision"
@@ -117,44 +117,63 @@
           </svg>
         </span>
       </a>
-      <div class="header-topbar-dropdown">
-        <a href="/me/overview" class="header-topbar-link">
-          {{ _("Dashboard") }} <span class="topbar-arrow"></span>
-        </a>
-        <div class="header-topbar-dropdown-menu">
-          <a href="/me/uploads" class="header-topbar-dropdown-item">{{ _("My Uploads") }}</a>
-          <a href="/me/requests" class="header-topbar-dropdown-item">{{ _("My Requests") }}</a>
+      {# Mobile-only hamburger #}
+      <button class="header-mobile-toggle"
+              aria-label="{{ _('Menu') }}"
+              aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="header-mobile-nav">
+        <div class="header-topbar-dropdown">
+          <a href="/me/overview" class="header-topbar-link">
+            {{ _("Dashboard") }} <span class="topbar-arrow"></span>
+          </a>
+          <div class="header-topbar-dropdown-menu">
+            <a href="/me/uploads" class="header-topbar-dropdown-item">{{ _("My Uploads") }}</a>
+            <a href="/me/requests" class="header-topbar-dropdown-item">{{ _("My Requests") }}</a>
+          </div>
         </div>
-      </div>
-      <div class="header-topbar-dropdown">
-        <a href="/communities" class="header-topbar-link">
-          {{ _("Communities") }} <span class="topbar-arrow"></span>
-        </a>
-        <div class="header-topbar-dropdown-menu">
-          <a href="/me/communities" class="header-topbar-dropdown-item">{{ _("My Communities") }}</a>
-          <a href="/communities-search" class="header-topbar-dropdown-item">{{ _("All Communities") }}</a>
-          <a href="/communities/new" class="header-topbar-dropdown-item">{{ _("New Community") }}</a>
+        <div class="header-topbar-dropdown">
+          <a href="/communities" class="header-topbar-link">
+            {{ _("Communities") }} <span class="topbar-arrow"></span>
+          </a>
+          <div class="header-topbar-dropdown-menu">
+            <a href="/me/communities" class="header-topbar-dropdown-item">{{ _("My Communities") }}</a>
+            <a href="/communities-search" class="header-topbar-dropdown-item">{{ _("All Communities") }}</a>
+            <a href="/communities/new" class="header-topbar-dropdown-item">{{ _("New Community") }}</a>
+          </div>
         </div>
-      </div>
-      {%- for item in current_menu.submenu('profile-admin').children if item.visible %}
-        {% set admin_text = item.text|safe %}
-        {% if 'Administration' in item.text|safe %}
-          {% set admin_text = _("Administration") %}
-        {%- endif %}
-        <a class="header-topbar-link" href="{{ item.url }}">{{ admin_text }}</a>
-      {%- endfor %}
-      <div class="header-topbar-dropdown">
-        <a href="/help/search" class="header-topbar-link">
-          {{ _("Help") }} <span class="topbar-arrow"></span>
-        </a>
-        <div class="header-topbar-dropdown-menu">
-          <a href="/help/search" class="header-topbar-dropdown-item">{{ _("Search Guide") }}</a>
-          {%- if config.get('OVERRIDE_SHOW_CONTACT') or config.get('OVERRIDE_FRONTPAGE_RIGHT') %}
-            <a id="contact-modal-trigger"
-               href="#"
-               class="header-topbar-dropdown-item">{{ _("Contact") }}</a>
+        {%- for item in current_menu.submenu('profile-admin').children if item.visible %}
+          {% set admin_text = item.text|safe %}
+          {% if 'Administration' in item.text|safe %}
+            {% set admin_text = _("Administration") %}
           {%- endif %}
+          <a class="header-topbar-link" href="{{ item.url }}">{{ admin_text }}</a>
+        {%- endfor %}
+        <div class="header-topbar-dropdown">
+          <a href="#" class="header-topbar-link" onclick="return false;">
+            {{ _("Help") }} <span class="topbar-arrow"></span>
+          </a>
+          <div class="header-topbar-dropdown-menu">
+            <a href="/help/search" class="header-topbar-dropdown-item">{{ _("Search Guide") }}</a>
+            {%- if config.get('OVERRIDE_SHOW_CONTACT') or config.get('OVERRIDE_FRONTPAGE_RIGHT') %}
+              <a id="contact-modal-trigger"
+                 href="#"
+                 class="header-topbar-dropdown-item">{{ _("Contact") }}</a>
+            {%- endif %}
+          </div>
         </div>
+        <div class="header-topbar-lang">
+          {%- for l in current_i18n.get_locales() %}
+            {%- if current_i18n.language != l.language %}
+              <a href="{{ invenio_url_for('invenio_i18n.set_lang', lang_code=l.language) }}"
+                 class="header-topbar-link header-topbar-lang-link">{{ l.get_display_name().upper()[0:2] }}</a>
+            {%- endif %}
+          {%- endfor %}
+        </div>
+        {%- block navbar_right %}
+          {%- include config.THEME_HEADER_LOGIN_TEMPLATE %}
+        {%- endblock navbar_right %}
       </div>
     </div>
   </div>
@@ -178,7 +197,7 @@
       {%- if config.OVERRIDE_SHOW_RIGHT_CONTACT_EMAIL %}
         <div style="margin-top: 0.75em;">
           <a href="mailto:{{ config.OVERRIDE_RIGHT_SECTION_CONTACT_EMAIL }}"
-             class="ui button">{{ _("Contact our Help Service") }}</a>
+             class="ui primary button">{{ _("Contact our Help Service") }}</a>
         </div>
       {%- endif %}
     </div>
@@ -193,24 +212,3 @@
   });
   </script>
 {%- endif %}
-{# ====== ROW 3: Language | Login ====== #}
-<div class="header-secondrow-outer">
-  <div class="ui container">
-    <div class="header-secondrow">
-      <div class="header-secondrow-left">
-        <div class="header-secondrow-lang">
-          {%- for l in current_i18n.get_locales() %}
-            {%- if current_i18n.language != l.language %}
-              <a href="{{ url_for('invenio_i18n.set_lang', lang_code=l.language) }}"
-                 class="no-decoration">{{ l.get_display_name().upper()[0:2] }}</a>
-            {%- endif %}
-          {%- endfor %}
-        </div>
-      </div>
-      <div class="header-secondrow-right">
-        {%- block navbar_right %}
-          {%- include config.THEME_HEADER_LOGIN_TEMPLATE %}
-        {%- endblock navbar_right %}
-      </div>
-    </div>
-  </div>

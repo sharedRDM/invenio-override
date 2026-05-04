@@ -470,3 +470,172 @@ aside.column .ui.toggle.checkbox {
   border-color: @labelDateBlue !important;
   color: #ffffff !important;
 }
+
+/* ======================================
+   Search type switcher
+====================================== */
+.search-type-switcher {
+  padding: 0.75rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.search-switcher-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.search-switcher-inner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 680px;
+  background: #ffffff;
+  border: none;
+  border-radius: @radiusPill;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+  overflow: visible;
+  height: 42px;
+}
+
+.search-switcher-dropdown {
+  border-radius: @radiusPill 0 0 @radiusPill;
+  overflow: visible !important;
+}
+
+.search-switcher-dropdown {
+  flex-shrink: 0;
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0 0.85rem !important;
+  min-width: 140px;
+  font-size: 0.875rem;
+  color: @primaryText;
+  cursor: pointer;
+  white-space: nowrap;
+
+  > .text {
+    color: @recordLightText;
+    font-size: @font-size-sm;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  > i.dropdown.icon {
+    margin-left: 0.4rem !important;
+    color: @recordLightText;
+    font-size: 0.8rem;
+  }
+
+  &.active > i.dropdown.icon {
+    color: @overridePrimary;
+  }
+
+  .menu {
+    border-radius: @radiusSmall !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1) !important;
+    border: 1px solid rgba(0, 0, 0, 0.12) !important;
+    min-width: 200px;
+    padding: 0.5rem 0 !important;
+
+    .item {
+      font-size: @font-size-base !important;
+      color: @primaryText !important;
+      padding: 0.6rem 1.25rem !important;
+      white-space: nowrap;
+
+      &.active,
+      &.selected {
+        color: @overridePrimary !important;
+        font-weight: 600;
+        background: none !important;
+      }
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.04) !important;
+        color: @primaryText !important;
+      }
+    }
+  }
+}
+
+.search-switcher-input-wrap {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  height: 100%;
+}
+
+.search-switcher-input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  padding: 0 2.2rem 0 0.85rem;
+  font-size: @font-size-base;
+  outline: none;
+  background: transparent;
+  color: @primaryText;
+  min-width: 0;
+}
+
+.search-switcher-clear {
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: @recordLightText;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  transition: background-color @transitionFast ease;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.06);
+  }
+}
+
+.search-switcher-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 48px;
+  border: none;
+  border-radius: 0 @radiusPill @radiusPill 0;
+  background-color: @overridePrimary;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color @transitionFast ease;
+
+  &:hover {
+    background-color: @overrideSecondary;
+  }
+}
+
+@media screen and (max-width: 767.9px) {
+  .search-switcher-inner {
+    max-width: 100%;
+  }
+
+  .search-switcher-dropdown {
+    min-width: 100px;
+    font-size: 0.8rem;
+    padding: 0 0.5rem !important;
+  }
+}

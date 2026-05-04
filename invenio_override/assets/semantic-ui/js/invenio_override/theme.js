@@ -9,6 +9,7 @@ import ReactDOM from "react-dom";
 import { UploadsResults } from "./UploadsResults";
 import { i18next } from "@translations/invenio_override/i18next";
 import { overrideStore } from "react-overridable";
+import { initSearchSwitcher } from "./searchSwitcher";
 
 overrideStore.add("InvenioAppRdm.DashboardUploads.SearchApp.results", UploadsResults);
 overrideStore.add("InvenioAppRdm.DashboardCommunities.SearchApp.results", CommunitiesResults);
@@ -144,6 +145,7 @@ function watchForSearchSidebar() {
 }
 
 document.addEventListener("DOMContentLoaded", watchForSearchSidebar);
+document.addEventListener("DOMContentLoaded", initSearchSwitcher);
 
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.querySelector(".header-mobile-toggle");
