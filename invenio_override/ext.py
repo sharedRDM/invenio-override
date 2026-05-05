@@ -19,7 +19,14 @@ except (ImportError, AttributeError):
     current_identity_can_view = lambda: False
 
 from . import config
-from .views import blueprint, index, locked, make_redirect, require_authenticated
+from .views import (
+    blueprint,
+    default_error_handler,
+    index,
+    locked,
+    make_redirect,
+    require_authenticated,
+)
 
 
 class InvenioOverride(object):
@@ -36,6 +43,7 @@ class InvenioOverride(object):
         app.add_url_rule("/", "index", index)
         self.init_config(app)
         app.register_error_handler(423, locked)
+        app.register_error_handler(Exception, default_error_handler)
         app.config["THEME_LOGO"] = app.config.get("OVERRIDE_LOGO")
         app.extensions["invenio-override"] = self
         routes = app.config.get("OVERRIDE_ROUTES")

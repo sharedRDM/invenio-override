@@ -200,6 +200,12 @@ OVERRIDE_SHIBBOLETH = False
 # See https://invenio-theme.readthedocs.io/en/latest/configuration.html
 # ============================================================================
 
+OVERRIDE_SUPPORT_EMAIL = ""
+"""Support email shown on the error page. Empty string hides the contact link."""
+
+THEME_500_TEMPLATE = "invenio_override/default_error.html"
+"""Template used for unhandled server errors."""
+
 THEME_SEARCHBAR = False
 """Enable or disable the header search bar."""
 

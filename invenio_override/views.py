@@ -8,6 +8,8 @@
 
 """invenio module for sharedRDM theme."""
 
+import secrets
+import traceback
 from functools import wraps
 from typing import Dict, Optional
 
@@ -73,13 +75,29 @@ def index():
 
 
 def default_error_handler(e: Exception) -> tuple:
-    """
-    Handle unhandled errors.
+    """Handle unhandled errors.
+
+    Generates a unique error ID, logs the full traceback with it, and renders
+    the error page. The error ID makes it easy to correlate a user-reported
+    error with the corresponding log entry.
 
     :param e: Exception raised.
     :returns: Rendered error page with HTTP 500 status.
     """
-    return render_template(current_app.config["THEME_500_TEMPLATE"]), 500
+    error_id = secrets.token_hex(4)
+    tb = "".join(traceback.format_exception(e))
+    current_app.logger.error(
+        "(caught by invenio-override default_error_handler):\n"
+        "Error ID: #%s\nException class: %s\nException: %s\n%s",
+        error_id,
+        type(e),
+        e,
+        tb,
+    )
+    return (
+        render_template(current_app.config["THEME_500_TEMPLATE"], error_id=error_id),
+        500,
+    )
 
 
 @blueprint.app_template_filter("make_dict_like")

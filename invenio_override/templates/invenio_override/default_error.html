@@ -1,0 +1,29 @@
+{#
+  Copyright (C) 2024-2026 Graz University of Technology.
+
+  invenio-override is free software; you can redistribute it and/or
+  modify it under the terms of the MIT License; see LICENSE file for more
+  details.
+#}
+{% extends config.BASE_TEMPLATE %}
+{% block page_body %}
+  <div class="ui container rel-mt-4 rel-mb-4">
+    <div class="ui center aligned grid">
+      <div class="ten wide computer sixteen wide mobile twelve wide tablet column">
+        <h1>
+          <i class="bolt icon"></i>
+          {{ _("An unexpected error occurred") }}
+        </h1>
+        {% if config.OVERRIDE_SUPPORT_EMAIL %}
+          <p>
+            {{ _("Please contact <a href=\"mailto:{support_email}\">our support</a> to let us know about this error.").format(support_email=config.OVERRIDE_SUPPORT_EMAIL) }}
+          </p>
+        {% endif %}
+        <p>{{ _("Please include the following error ID in your message:") }}</p>
+        <p>
+          <strong>{{ error_id }}</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+{% endblock page_body %}
