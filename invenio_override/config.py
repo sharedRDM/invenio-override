@@ -195,6 +195,11 @@ OVERRIDE_FAVICON = "favicon.ico"
 OVERRIDE_SHIBBOLETH = False
 """Set True if SAML is configured"""
 
+# Invenio-Communities - Restrict Community Creation
+# ============================================================================
+OVERRIDE_COMMUNITIES_RESTRICT_CREATION = False
+OVERRIDE_COMMUNITIES_CREATE_ROLES = ["community-creator"]
+
 # ============================================================================
 # Theme and Templates
 # See https://invenio-theme.readthedocs.io/en/latest/configuration.html
