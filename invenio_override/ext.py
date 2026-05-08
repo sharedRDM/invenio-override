@@ -74,6 +74,9 @@ class InvenioOverride(object):
                 "invenio_catalogue_marc21.deposit_edit": _(
                     "Deposit a catalogue record"
                 ),
+                "invenio_records_lom.uploads": _(
+                    "Manage and publish your openly licensed educational materials"
+                ),
                 "invenio_records_lom.deposit_create": _(
                     "Deposit an educational resource"
                 ),
