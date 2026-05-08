@@ -8,14 +8,21 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { UploadsResults } from "./UploadsResults";
 import { i18next } from "@translations/invenio_override/i18next";
-import { overrideStore } from "react-overridable";
 import { initSearchSwitcher } from "./searchSwitcher";
+import { overrideStore } from "react-overridable";
 
-overrideStore.add("InvenioAppRdm.DashboardUploads.SearchApp.results", UploadsResults);
-overrideStore.add("InvenioAppRdm.DashboardCommunities.SearchApp.results", CommunitiesResults);
+overrideStore.add(
+  "InvenioAppRdm.DashboardUploads.SearchApp.results",
+  UploadsResults,
+);
+overrideStore.add("SearchApp.results", UploadsResults);
+overrideStore.add(
+  "InvenioAppRdm.DashboardCommunities.SearchApp.results",
+  CommunitiesResults,
+);
 
 /* sticky notification setup for test instance */
-$(".ui.sticky.test-instance").sticky({
+$(".ui.sticky.instance-banner").sticky({
   context: "body",
 });
 
@@ -30,10 +37,12 @@ document.addEventListener("DOMContentLoaded", function () {
       <div className="ui fluid input frontpage-search-container">
         <MultipleOptionsSearchBar
           options={searchBarOptions}
-          placeholder={i18next.t("Use this dropdown to search across different resource types")}
+          placeholder={i18next.t(
+            "Use this dropdown to search across different resource types",
+          )}
         />
       </div>,
-      frontpageSearchbar
+      frontpageSearchbar,
     );
   }
 
@@ -48,25 +57,40 @@ document.addEventListener("DOMContentLoaded", function () {
           <div className="dashboard-nav-box-circle">
             <i className="users icon" />
           </div>
-          <span className="dashboard-nav-box-title">{i18next.t("My Communities")}</span>
-          <span className="dashboard-nav-box-desc">{i18next.t("Communities you own or are a member of")}</span>
+          <span className="dashboard-nav-box-title">
+            {i18next.t("My Communities")}
+          </span>
+          <span className="dashboard-nav-box-desc">
+            {i18next.t("Communities you own or are a member of")}
+          </span>
         </a>
         <a href="/communities-search" className="dashboard-nav-box">
           <div className="dashboard-nav-box-circle">
             <i className="globe icon" />
           </div>
-          <span className="dashboard-nav-box-title">{i18next.t("All Communities")}</span>
-          <span className="dashboard-nav-box-desc">{i18next.t("Browse and discover all communities")}</span>
+          <span className="dashboard-nav-box-title">
+            {i18next.t("All Communities")}
+          </span>
+          <span className="dashboard-nav-box-desc">
+            {i18next.t("Browse and discover all communities")}
+          </span>
         </a>
-        <a href="/communities/new" className="dashboard-nav-box dashboard-nav-box-highlight">
+        <a
+          href="/communities/new"
+          className="dashboard-nav-box dashboard-nav-box-highlight"
+        >
           <div className="dashboard-nav-box-circle">
             <i className="plus icon" />
           </div>
-          <span className="dashboard-nav-box-title">{i18next.t("New Community")}</span>
-          <span className="dashboard-nav-box-desc">{i18next.t("Create a new community")}</span>
+          <span className="dashboard-nav-box-title">
+            {i18next.t("New Community")}
+          </span>
+          <span className="dashboard-nav-box-desc">
+            {i18next.t("Create a new community")}
+          </span>
         </a>
       </div>,
-      communitiesFrontpage
+      communitiesFrontpage,
     );
   }
 });
@@ -105,7 +129,6 @@ export function toggleVisibility(id) {
 window.toggleVisibility = toggleVisibility;
 */
 
-
 /* ======================================
    Search sidebar — collapsible facets
    GridResponsiveSidebarColumn renders <aside class="column"> (no .sidebar-container).
@@ -118,7 +141,7 @@ function initFacetCollapse() {
 
   document.body.addEventListener("click", function (e) {
     const header = e.target.closest(
-      "aside.column .ui.card.borderless.facet > .content > h2.header"
+      "aside.column .ui.card.borderless.facet > .content > h2.header",
     );
     if (!header) return;
     if (e.target.closest("button")) return;
@@ -169,7 +192,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   /* Mobile: */
   nav.querySelectorAll(".header-topbar-dropdown").forEach(function (dropdown) {
-    const arrow = dropdown.querySelector(":scope > .header-topbar-link .topbar-arrow");
+    const arrow = dropdown.querySelector(
+      ":scope > .header-topbar-link .topbar-arrow",
+    );
     const menu = dropdown.querySelector(".header-topbar-dropdown-menu");
     if (!arrow || !menu) return;
 
@@ -178,26 +203,12 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       e.stopPropagation();
       const isOpen = menu.style.display === "block";
-      nav.querySelectorAll(".header-topbar-dropdown-menu").forEach(function (m) {
-        m.style.display = "";
-      });
+      nav
+        .querySelectorAll(".header-topbar-dropdown-menu")
+        .forEach(function (m) {
+          m.style.display = "";
+        });
       menu.style.display = isOpen ? "" : "block";
     });
   });
-});
-
-/* User profile dropdown */
-$("#user-profile-dropdown.ui.dropdown").dropdown({
-  showOnFocus: false,
-  selectOnKeydown: false,
-  action: (text, value, element) => {
-    let path = element.attr("href");
-    window.location.pathname = path;
-  },
-  onShow: () => {
-    $("#user-profile-dropdown-btn").attr("aria-expanded", true);
-  },
-  onHide: () => {
-    $("#user-profile-dropdown-btn").attr("aria-expanded", false);
-  },
 });

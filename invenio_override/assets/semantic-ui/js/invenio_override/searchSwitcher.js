@@ -35,9 +35,9 @@ export function initSearchSwitcher() {
     return;
   }
 
-  const typeDropdown  = document.getElementById("search-switcher-type");
-  const searchInput   = document.getElementById("search-switcher-input");
-  const clearButton   = document.getElementById("search-switcher-clear");
+  const typeDropdown = document.getElementById("search-switcher-type");
+  const searchInput = document.getElementById("search-switcher-input");
+  const clearButton = document.getElementById("search-switcher-clear");
   const $typeDropdown = $(typeDropdown);
 
   function getValue() {
@@ -76,8 +76,8 @@ export function initSearchSwitcher() {
   });
 
   const activeItem = typeDropdown.querySelector(".item.active");
-  const firstItem  = typeDropdown.querySelector(".item");
-  const initValue  = (activeItem || firstItem || {}).dataset.value;
+  const firstItem = typeDropdown.querySelector(".item");
+  const initValue = (activeItem || firstItem || {}).dataset.value;
   if (initValue) {
     $typeDropdown.dropdown("set selected", initValue);
   }

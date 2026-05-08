@@ -59,9 +59,7 @@ export class CommunityCards extends Component {
     if (isLoading) return null;
 
     if (!hits.length) {
-      return (
-        <p className="override-community-empty">{emptyMessage}</p>
-      );
+      return <p className="override-community-empty">{emptyMessage}</p>;
     }
 
     return (

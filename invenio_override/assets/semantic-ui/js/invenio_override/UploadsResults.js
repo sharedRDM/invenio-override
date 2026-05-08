@@ -35,10 +35,7 @@ export const UploadsResults = ({
                 </Grid.Column>
                 <Grid.Column width={12} textAlign="right">
                   {sortOptions && (
-                    <Sort
-                      values={sortOptions}
-                      label={(cmp) => <>{cmp}</>}
-                    />
+                    <Sort values={sortOptions} label={(cmp) => <>{cmp}</>} />
                   )}
                 </Grid.Column>
               </Grid.Row>

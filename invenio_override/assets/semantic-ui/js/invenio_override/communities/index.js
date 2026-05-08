@@ -7,7 +7,6 @@ import ReactDOM from "react-dom";
 const DEFAULT_LOGO = "/static/images/square-placeholder.png";
 
 document.addEventListener("DOMContentLoaded", () => {
-
   const subheader = document.querySelector(".page-subheader");
   if (subheader) {
     subheader.querySelector("h1.ui.header")?.closest(".row")?.remove();
@@ -22,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         defaultLogo={DEFAULT_LOGO}
         emptyMessage="You are not a member of any community yet."
       />,
-      userContainer
+      userContainer,
     );
   }
 
@@ -34,8 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         defaultLogo={DEFAULT_LOGO}
         emptyMessage="No communities yet."
       />,
-      newContainer
+      newContainer,
     );
   }
 });
-
