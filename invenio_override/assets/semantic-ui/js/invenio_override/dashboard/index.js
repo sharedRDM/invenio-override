@@ -9,7 +9,15 @@ import ReactDOM from "react-dom";
 
 const container = document.getElementById("dashboard-overview");
 if (container) {
+  const showLom = container.dataset.showLom === "true";
   const showCurations = container.dataset.showCurations === "true";
   const showPublications = container.dataset.showPublications === "true";
-  ReactDOM.render(<DashboardOverview showCurations={showCurations} showPublications={showPublications} />, container);
+  ReactDOM.render(
+    <DashboardOverview
+      showLom={showLom}
+      showCurations={showCurations}
+      showPublications={showPublications}
+    />,
+    container,
+  );
 }

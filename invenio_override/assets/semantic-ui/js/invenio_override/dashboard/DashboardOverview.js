@@ -10,33 +10,34 @@ import React from "react";
 const NAV_BOXES = [
   {
     key: "uploads",
-    title: () => i18next.t("My Uploads"),
-    description: () => i18next.t("Your deposited records"),
+    title: () => i18next.t("Research Results"),
+    description: () => i18next.t("Your deposited research results"),
     icon: "file alternate outline",
     url: "/me/uploads",
   },
   {
     key: "requests",
-    title: () => i18next.t("My Requests"),
-    description: () => i18next.t("Open and closed requests"),
+    title: () => i18next.t("Requests"),
+    description: () =>
+      i18next.t("Check for incoming notifications and assignments"),
     icon: "tasks",
     url: "/me/requests",
   },
   {
     key: "curations",
     title: () => i18next.t("Curation Requests"),
-    description: () => i18next.t("Review and manage submissions"),
+    description: () => i18next.t("Review and manage curation submissions"),
     icon: "clipboard check",
     url: "/curations/overview",
     curatorOnly: true,
   },
   {
-    key: "upload-dataset",
-    title: () => i18next.t("Upload Dataset"),
-    description: () => i18next.t("Deposit research data"),
-    icon: "database",
-    url: "/uploads/new",
-    highlight: true,
+    key: "educational-resources",
+    title: () => i18next.t("Educational Resources"),
+    description: () => i18next.t("Your openly licensed educational materials"),
+    icon: "graduation cap",
+    url: "/oer/uploads",
+    lomOnly: true,
   },
   {
     key: "upload-publication",
@@ -47,13 +48,29 @@ const NAV_BOXES = [
     marc21Only: true,
     highlight: true,
   },
+  {
+    key: "upload-dataset",
+    title: () => i18next.t("Upload Research Result"),
+    description: () =>
+      i18next.t("Deposit research data, software, preprints and more"),
+    icon: "database",
+    url: "/uploads/new",
+    highlight: true,
+  },
 ];
 
-export function DashboardOverview({ showCurations, showPublications }) {
-  const boxes = NAV_BOXES.filter(box =>
-    (!box.curatorOnly || showCurations) &&
-    (!box.marc21Only || showPublications)
+export function DashboardOverview({
+  showLom,
+  showCurations,
+  showPublications,
+}) {
+  const boxes = NAV_BOXES.filter(
+    (box) =>
+      (!box.lomOnly || showLom) &&
+      (!box.curatorOnly || showCurations) &&
+      (!box.marc21Only || showPublications),
   );
+
   return (
     <div className="dashboard-nav-grid">
       {boxes.map((box) => (
