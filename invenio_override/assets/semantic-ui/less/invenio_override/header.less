@@ -144,6 +144,12 @@ header > nav {
   }
 }
 
+.header-topbar-dropdown-divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+  margin: 0.25rem 0;
+}
+
 /* ======================================
    ROW 2: Lang | Login — transparent, inherits nav gradient
 ====================================== */
@@ -301,11 +307,42 @@ span.home-inline {
   align-items: center;
 }
 
-.test-instance {
-  text-align: center;
-  background-color: @notificationBackground;
-  border: solid @notificationBorder 1px;
+.instance-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  max-width: 78.75%;
+  margin: 0.75rem auto;
+  padding: 1rem 1.5rem;
+  font-size: @font-size-base;
+  font-weight: 600;
+  border-radius: @radiusCardLarge;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   z-index: 100000;
+
+  p {
+    margin: 0;
+    flex: 1;
+  }
+
+  @media screen and (max-width: 767.9px) {
+    font-size: @font-size-sm;
+    max-width: 95%;
+  }
+}
+
+.instance-banner--test {
+  background-color: @instanceBannerTest;
+  border-color: darken(@instanceBannerTest, 12%);
+  color: @instanceBannerTestText;
+}
+
+.instance-banner--demo {
+  background-color: @instanceBannerDemo;
+  border-color: darken(@instanceBannerDemo, 12%);
+  color: @instanceBannerDemoText;
 }
 
 .spacer {

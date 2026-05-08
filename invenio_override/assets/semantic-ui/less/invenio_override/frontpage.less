@@ -46,7 +46,16 @@ h2 {
   display: flex;
   align-items: center;
   position: relative;
+  z-index: 1;
   overflow: visible;
+  opacity: 0;
+  animation: heroFadeIn 0.4s ease 0.2s forwards;
+}
+
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 #hero-canvas {
@@ -58,6 +67,14 @@ h2 {
   height: 100%;
   pointer-events: none;
   z-index: 0;
+  opacity: 0;
+  animation: heroCanvasFadeIn 0.4s ease 0.15s forwards;
+}
+
+@keyframes heroCanvasFadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 /* Default state — invisible nodes, very thin lines */
@@ -183,6 +200,7 @@ h2 {
 }
 
 /* The component renders .ui.search > .ui.icon.input */
+.frontpage-search-wrapper .ui.search,
 .frontpage-search-wrapper .ui.icon.input {
   width: 100% !important;
 }
@@ -190,6 +208,11 @@ h2 {
 .frontpage-search-wrapper .ui.selection.dropdown,
 .frontpage-search-wrapper .ui.dropdown {
   font-size: @font-size-base !important;
+}
+
+.frontpage-search-wrapper .ui.dropdown .menu,
+#frontpage-search-bar .ui.dropdown .menu {
+  z-index: 1000 !important;
 }
 
 .frontpage-search-wrapper .ui.icon.input > input {
@@ -377,6 +400,8 @@ h2 {
 .frontpage-below-hero {
   background: transparent;
   padding-bottom: 0.5rem;
+  opacity: 0;
+  animation: heroFadeIn 0.4s ease 0.2s forwards;
 }
 
 /* ======================================

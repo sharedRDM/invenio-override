@@ -23,6 +23,15 @@ login & signup page title
   color: @primaryText;
 }
 
+@keyframes bodyFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* global font styling and base size */
 html {
   font-size: 16px;
@@ -32,6 +41,7 @@ html {
 body {
   font-size: @font-size-base;
   line-height: 1.6;
+  animation: bodyFadeIn 0.25s ease forwards;
   background-color: #f0f0f0;
   background-image: linear-gradient(180deg, #ffffff 0%, #dddddd 100%);
   background-attachment: fixed;
@@ -62,17 +72,16 @@ pre,
   font-family: "Source Sans Pro";
 }
 
-/* consistent heading sizes */
-h1 {
+h1:not(.header) {
   font-size: @font-size-2xl;
 }
-h2 {
+h2:not(.header) {
   font-size: @font-size-xl;
 }
-h3 {
+h3:not(.header) {
   font-size: @font-size-lg;
 }
-h4 {
+h4:not(.header) {
   font-size: @font-size-nav;
 }
 
@@ -250,11 +259,17 @@ pre {
   color: #ffffff;
 }
 
+/* hide dismiss (×) button on all flash messages */
+.flash-close-btn {
+  display: none !important;
+}
+
 /* deposit + login + preview flash notifications — full card style */
 #deposit-form .ui.message.flashed.top.attached,
 .ui.message.flashed.top.attached[id$="-feedback-div"],
 .login-card .ui.message.flashed.top.attached,
-.ui.message.flashed.bottom.attached.manage {
+.ui.message.flashed.bottom.attached.manage,
+.ui.info.bottom.attached.manage.message {
   position: relative !important;
   top: auto !important;
   right: auto !important;
@@ -414,32 +429,32 @@ pre {
 }
 
 /* ======================================
-   UI messages — subtle styling
+   UI messages
 ====================================== */
+
+.ui.message {
+  border-radius: @radiusCardLarge !important;
+  box-shadow: @msgShadow !important;
+  border: @borderSubtle !important;
+  padding: 1rem 1.5rem !important;
+}
+
 .ui.success.message {
-  background-color: #f0faf5;
-  color: #1a6b4a;
-  border: 1px solid rgba(26, 107, 74, 0.15);
-  border-radius: (@radiusCard - 2);
+  background-color: @msgSuccessBg;
+  color: @msgSuccessText;
 }
 .ui.info.message {
-  background-color: #f0f7ff;
-  color: #1a5276;
-  border: 1px solid rgba(26, 82, 118, 0.15);
-  border-radius: (@radiusCard - 2);
+  background-color: @msgInfoBg;
+  color: @msgInfoText;
 }
 .ui.warning.message {
-  background-color: #fffaf3;
-  color: #856404;
-  border: 1px solid rgba(133, 100, 4, 0.15);
-  border-radius: (@radiusCard - 2);
+  background-color: @msgWarningBg;
+  color: @msgWarningText;
 }
 .ui.error.message,
 .ui.negative.message {
-  background-color: #fff5f5;
-  color: #9b1c1c;
-  border: 1px solid rgba(155, 28, 28, 0.15);
-  border-radius: (@radiusCard - 2);
+  background-color: @msgErrorBg;
+  color: @msgErrorText;
 }
 
 /* ======================================
@@ -463,7 +478,7 @@ pre {
 }
 
 /* ======================================
-   Record cards (used in overrides theme)
+   Record cards
 ====================================== */
 .record-card {
   background: #ffffff;
@@ -794,4 +809,86 @@ html {
   max-height: 32px;
   width: auto;
   filter: brightness(0) invert(1);
+}
+
+/* Request detail — columns as cards */
+#request-detail > .ui.grid > .column,
+#request-detail > .ui.grid > .stretched.row > .column {
+  background: #ffffff;
+  border: @borderSubtle;
+  border-radius: @radiusCardLarge;
+  box-shadow: @cardShadowRest;
+  padding: 1.5rem !important;
+}
+
+/* Gap between request detail columns */
+#request-detail .ui.grid {
+  column-gap: 20px !important;
+}
+
+@media only screen and (min-width: 1280px) {
+  #request-detail .ui.grid > [class*="thirteen wide computer"].column {
+    width: 79% !important;
+  }
+}
+
+/* Record detail sidebar — remove extra padding on smaller screens */
+@media screen and (max-width: 1275px) {
+  .ui.relaxed.grid > .row > .column.sidebar {
+    padding: 0 !important;
+  }
+}
+
+/* Preview/info banners with no-border-radius — restore corners and spacing */
+.ui.info.message.no-border-radius {
+  border-radius: @radiusCard !important;
+  margin: 0 0 1rem 0 !important;
+  font-size: @font-size-sm;
+
+  .header {
+    font-size: @font-size-sm;
+  }
+}
+
+/* Inside versions sidebar card — tighter spacing */
+.ui.card .ui.info.message.no-border-radius,
+.rdm-sidebar .ui.info.message.no-border-radius {
+  margin: 0.5rem !important;
+}
+
+/* Request list item — keep eye/type icon pinned to the top of the row */
+.ui.items > .item.flex > .status-icon {
+  align-self: flex-start !important;
+}
+
+/* Remove default .extra margin-top that pushes the eye icon below the type label */
+.ui.items > .item.flex > .status-icon .extra {
+  margin-top: 0 !important;
+}
+
+/* Make avatar.tiny square so border-radius: 500rem gives a circle.
+   Upstream only sets height: @lineHeight (≈1.4285em), leaving width at @tinyWidth (80px) → oval. */
+.image.avatar.tiny {
+  width: 1.4285em !important;
+}
+
+/* Avatar + name in request detail metadata — undo card/flex styles from search.less */
+.avatar-logo-container.ui.items > .item {
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+
+.avatar-logo-container.ui.items > .item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+}
+
+.avatar-logo-container.ui.items > .item > .content {
+  display: block !important;
+  flex: 1 !important;
 }

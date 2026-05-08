@@ -444,6 +444,9 @@
 
 #invenio-search-config.uploads-search-app .row.tablet.only:not(.mobile),
 #invenio-search-config.uploads-search-app
+  .row.mobile.only:not(.tablet):has(.right.aligned.column),
+#invenio-search-lom-config.uploads-search-app .row.tablet.only:not(.mobile),
+#invenio-search-lom-config.uploads-search-app
   .row.mobile.only:not(.tablet):has(.right.aligned.column) {
   display: none !important;
 }
@@ -519,11 +522,28 @@
   width: 320px !important;
   max-width: 100%;
 }
-/* Col 4 (Sort): hidden — lives in highlight-background row */
+/* Col 4 (Sort): hidden in RDM uploads — lives in highlight-background row */
 #invenio-search-config.uploads-search-app
   .row.computer.only
   > .column:nth-child(4) {
   display: none !important;
+}
+
+/* Col 3 (Sort): hidden in OER uploads — no SharedOrMineFilter so sort is one column earlier */
+#invenio-search-lom-config.uploads-search-app
+  .row.computer.only
+  > .column:nth-child(3) {
+  display: none !important;
+}
+
+/* Col 2 (SearchBar) in OER: match RDM search position (after missing 4-wide SharedOrMineFilter) */
+#invenio-search-lom-config.uploads-search-app
+  .row.computer.only
+  > .column:nth-child(2) {
+  flex: 0 0 auto !important;
+  float: none !important;
+  margin-left: 25% !important;
+  max-width: 340px !important;
 }
 
 /* Requests: [empty] [search col4→1] [My requests col3→2] [Open col2→3] */
@@ -732,4 +752,13 @@
       font-size: 1.6rem;
     }
   }
+}
+
+.dashboard-section-title {
+  font-size: @font-size-base;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: @recordLightText;
+  margin: 2rem 0 1rem 0;
 }

@@ -123,7 +123,16 @@
 }
 
 /* Bottom meta footer — matches .record-card-meta style */
-.ui.items > .item > .content > .extra:not(.labels-actions) {
+.invenio-search-results
+  .ui.items
+  > .item
+  > .content
+  > .extra:not(.labels-actions),
+[data-invenio-search-config]
+  .ui.items
+  > .item
+  > .content
+  > .extra:not(.labels-actions) {
   color: @recordLightText;
   font-size: @font-size-sm;
   margin-top: 0.75rem;
@@ -135,6 +144,16 @@
     justify-content: space-between;
     align-items: flex-end;
   }
+}
+
+[data-invenio-search-config*="DashboardRequests"]
+  .ui.items
+  > .item
+  > .content
+  > .extra:not(.labels-actions) {
+  margin-top: 0 !important;
+  border-top: none !important;
+  padding-top: 0 !important;
 }
 
 /* ======================================
