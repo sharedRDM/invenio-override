@@ -129,8 +129,16 @@
             {{ _("Dashboard") }} <span class="topbar-arrow"></span>
           </a>
           <div class="header-topbar-dropdown-menu">
-            <a href="/me/uploads" class="header-topbar-dropdown-item">{{ _("My Uploads") }}</a>
-            <a href="/me/requests" class="header-topbar-dropdown-item">{{ _("My Requests") }}</a>
+            <a href="/me/uploads" class="header-topbar-dropdown-item">{{ _("Research Results") }}</a>
+            {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
+              <a href="/oer/uploads" class="header-topbar-dropdown-item">{{ _("Educational Resources") }}</a>
+            {% endif %}
+            <a href="/me/requests" class="header-topbar-dropdown-item">{{ _("Requests") }}</a>
+            {% if current_menu.submenu("dashboard").submenu("curation-overview").visible %}
+              <a href="/curations/overview" class="header-topbar-dropdown-item">{{ _("Curation Requests") }}</a>
+            {% endif %}
+            <div class="header-topbar-dropdown-divider"></div>
+            <a href="/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Research Result") }}</a>
           </div>
         </div>
         <div class="header-topbar-dropdown">
@@ -138,7 +146,7 @@
             {{ _("Communities") }} <span class="topbar-arrow"></span>
           </a>
           <div class="header-topbar-dropdown-menu">
-            <a href="/me/communities" class="header-topbar-dropdown-item">{{ _("My Communities") }}</a>
+            <a href="/me/communities" class="header-topbar-dropdown-item">{{ _("Communities") }}</a>
             <a href="/communities-search" class="header-topbar-dropdown-item">{{ _("All Communities") }}</a>
             <a href="/communities/new" class="header-topbar-dropdown-item">{{ _("New Community") }}</a>
           </div>

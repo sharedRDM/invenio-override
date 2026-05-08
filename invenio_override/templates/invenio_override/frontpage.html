@@ -23,8 +23,8 @@
       {%- if config.get('OVERRIDE_FRONTPAGE_SHOW_RECENT_UPLOADS', False) %}
         <div class="ui container">{% include "invenio_override/recent_uploads.html" %}</div>
       {%- endif %}
+      <div class="ui container">{% include "invenio_override/frontpage_reasons.html" %}</div>
     </div>
-    <div class="ui container">{% include "invenio_override/frontpage_reasons.html" %}</div>
     {# Required: loads invenio-app-rdm-frontpage.js and provides #records-list anchor #}
     <div style="display:none;">{{ records_list() }}</div>
   {%- endblock grid_section %}

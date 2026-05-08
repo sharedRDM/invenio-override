@@ -5,10 +5,15 @@
   modify it under the terms of the MIT License; see LICENSE file for more
   details.
 #}
-{% if not config.OVERRIDE_PRODUCTION %}
-  <div class="ui sticky test-instance">
-    <h4>{{ _ ("Test Instance") }}</h4>
-    <p>{{ _ ("This is the test instance of the Repository.") }}</p>
+{% if config.OVERRIDE_INSTANCE_TYPE in ["test", "demo"] %}
+  <div class="instance-banner instance-banner--{{ config.OVERRIDE_INSTANCE_TYPE }}">
+    <p>
+      {% if config.OVERRIDE_INSTANCE_TYPE == "test" %}
+        {{ _("This is the test instance of the Repository.") }}
+      {% elif config.OVERRIDE_INSTANCE_TYPE == "demo" %}
+        {{ _("This is the demo instance of the Repository.") }}
+      {% endif %}
+    </p>
   </div>
 {% endif %}
 <div>

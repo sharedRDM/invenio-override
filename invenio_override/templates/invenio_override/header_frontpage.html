@@ -42,37 +42,12 @@
     } %}
   {% set options = [all_option] + options %}
 {% endif %}
+<style>.frontpage-hero-section,.frontpage-below-hero{opacity:0}.header-mobile-nav{display:none}</style>
 {%- block site_banner %}
   {%- from "invenio_banners/banner.html" import banner with context -%}
   {{ banner() }}
 {%- endblock site_banner %}
 {%- block frontpage_search %}
-  <style>
-  .frontpage-search-wrapper .ui.search,
-  .frontpage-search-wrapper .ui.icon.input {
-    width: 100% !important;
-  }
-  .frontpage-search-wrapper .ui.search > .results {
-    width: 100% !important;
-    border-radius: 0 0 1.5rem 1.5rem !important;
-    overflow: hidden !important;
-  }
-  .frontpage-search-wrapper .ui.search > .results .result:last-child {
-    border-radius: 0 0 1.5rem 1.5rem !important;
-  }
-  @media screen and (max-width: 1280px) {
-    .frontpage-hero-layout { flex-direction: column !important; gap: 2rem !important; }
-    .frontpage-hero-left { flex: 1 1 auto !important; }
-    .frontpage-hero-right { width: 100% !important; margin-left: 0 !important; }
-    .frontpage-pillars { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; }
-    .frontpage-pillar { flex-direction: column !important; width: auto !important; }
-    .frontpage-hero-title { text-align: center !important; }
-    .frontpage-hero-title::after { margin: 0.7rem auto 0 !important; }
-    .frontpage-hero-subtitle { text-align: center !important; }
-    .frontpage-search-hint { text-align: center !important; }
-    .frontpage-search-wrapper { max-width: 100% !important; }
-  }
-  </style>
   <section class="frontpage-hero-section"
            role="banner"
            aria-label="{{ _('Search repository') }}">
