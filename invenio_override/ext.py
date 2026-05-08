@@ -9,6 +9,7 @@
 
 """invenio module for sharedRDM theme."""
 
+from flask import request
 from flask_login import login_required
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
@@ -58,6 +59,30 @@ class InvenioOverride(object):
         @app.context_processor
         def inject_visibility():
             return {"can_view_marc21": current_identity_can_view()}
+
+        @app.context_processor
+        def inject_deposit_page_description():
+            descriptions = {
+                "invenio_communities.communities_search": _(
+                    "Browse and discover all communities"
+                ),
+                "invenio_records_marc21.deposit_create": _("Deposit a publication"),
+                "invenio_records_marc21.deposit_edit": _("Deposit a publication"),
+                "invenio_catalogue_marc21.deposit_create": _(
+                    "Deposit a catalogue record"
+                ),
+                "invenio_catalogue_marc21.deposit_edit": _(
+                    "Deposit a catalogue record"
+                ),
+                "invenio_records_lom.deposit_create": _(
+                    "Deposit an educational resource"
+                ),
+                "invenio_records_lom.deposit_edit": _(
+                    "Deposit an educational resource"
+                ),
+            }
+            desc = descriptions.get(request.endpoint)
+            return {"page_description": desc} if desc else {}
 
     def init_config(self, app):
         """Initialize configuration."""

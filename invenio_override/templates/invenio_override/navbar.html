@@ -139,6 +139,12 @@
             {% endif %}
             <div class="header-topbar-dropdown-divider"></div>
             <a href="/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Research Result") }}</a>
+            {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
+              <a href="/publications/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Publication") }}</a>
+            {% endif %}
+            {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
+              <a href="/oer/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Educational Resource") }}</a>
+            {% endif %}
           </div>
         </div>
         <div class="header-topbar-dropdown">
