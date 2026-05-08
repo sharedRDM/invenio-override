@@ -177,6 +177,15 @@ OVERRIDE_PRODUCTION = False
     has to be 'INVENIO_OVERRIDE_PRODUCTION'.
 """
 
+OVERRIDE_INSTANCE_TYPE = "production"
+"""Type of the instance. Controls the banner shown at the top of every page.
+
+Available values:
+- ``production``: no banner shown
+- ``test``: yellow banner
+- ``demo``: orange banner
+"""
+
 # ============================================================================
 # Routing Configuration
 # ============================================================================
