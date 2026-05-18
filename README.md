@@ -18,18 +18,20 @@ An InvenioRDM package based on [InvenioRDM](https://inveniosoftware.org/products
 
 `invenio-override` is installed as a package in your InvenioRDM instance. Each institution provides their own theme on top of it. Same package, different institutions.
 
+**Features:**
+
+- Custom header template
+- Custom footer template
+- Custom login/signup templates
+- Custom frontpage template
+- Custom contact template
+- Overridden theme
+
 ---
 
-## How it works
+## Configuration
 
-In your InvenioRDM instance, create a theme folder (e.g. `themes/TUG/`) with:
-- `variables.less` — institution colors and typography
-- `overrides.less` — component-level tweaks
-- `invenio.cfg` — branding, enabled features, footer links
-
-At build time the LESS files are applied on top of the base theme. Everything else is configured at runtime via `invenio.cfg`.
-
-See [`invenio.cfg.example`](invenio.cfg.example) for all available `OVERRIDE_*` variables.
+All available `OVERRIDE_*` configuration variables with descriptions and default values are documented in [`invenio.cfg.example`](invenio.cfg.example). Copy the relevant sections into your instance's `invenio.cfg` and adjust the values for your institution.
 
 ---
 
@@ -39,4 +41,3 @@ See [`invenio.cfg.example`](invenio.cfg.example) for all available `OVERRIDE_*` 
 - [invenio-curations](https://github.com/tu-graz-library/invenio-curations)
 - [invenio-records-lom](https://github.com/tu-graz-library/invenio-records-lom) (OER)
 - [invenio-records-marc21](https://github.com/tu-graz-library/invenio-records-marc21) (Publications)
-

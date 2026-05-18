@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2020-2023 Graz University of Technology.
+# Copyright (C) 2020-2026 Graz University of Technology.
 #
 # invenio-override is free software; you can redistribute it and/or
 # modify it under the terms of the MIT License; see LICENSE file for more
@@ -95,24 +95,8 @@ class InvenioOverride(object):
 
 def finalize_app(app):
     """Finalize app."""
-    apply_demo_mode(app)
     modify_user_dashboard(app)
     guard_view_functions(app)
-
-
-def apply_demo_mode(app):
-    """Apply demo mode config overrides."""
-    if not app.config.get("DEMO_MODE"):
-        return
-
-    demo_file = app.config.get("DEMO_CONFIG_FILE")
-    if demo_file:
-        app.config.from_pyfile(demo_file, silent=False)
-        return
-
-    demo = app.config.get("DEMO_MODE_CONFIG", {})
-    for k, v in demo.items():
-        app.config[k] = v
 
 
 def modify_user_dashboard(app):

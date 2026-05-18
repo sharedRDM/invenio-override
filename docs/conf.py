@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) 2020-2023 Graz University of Technology.
-# Copyright (C) 2024 Shared RDM.
+# Copyright (C) 2020-2026 Graz University of Technology.
 #
 # invenio-override is free software; you can redistribute it and/or
 # modify it under the terms of the MIT License; see LICENSE file for more
@@ -46,8 +45,8 @@ master_doc = "index"
 
 # General information about the project.
 project = "invenio-override"
-copyright = "2020, Shared RDM"
-author = "Shared RDM"
+copyright = "2020, Graz University of Technology"
+author = "Graz University of Technology"
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -243,7 +242,7 @@ latex_documents = [
         master_doc,
         "invenio-override.tex",
         "invenio-override Documentation",
-        "Shared RDM",
+        "Graz University of Technology",
         "manual",
     ),
 ]
