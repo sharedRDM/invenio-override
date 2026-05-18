@@ -8,37 +8,35 @@
 
 # invenio-override
 
-[![CI](https://github.com/sharedRDM/invenio-override/workflows/CI/badge.svg)](https://github.com/sharedRDM/invenio-override/actions)
+[![CI](https://github.com/tu-graz-library/invenio-override/workflows/CI/badge.svg)](https://github.com/tu-graz-library/invenio-override/actions)
 [![PyPI downloads](https://img.shields.io/pypi/dm/invenio-override.svg)](https://pypi.python.org/pypi/invenio-override)
-[![Release](https://img.shields.io/github/tag/sharedRDM/invenio-override.svg)](https://github.com/sharedRDM/invenio-override/releases)
-[![License](https://img.shields.io/github/license/sharedRDM/invenio-override.svg)](https://github.com/sharedRDM/invenio-override/blob/master/LICENSE)
-[![Docs](https://readthedocs.org/projects/invenio-override/badge/?version=latest)](https://invenio-override.readthedocs.io/en/latest/?badge=latest)
+[![Release](https://img.shields.io/github/tag/tu-graz-library/invenio-override.svg)](https://github.com/tu-graz-library/invenio-override/releases)
+[![License](https://img.shields.io/github/license/tu-graz-library/invenio-override.svg)](https://github.com/tu-graz-library/invenio-override/blob/master/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-Override InvenioRDM theme.
+An InvenioRDM package based on [InvenioRDM](https://inveniosoftware.org/products/rdm/), built and maintained by [Graz University of Technology](https://www.tugraz.at).
 
-**Features:**
+`invenio-override` is installed as a package in your InvenioRDM instance. Each institution provides their own theme on top of it. Same package, different institutions.
 
-- Custom header template
-- Custom footer template
-- Custom login/signup templates
-- Custom frontpage template
-- Custom contact template
-- Overridden theme
+---
 
-## Configuration
+## How it works
 
-All available `OVERRIDE_*` configuration variables with descriptions and
-default values are documented in [`invenio.cfg.example`](invenio.cfg.example).
-Copy the relevant sections into your instance's `invenio.cfg` and adjust
-the values for your institution.
+In your InvenioRDM instance, create a theme folder (e.g. `themes/TUG/`) with:
+- `variables.less` — institution colors and typography
+- `overrides.less` — component-level tweaks
+- `invenio.cfg` — branding, enabled features, footer links
 
-## Deployment
+At build time the LESS files are applied on top of the base theme. Everything else is configured at runtime via `invenio.cfg`.
 
-For cluster setup and operations see [themes/K3S-OPS.md](themes/K3S-OPS.md).
+See [`invenio.cfg.example`](invenio.cfg.example) for all available `OVERRIDE_*` variables.
 
-## Further documentation
+---
 
-<!-- TODO: expand this section after the PR is merged -->
+## Supports
 
-https://invenio-override.readthedocs.io/
+- [invenio-global-search](https://github.com/tu-graz-library/invenio-global-search)
+- [invenio-curations](https://github.com/tu-graz-library/invenio-curations)
+- [invenio-records-lom](https://github.com/tu-graz-library/invenio-records-lom) (OER)
+- [invenio-records-marc21](https://github.com/tu-graz-library/invenio-records-marc21) (Publications)
+
