@@ -30,6 +30,7 @@ recursive-include docs *.txt
 recursive-include docs Makefile
 recursive-include invenio_override *.html
 recursive-include invenio_override *.js
+recursive-include invenio_override *.jsx
 recursive-include invenio_override *.json
 recursive-include invenio_override *.png
 recursive-include invenio_override *.scss
