@@ -20,6 +20,7 @@ overrideStore.add(
   "InvenioAppRdm.DashboardCommunities.SearchApp.results",
   CommunitiesResults,
 );
+overrideStore.add("SearchApp.resultOptions", () => null);
 
 /* sticky notification setup for test instance */
 $(".ui.sticky.instance-banner").sticky({

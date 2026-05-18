@@ -7,8 +7,9 @@
 
   Overrides: invenio_records_lom/uploads.html
   Changes:
-    - Replaced inline button with mobile action bar + JS-injected desktop
-      circle button, matching the RDM uploads page layout.
+    - Added mobile action bar with "New upload" button.
+    - Added desktop "New upload" circle button injected via JS into the
+      React search row after render.
 #}
 {%- extends config.LOM_BASE_TEMPLATE %}
 {%- set active_dashboard_menu_item = "OER" %}
