@@ -7,6 +7,23 @@
 
 Changes
 =======
+Version v1.0.0 (release 2026-05-19)
+
+- feat: complete UI redesign — new frontpage, header, navbar, dashboard
+- feat: mobile responsive layout
+- feat: search type switcher with query persistence across resource types
+- feat: permission-based dashboard navigation circles
+- feat: design tokens (LESS variables) for consistent theming
+- feat: OER uploads page matching Research Results layout
+- feat: generic error page templates (404, 500, 423)
+- feat: deposit page descriptions via context processor
+- feat: SAML login option
+- feat: admin theme improvements
+- fix: duplicate result count on search pages
+- fix: remove double banner
+- chore: upgrade to invenio-app-rdm v14
+- chore: cleanup and documentation update
+
 Version v0.0.7 (release 2025-02-11)
 
 - refactor: overview responsiveness on the front page
