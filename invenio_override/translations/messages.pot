@@ -8,29 +8,49 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-05-08 08:26+0200\n"
+"POT-Creation-Date: 2026-05-21 11:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: invenio_override/config.py:288
+#: invenio_override/config.py:296
 msgid "German"
 msgstr ""
 
-#: invenio_override/config.py:301
+#: invenio_override/config.py:309
 msgid "Welcome to The Repository!"
 msgstr ""
 
-#: invenio_override/ext.py:87
+#: invenio_override/ext.py:66
+msgid "Browse and discover all communities"
+msgstr ""
+
+#: invenio_override/ext.py:68 invenio_override/ext.py:69
+msgid "Deposit a publication"
+msgstr ""
+
+#: invenio_override/ext.py:71 invenio_override/ext.py:74
+msgid "Deposit a catalogue record"
+msgstr ""
+
+#: invenio_override/ext.py:77
+msgid "Manage and publish your openly licensed educational materials"
+msgstr ""
+
+#: invenio_override/ext.py:80 invenio_override/ext.py:83
+msgid "Deposit an educational resource"
+msgstr ""
+
+#: invenio_override/ext.py:129
 #: invenio_override/templates/invenio_override/overview.html:10
 msgid "Overview"
 msgstr ""
 
-#: invenio_override/ext.py:93
+#: invenio_override/ext.py:135
 msgid "My dashboard"
 msgstr ""
 
@@ -43,7 +63,7 @@ msgid "The resource that is being accessed is locked."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/accounts/accounts_base.html:27
-#: invenio_override/templates/invenio_override/accounts/login_user.html:12
+#: invenio_override/templates/invenio_override/accounts/login_user.html:11
 #: invenio_override/templates/invenio_override/base.html:27
 msgid "Invenio"
 msgstr ""
@@ -120,8 +140,8 @@ msgid "More"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/communities_frontpage.html:9
-#: invenio_override/templates/invenio_override/navbar.html:146
-#: invenio_override/templates/invenio_override/navbar.html:149
+#: invenio_override/templates/invenio_override/navbar.html:152
+#: invenio_override/templates/invenio_override/navbar.html:155
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/communities.html:17
 msgid "Communities"
 msgstr ""
@@ -147,42 +167,42 @@ msgid "New communities"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:9
-#: invenio_override/templates/invenio_override/navbar.html:191
+#: invenio_override/templates/invenio_override/navbar.html:197
 msgid "Need help?"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:12
-#: invenio_override/templates/invenio_override/navbar.html:202
+#: invenio_override/templates/invenio_override/navbar.html:208
 msgid "Contact us"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:18
-#: invenio_override/templates/invenio_override/navbar.html:208
+#: invenio_override/templates/invenio_override/navbar.html:214
 msgid "Contact our Help Service"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:21
-#: invenio_override/templates/invenio_override/navbar.html:193
+#: invenio_override/templates/invenio_override/navbar.html:199
 msgid "We can help with:"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:23
-#: invenio_override/templates/invenio_override/navbar.html:195
+#: invenio_override/templates/invenio_override/navbar.html:201
 msgid "Upload your research results, software, preprints, etc."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:24
-#: invenio_override/templates/invenio_override/navbar.html:196
+#: invenio_override/templates/invenio_override/navbar.html:202
 msgid "Increase upload limit beyond our default policy of 10GB."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:25
-#: invenio_override/templates/invenio_override/navbar.html:197
+#: invenio_override/templates/invenio_override/navbar.html:203
 msgid "Establish contact with data stewards."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:26
-#: invenio_override/templates/invenio_override/navbar.html:198
+#: invenio_override/templates/invenio_override/navbar.html:204
 msgid "Find individual solutions."
 msgstr ""
 
@@ -218,7 +238,7 @@ msgid "Reference Guide"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/footer_mug.html:49
-#: invenio_override/templates/invenio_override/navbar.html:166
+#: invenio_override/templates/invenio_override/navbar.html:172
 msgid "Search Guide"
 msgstr ""
 
@@ -339,7 +359,7 @@ msgstr ""
 
 #: invenio_override/templates/invenio_override/header.html:47
 #: invenio_override/templates/invenio_override/header_frontpage.html:21
-#: invenio_override/templates/invenio_override/header_frontpage.html:194
+#: invenio_override/templates/invenio_override/header_frontpage.html:169
 #: invenio_override/templates/invenio_override/resource_overview.html:37
 #: invenio_override/templates/invenio_override/search_nav.html:15
 #: invenio_override/templates/invenio_records_marc21/search/search.html:8
@@ -379,7 +399,7 @@ msgid "Search and discover open educational resources."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/header_frontpage.html:13
-#: invenio_override/templates/invenio_override/header_frontpage.html:176
+#: invenio_override/templates/invenio_override/header_frontpage.html:151
 #: invenio_override/templates/invenio_override/navbar.html:132
 #: invenio_override/templates/invenio_override/resource_overview.html:20
 #: invenio_override/templates/invenio_override/search.html:8
@@ -388,13 +408,12 @@ msgid "Research Results"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/header_frontpage.html:30
-#: invenio_override/templates/invenio_override/header_frontpage.html:214
+#: invenio_override/templates/invenio_override/header_frontpage.html:189
 #: invenio_override/templates/invenio_override/navbar.html:134
 #: invenio_override/templates/invenio_override/resource_overview.html:52
 #: invenio_override/templates/invenio_override/search_nav.html:18
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:16
 #: invenio_override/templates/invenio_records_lom/search.html:8
-#: invenio_override/templates/invenio_records_lom/uploads.html:15
+#: invenio_override/templates/invenio_records_lom/uploads.html:16
 msgid "Educational Resources"
 msgstr ""
 
@@ -403,19 +422,19 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:78
+#: invenio_override/templates/invenio_override/header_frontpage.html:53
 msgid "Search repository"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:162
+#: invenio_override/templates/invenio_override/header_frontpage.html:137
 msgid "Search research results"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:182
+#: invenio_override/templates/invenio_override/header_frontpage.html:157
 msgid "Search publications"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:201
+#: invenio_override/templates/invenio_override/header_frontpage.html:176
 msgid "Search educational resources"
 msgstr ""
 
@@ -440,28 +459,35 @@ msgstr ""
 msgid "Upload Research Result"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:150
+#: invenio_override/templates/invenio_override/navbar.html:143
+msgid "Upload Publication"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:146
+msgid "Upload Educational Resource"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:156
 msgid "All Communities"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:151
+#: invenio_override/templates/invenio_override/navbar.html:157
 msgid "New Community"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:157
+#: invenio_override/templates/invenio_override/navbar.html:163
 msgid "Administration"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:163
+#: invenio_override/templates/invenio_override/navbar.html:169
 msgid "Help"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:170
+#: invenio_override/templates/invenio_override/navbar.html:176
 msgid "Contact"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:213
-#: invenio_override/templates/semantic-ui/invenio_theme/macros/messages.html:31
+#: invenio_override/templates/invenio_override/navbar.html:219
 msgid "Close"
 msgstr ""
 
@@ -561,7 +587,6 @@ msgid "Clear search"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/accounts/header_login.html:13
-#: invenio_override/templates/invenio_override/accounts/login_user.html:76
 #: invenio_override/templates/invenio_override/accounts/register_user.html:69
 msgid "Sign up"
 msgstr ""
@@ -570,42 +595,37 @@ msgstr ""
 msgid "Log in"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/header_login.html:41
+#: invenio_override/templates/invenio_override/accounts/header_login.html:39
 msgid "Sign out"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:15
+#: invenio_override/templates/invenio_override/accounts/login_user.html:14
 msgid "Log in to"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:16
+#: invenio_override/templates/invenio_override/accounts/login_user.html:15
 msgid "Access and manage your research data."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:38
+#: invenio_override/templates/invenio_override/accounts/login_user.html:32
 #, python-format
 msgid "Log in with %(title)s"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:47
+#: invenio_override/templates/invenio_override/accounts/login_user.html:43
 #: invenio_override/templates/invenio_override/accounts/register_user.html:45
 msgid "Or"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:53
+#: invenio_override/templates/invenio_override/accounts/login_user.html:54
 msgid "Log in with repository credentials"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:64
+#: invenio_override/templates/invenio_override/accounts/login_user.html:68
 msgid "Log In"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:75
-#, python-format
-msgid "New to %(sitename)s?"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/accounts/login_user.html:83
+#: invenio_override/templates/invenio_override/accounts/login_user.html:72
 msgid "Forgot password?"
 msgstr ""
 
@@ -656,78 +676,12 @@ msgstr ""
 msgid "Sign up with repository credentials"
 msgstr ""
 
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:17
-#: invenio_override/templates/invenio_records_lom/records/deposit.html:21
-#: invenio_override/templates/invenio_records_lom/uploads.html:16
+#: invenio_override/templates/invenio_records_lom/uploads.html:17
 msgid "Manage and publish your openly licensed educational materials."
 msgstr ""
 
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:30
-msgid ""
-"\"Open Educational Resources (OER) are open educational materials, i.e. "
-"teaching and learning materials that\n"
-"          are freely accessible and, thanks to appropriate licensing (or "
-"because they are in the public domain), may be\n"
-"          edited, further developed and distributed without additional "
-"permission.\""
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:35
-msgid "Bündnis Freie Bildung, 2015"
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:37
-msgid "Permission required!"
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:40
-msgid ""
-"Here you can upload your openly licensed teaching and learning materials "
-"(Open Educational Resources, OER for\n"
-"          short). By doing this, you can archive them sustainably and "
-"make them publicly accessible and usable to others.\n"
-"          Furthermore, all open educational resources uploaded here are "
-"automatically transferred to <a href=\"oerhub.at\">OERhub.at</a> - a\n"
-"          national search engine for OER - in order to reach an even "
-"greater audience reach."
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:47
-msgid ""
-"To use the upload feature, have your account activated by sending your "
-"OER certificate issued by the national\n"
-"          certification body to <a "
-"href=\"mailto:telucation@tugraz.at\">telucation@tugraz.at</a>."
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:52
-msgid ""
-"Not yet certified? Members of Graz University of Technology are required "
-"to obtain the OER certificate from\n"
-"          fnma at Graz University of Technology, which you can obtain as "
-"part of the in-house training. Please register\n"
-"          via your business card in <a "
-"href=\"online.tugraz.at\">TUGRAZonline</a>."
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:58
-msgid ""
-"As a member of another university, visit the information page on OER "
-"certification to find a corresponding\n"
-"          offer at your university and submit your certificate to <a "
-"href=\"mailto:telucation@tugraz.at\">telucation@tugraz.at</a>,\n"
-"          after which an upload is possible."
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/not_licensed_text.html:64
-msgid ""
-"For further information, please contact the OU Educational Technology "
-"directly at +43(316)873-8577 or write an email to <a "
-"href=\"mailto:telucation@tugraz.at\">telucation@tugraz.at</a>."
-msgstr ""
-
 #: invenio_override/templates/invenio_records_lom/uploads.html:31
-#: invenio_override/templates/invenio_records_lom/uploads.html:48
+#: invenio_override/templates/invenio_records_lom/uploads.html:47
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/records/deposit.html:26
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/uploads.html:30
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/uploads.html:34
@@ -737,20 +691,8 @@ msgid "New upload"
 msgstr ""
 
 #: invenio_override/templates/invenio_records_lom/uploads.html:32
-#: invenio_override/templates/invenio_records_lom/uploads.html:49
+#: invenio_override/templates/invenio_records_lom/uploads.html:48
 msgid "Share your educational resources"
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/records/deposit.html:15
-msgid "New Version of OER Upload"
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/records/deposit.html:17
-msgid "New OER Upload"
-msgstr ""
-
-#: invenio_override/templates/invenio_records_lom/records/deposit.html:19
-msgid "Edit OER Upload"
 msgstr ""
 
 #: invenio_override/templates/invenio_records_marc21/search/search.html:9
