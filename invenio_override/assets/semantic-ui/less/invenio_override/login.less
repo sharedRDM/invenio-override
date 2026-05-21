@@ -34,6 +34,119 @@
 }
 
 /* ======================================
+   SSO / credentials button
+====================================== */
+
+.login-card {
+  padding: 1.75rem !important;
+}
+
+.login-card-title {
+  font-size: @font-size-xl;
+  font-weight: 700;
+  color: @primaryText;
+  margin: 0 0 0.75rem 0;
+  text-align: center;
+}
+
+.login-sso-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.9rem 1.25rem;
+  margin-bottom: 0.6rem;
+  background: #f4f4f4;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: @radiusCard;
+  color: @primaryText;
+  font-size: @font-size-base;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    background: #ebebeb;
+    border-color: rgba(0, 0, 0, 0.2);
+    color: @primaryText;
+    text-decoration: none;
+  }
+
+  img {
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+  }
+}
+
+.login-accordion {
+  box-shadow: none !important;
+  border: none !important;
+  background: transparent !important;
+
+  .title.login-credentials-title {
+    border: none !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+
+    span {
+      padding: 0.5rem 1.25rem;
+    }
+
+    i.dropdown.icon {
+      font-size: 1.1rem !important;
+      width: 22px;
+      height: 22px;
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      margin: 0 1.25rem 0 0 !important;
+      color: @greyDark;
+      flex-shrink: 0;
+      float: none !important;
+    }
+  }
+}
+
+.login-credentials-content {
+  padding: 0 !important;
+  overflow: hidden !important;
+
+  form {
+    padding-top: 1.25rem;
+  }
+}
+
+.login-divider {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  color: @recordLightText;
+  font-size: @font-size-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  span {
+    padding: 0 0.75rem;
+  }
+}
+
+.login-forgot {
+  text-align: right;
+  margin-top: 0.75rem;
+  font-size: @font-size-sm;
+}
+
+/* ======================================
    Responsive — column order on small screens
 ====================================== */
 @media (max-width: 767px) {
