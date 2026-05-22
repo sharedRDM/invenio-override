@@ -15,6 +15,7 @@
 {%- block css %}
   {{ super() }}
   <style>body{opacity:0;transition:opacity .15s ease}.frontpage-hero-section,.frontpage-below-hero{opacity:0}</style>
+  <noscript><style>body{opacity:1}</style></noscript>
   <script>document.addEventListener('DOMContentLoaded',function(){document.body.style.opacity='1'});</script>
 {%- endblock css %}
 {%- block page_header %} {%- include "invenio_override/header_frontpage.html" %}

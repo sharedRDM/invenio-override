@@ -98,11 +98,7 @@
     <div class="ui container">
       {%- block frontpage_hero %}{%- endblock frontpage_hero %}
         {%- block frontpage_form %}
-          <div class="frontpage-hero-layout"
-               style="max-width:1200px;
-                      margin:0 auto;
-                      justify-content:flex-start;
-                      gap:6rem">
+          <div class="frontpage-hero-layout">
             {# Left: title + search #}
             <div class="frontpage-hero-left">
               {# <div class="hero-trust-badges">
@@ -125,11 +121,8 @@
               </div>
             </div>
             {# Right: pillar icons in a vertical column #}
-            <div class="frontpage-hero-right" style="margin-left:auto;">
-              <div class="frontpage-pillars"
-                   style="flex-direction:column;
-                          gap:1rem;
-                          align-items:center">
+            <div class="frontpage-hero-right">
+              <div class="frontpage-pillars">
                 <a href="/records/search"
                    class="frontpage-pillar"
                    data-hero-group="rdm"

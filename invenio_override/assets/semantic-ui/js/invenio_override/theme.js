@@ -33,7 +33,13 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Frontpage search bar */
   const frontpageSearchbar = document.getElementById("frontpage-search-bar");
   if (frontpageSearchbar) {
-    const searchBarOptions = JSON.parse(frontpageSearchbar.dataset.options);
+    let searchBarOptions;
+    try {
+      searchBarOptions = JSON.parse(frontpageSearchbar.dataset.options);
+    } catch (e) {
+      console.warn("frontpage-search-bar: invalid data-options JSON", e);
+    }
+    if (!searchBarOptions) return;
     ReactDOM.render(
       <div className="ui fluid input frontpage-search-container">
         <MultipleOptionsSearchBar
