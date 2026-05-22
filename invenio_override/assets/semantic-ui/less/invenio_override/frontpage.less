@@ -40,7 +40,7 @@ h2 {
 .frontpage-hero-section {
   background: transparent;
   border-bottom: none;
-  padding: 6rem 0 2rem;
+  padding: 6rem 10rem 2rem;
   text-align: center;
   min-height: 380px;
   display: flex;
@@ -196,7 +196,7 @@ h2 {
   width: 100%;
   margin-top: 1.75rem;
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 
 /* The component renders .ui.search > .ui.icon.input */
@@ -295,18 +295,19 @@ h2 {
 }
 
 /* ======================================
-   Frontpage hero — two-column layout
+   Frontpage hero
 ====================================== */
 .frontpage-hero-layout {
   display: flex;
-  gap: 3.5rem;
   align-items: center;
-  justify-content: center;
-  padding: 0.5rem 0 1.5rem;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 0.5rem 1rem 1.5rem;
 }
 
 .frontpage-hero-left {
-  flex: 0 1 520px;
+  flex: 1 1 auto;
+  max-width: 600px;
   min-width: 0;
 }
 
@@ -323,7 +324,7 @@ h2 {
 }
 
 /* ======================================
-   Frontpage pillars — vertical stack on right
+   Frontpage pillars
 ====================================== */
 .frontpage-pillars {
   display: flex;
@@ -389,10 +390,6 @@ h2 {
   transition: color 0.2s ease;
   white-space: nowrap;
 }
-
-/* ======================================
-   Responsive — stack on tablet/mobile
-====================================== */
 
 /* ======================================
    Below-hero gradient continuation
@@ -789,18 +786,33 @@ h2 {
 }
 
 /* ======================================
-   Responsive — mobile-first breakpoints
+   Responsive
 ====================================== */
+@media screen and (max-width: 1287px) {
+  .frontpage-hero-section {
+    padding: 6rem 4rem 2rem;
+  }
+}
+
 @media screen and (max-width: 991.9px) {
+  .frontpage-hero-section {
+    padding: 3rem 1rem 2rem;
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 767.9px) {
   .frontpage-hero-layout {
     flex-direction: column;
     gap: 2rem;
     align-items: center;
+    padding: 0.5rem 1rem 1.5rem;
   }
 
   .frontpage-hero-left {
-    width: 100%;
+    max-width: 100%;
     text-align: center;
+    margin: 0 auto;
   }
 
   .frontpage-search-wrapper {
