@@ -16,16 +16,17 @@
     </div>
   </div>
   {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
+  {%- set _flash_html = flashed_messages() %}
   <div class="ui container">
     <div class="login-page-container">
       <div class="login-card">
         {%- block form_header %}{%- endblock form_header %}
-          <div class="login-flash-messages">{{ flashed_messages() }}</div>
+          {%- if _flash_html %}<div class="login-flash-messages">{{ _flash_html }}</div>{%- endif %}
           {# OAuth SSO buttons #}
           {% if config.OAUTHCLIENT_REMOTE_APPS %}
             {%- set allowed = config.get("OVERRIDE_LOGIN_OAUTH_PROVIDERS") %}
             {% for name, app in config.OAUTHCLIENT_REMOTE_APPS.items() %}
-              {% if not allowed or name in allowed %}
+              {% if allowed is none or name in allowed %}
                 <a class="login-sso-button"
                    href="{{ url_for('invenio_oauthclient.login', remote_app=name, next=request.args.get('next') or request.referrer) }}">
                   <span>{{ _('Log in with %(title)s', title=app['title']) }}</span>
@@ -50,7 +51,8 @@
               {%- with form = login_user_form %}
                 {%- set has_sso = config.OAUTHCLIENT_REMOTE_APPS or config.EDUGAIN_LOGIN_ENABLED %}
                 {%- set accordion_active = "active" if form.errors else ("" if has_sso else "active") %}
-                <div class="ui fluid accordion login-accordion">
+                {%- set has_above = _flash_html or has_sso %}
+                <div class="ui fluid accordion login-accordion{% if has_above %} has-above{% endif %}">
                   <div class="title {{ accordion_active }} login-sso-button login-credentials-title">
                     <span>{{ _("Log in with repository credentials") }}</span>
                     <i class="dropdown icon"></i>
