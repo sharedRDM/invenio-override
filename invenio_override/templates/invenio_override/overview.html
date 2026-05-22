@@ -18,6 +18,8 @@
     <div id="dashboard-overview"
          data-show-lom="{{ 'true' if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES else 'false' }}"
          data-show-curations="{{ 'true' if current_menu.submenu('dashboard').submenu('curation-overview').visible else 'false' }}"
-         data-show-publications="{{ 'true' if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH else 'false' }}"></div>
+         data-show-publications="{{ 'true' if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH else 'false' }}"
+         data-can-upload-publications="{{ 'true' if (config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH and (current_user.has_role('Marc21Manager') or current_user.has_role('Marc21Creator') or current_user.has_role('superuser-access') or current_user.has_role(config.OVERRIDE_AUTHENTICATED_ROLE))) else 'false' }}">
+    </div>
   </section>
 {%- endblock page_body %}

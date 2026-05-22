@@ -246,7 +246,7 @@ SECURITY_LOGIN_USER_TEMPLATE = "invenio_override/accounts/login_user.html"
 """Login template"""
 
 OAUTHCLIENT_LOGIN_USER_TEMPLATE = "invenio_override/accounts/login_user.html"
-"""Prevent invenio-oauthclient from wrapping our login template with its own."""
+"""Prevent invenio-oauthclient from wrapping the login template with its own."""
 
 SECURITY_REGISTER_USER_TEMPLATE = "invenio_override/accounts/register_user.html"
 """Sigup template"""

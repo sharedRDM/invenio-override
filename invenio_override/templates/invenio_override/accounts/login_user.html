@@ -17,41 +17,41 @@
   </div>
   {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
   {%- set _flash_html = flashed_messages() %}
+  {%- set _allowed = config.get("OVERRIDE_LOGIN_OAUTH_PROVIDERS") %}
+  {%- set _has_sso = config.OAUTHCLIENT_REMOTE_APPS and (_allowed is none or _allowed | length > 0) %}
   <div class="ui container">
     <div class="login-page-container">
       <div class="login-card">
         {%- block form_header %}{%- endblock form_header %}
           {%- if _flash_html %}<div class="login-flash-messages">{{ _flash_html }}</div>{%- endif %}
           {# OAuth SSO buttons #}
-          {% if config.OAUTHCLIENT_REMOTE_APPS %}
-            {%- set allowed = config.get("OVERRIDE_LOGIN_OAUTH_PROVIDERS") %}
-            {% for name, app in config.OAUTHCLIENT_REMOTE_APPS.items() %}
-              {% if allowed is none or name in allowed %}
+          {%- if config.OAUTHCLIENT_REMOTE_APPS %}
+            {%- for name, app in config.OAUTHCLIENT_REMOTE_APPS.items() %}
+              {%- if _allowed is none or name in _allowed %}
                 <a class="login-sso-button"
                    href="{{ url_for('invenio_oauthclient.login', remote_app=name, next=request.args.get('next') or request.referrer) }}">
                   <span>{{ _('Log in with %(title)s', title=app['title']) }}</span>
-                  {% if config.OVERRIDE_ICON %}
+                  {%- if config.OVERRIDE_ICON %}
                     <img src="{{ url_for('static', filename=config.OVERRIDE_ICON) }}"
                          height="22px"
                          alt="{{ app['title'] }}" />
-                  {% endif %}
+                  {%- endif %}
                 </a>
-              {% endif %}
-            {% endfor %}
-          {% endif %}
-          {# OR divider #}
-          {% if (config.OAUTHCLIENT_REMOTE_APPS or config.EDUGAIN_LOGIN_ENABLED) and config.ACCOUNTS_LOCAL_LOGIN_ENABLED %}
+              {%- endif %}
+            {%- endfor %}
+          {%- endif %}
+          {%- if _has_sso and config.ACCOUNTS_LOCAL_LOGIN_ENABLED %}
             <div class="login-divider">
               <span>{{ _("Or") }}</span>
             </div>
-          {% endif %}
-          {# Collapsible basic auth #}
+          {%- endif %}
           {%- block form_outer %}
+            {%- set _a = config.get("OVERRIDE_LOGIN_OAUTH_PROVIDERS") %}
+            {%- set _s = config.OAUTHCLIENT_REMOTE_APPS and (_a is none or _a | length > 0) %}
             {%- if config.ACCOUNTS_LOCAL_LOGIN_ENABLED %}
               {%- with form = login_user_form %}
-                {%- set has_sso = config.OAUTHCLIENT_REMOTE_APPS or config.EDUGAIN_LOGIN_ENABLED %}
-                {%- set accordion_active = "active" if form.errors else ("" if has_sso else "active") %}
-                {%- set has_above = _flash_html or has_sso %}
+                {%- set accordion_active = "active" if form.errors else ("" if _s else "active") %}
+                {%- set has_above = _flash_html | default(false) or _s %}
                 <div class="ui fluid accordion login-accordion{% if has_above %} has-above{% endif %}">
                   <div class="title {{ accordion_active }} login-sso-button login-credentials-title">
                     <span>{{ _("Log in with repository credentials") }}</span>
@@ -87,14 +87,14 @@
   {% block javascript %}
     {{ super() }}
     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.ui.message .close.icon').forEach(function (icon) {
-      icon.addEventListener('click', function () {
-        var msg = this.closest('.ui.message');
-        if (msg) msg.style.display = 'none';
-      });
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.ui.message .close.icon').forEach(function (icon) {
+    icon.addEventListener('click', function () {
+      var msg = this.closest('.ui.message');
+      if (msg) msg.style.display = 'none';
     });
-    $('.login-accordion').accordion();
   });
+  $('.login-accordion').accordion();
+});
     </script>
   {% endblock javascript %}

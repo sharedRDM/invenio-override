@@ -7,7 +7,7 @@
 #}
 {%- if config.ACCOUNTS %}
   {%- if not current_user.is_authenticated %}
-    {%- if config.SECURITY_REGISTERABLE %}
+    {%- if security.registerable %}
       <div class="short-menu-right-button">
         <a href="{{ url_for('security.register') }}"
            class="header-topbar-link no-decoration">{{ _ ("Sign up") }}</a>

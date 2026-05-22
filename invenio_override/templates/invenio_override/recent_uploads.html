@@ -36,9 +36,7 @@
           <i class="icon {{ r.access_status.icon }}"></i>
           {{ r.access_status.title_l10n }}
         </span>
-        {%- if not config.OVERRIDE_SHOW_RDM_SEARCH %}
-          <span class="ui small horizontal label schema">{{ r.original.schema_l10n }}</span>
-        {%- endif %}
+        <span class="ui small horizontal label schema">{{ r.original.schema_l10n }}</span>
       </div>
       <h4>
         <a href="{{ record_url }}">{{ r.metadata.titles[0] }}</a>

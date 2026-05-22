@@ -130,7 +130,7 @@
           </a>
           <div class="header-topbar-dropdown-menu">
             <a href="/me/uploads" class="header-topbar-dropdown-item">{{ _("Research Results") }}</a>
-            {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
+            {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH and current_user.is_authenticated %}
               <a href="/publications/search" class="header-topbar-dropdown-item">{{ _("Publications") }}</a>
             {% endif %}
             {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
@@ -142,10 +142,9 @@
             {% endif %}
             <div class="header-topbar-dropdown-divider"></div>
             <a href="/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Research Result") }}</a>
-            {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
-              {% if current_user.has_role("Marc21Manager") or current_user.has_role("Marc21Curator") %}
-                <a href="/publications/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Publication") }}</a>
-              {% endif %}
+            {%- set _can_upload_pub = current_user.has_role("Marc21Manager") or current_user.has_role("Marc21Creator") or current_user.has_role("superuser-access") or current_user.has_role(config.OVERRIDE_AUTHENTICATED_ROLE) %}
+            {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH and _can_upload_pub %}
+              <a href="/publications/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Publication") }}</a>
             {% endif %}
             {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
               <a href="/oer/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Educational Resource") }}</a>

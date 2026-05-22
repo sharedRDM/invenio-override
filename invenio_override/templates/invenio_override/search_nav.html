@@ -21,6 +21,12 @@
   {%- set _sw_options = [{"text": _("All"), "value": url_for("invenio_search_ui.search")}] + _sw_options %}
 {%- endif %}
 {%- if _sw_options | length > 1 %}
+  {%- set _active_text = namespace(value=_sw_options[0].text) %}
+  {%- for opt in _sw_options %}
+    {%- if request.path == opt.value.split('?')[0] %}
+      {%- set _active_text.value = opt.text %}
+    {%- endif %}
+  {%- endfor %}
   <div class="search-type-switcher rel-mb-2" role="search">
     <form id="search-switcher-form"
           class="search-switcher-form"
@@ -30,7 +36,7 @@
         <div id="search-switcher-type"
              class="ui inline dropdown search-switcher-dropdown"
              aria-label="{{ _('Search type') }}">
-          <span class="text"></span>
+          <span class="text">{{ _active_text.value }}</span>
           <i class="dropdown icon"></i>
           <div class="menu">
             {%- for opt in _sw_options %}

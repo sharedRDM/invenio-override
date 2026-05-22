@@ -53,7 +53,7 @@ const NAV_BOXES = [
     description: () => i18next.t("Deposit a publication"),
     icon: "book",
     url: "/publications/uploads/new",
-    marc21Only: true,
+    marc21UploadOnly: true,
     highlight: true,
   },
   {
@@ -71,12 +71,14 @@ export function DashboardOverview({
   showLom,
   showCurations,
   showPublications,
+  canUploadPublications,
 }) {
   const boxes = NAV_BOXES.filter(
     (box) =>
       (!box.lomOnly || showLom) &&
       (!box.curatorOnly || showCurations) &&
-      (!box.marc21Only || showPublications),
+      (!box.marc21Only || showPublications) &&
+      (!box.marc21UploadOnly || canUploadPublications),
   );
 
   return (
