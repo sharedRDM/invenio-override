@@ -12,6 +12,11 @@
 {%- from "invenio_override/macros/authors.html" import creators -%}
 {%- from "invenio_app_rdm/macros/records_list.html" import records_list %}
 {%- extends "invenio_app_rdm/frontpage.html" %}
+{%- block css %}
+  {{ super() }}
+  <style>body{opacity:0;transition:opacity .15s ease}.frontpage-hero-section,.frontpage-below-hero{opacity:0}</style>
+  <script>document.addEventListener('DOMContentLoaded',function(){document.body.style.opacity='1'});</script>
+{%- endblock css %}
 {%- block page_header %} {%- include "invenio_override/header_frontpage.html" %}
 {%- endblock page_header %}
 {%- block top_banner %}{%- endblock top_banner %}
