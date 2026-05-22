@@ -32,6 +32,14 @@ const NAV_BOXES = [
     curatorOnly: true,
   },
   {
+    key: "publications",
+    title: () => i18next.t("Publications"),
+    description: () => i18next.t("Browse and search publications"),
+    icon: "book",
+    url: "/publications/search",
+    marc21Only: true,
+  },
+  {
     key: "educational-resources",
     title: () => i18next.t("Educational Resources"),
     description: () => i18next.t("Your openly licensed educational materials"),

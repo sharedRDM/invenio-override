@@ -130,6 +130,9 @@
           </a>
           <div class="header-topbar-dropdown-menu">
             <a href="/me/uploads" class="header-topbar-dropdown-item">{{ _("Research Results") }}</a>
+            {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
+              <a href="/publications/search" class="header-topbar-dropdown-item">{{ _("Publications") }}</a>
+            {% endif %}
             {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
               <a href="/oer/uploads" class="header-topbar-dropdown-item">{{ _("Educational Resources") }}</a>
             {% endif %}
@@ -140,7 +143,9 @@
             <div class="header-topbar-dropdown-divider"></div>
             <a href="/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Research Result") }}</a>
             {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH %}
-              <a href="/publications/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Publication") }}</a>
+              {% if current_user.has_role("Marc21Manager") or current_user.has_role("Marc21Curator") %}
+                <a href="/publications/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Publication") }}</a>
+              {% endif %}
             {% endif %}
             {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES %}
               <a href="/oer/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Educational Resource") }}</a>
