@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function () {
     } catch (e) {
       console.warn("frontpage-search-bar: invalid data-options JSON", e);
     }
-    if (!searchBarOptions) return;
+    if (!searchBarOptions) {
+      return;
+    }
     ReactDOM.render(
       <div className="ui fluid input frontpage-search-container">
         <MultipleOptionsSearchBar
@@ -143,18 +145,26 @@ window.toggleVisibility = toggleVisibility;
 ====================================== */
 function initFacetCollapse() {
   // Use document-level delegation so it works for both desktop aside and mobile sidebar
-  if (document.body.dataset.facetCollapseReady) return;
+  if (document.body.dataset.facetCollapseReady) {
+    return;
+  }
   document.body.dataset.facetCollapseReady = "1";
 
   document.body.addEventListener("click", function (e) {
     const header = e.target.closest(
       "aside.column .ui.card.borderless.facet > .content > h2.header",
     );
-    if (!header) return;
-    if (e.target.closest("button")) return;
+    if (!header) {
+      return;
+    }
+    if (e.target.closest("button")) {
+      return;
+    }
 
     const card = header.closest(".ui.card.borderless.facet");
-    if (card.classList.contains("mt-0")) return;
+    if (card.classList.contains("mt-0")) {
+      return;
+    }
 
     card.classList.toggle("facet-collapsed");
   });
@@ -180,7 +190,9 @@ document.addEventListener("DOMContentLoaded", initSearchSwitcher);
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.querySelector(".header-mobile-toggle");
   const nav = document.querySelector(".header-mobile-nav");
-  if (!toggle || !nav) return;
+  if (!toggle || !nav) {
+    return;
+  }
 
   toggle.addEventListener("click", function (e) {
     e.stopPropagation();
@@ -203,10 +215,14 @@ document.addEventListener("DOMContentLoaded", function () {
       ":scope > .header-topbar-link .topbar-arrow",
     );
     const menu = dropdown.querySelector(".header-topbar-dropdown-menu");
-    if (!arrow || !menu) return;
+    if (!arrow || !menu) {
+      return;
+    }
 
     arrow.addEventListener("click", function (e) {
-      if (window.innerWidth >= 768) return;
+      if (window.innerWidth >= 768) {
+        return;
+      }
       e.preventDefault();
       e.stopPropagation();
       const isOpen = menu.style.display === "block";

@@ -9,7 +9,7 @@
 """invenio module for sharedRDM theme."""
 
 from flask import request
-from flask_login import login_required
+from flask_login import current_user, login_required
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
 
@@ -57,7 +57,27 @@ class InvenioOverride(object):
 
         @app.context_processor
         def inject_visibility():
-            return {"can_view_marc21": current_identity_can_view()}
+            can_upload_publications = bool(
+                app.config.get("OVERRIDE_SHOW_PUBLICATIONS_SEARCH")
+                and (
+                    current_user.has_role("Marc21Manager")
+                    or current_user.has_role("Marc21Creator")
+                    or current_user.has_role("superuser-access")
+                )
+            )
+            can_upload_oer = bool(
+                app.config.get("OVERRIDE_SHOW_EDUCATIONAL_RESOURCES")
+                and (
+                    current_user.has_role("oer_certified_user")
+                    or current_user.has_role("oer_curator")
+                    or current_user.has_role("superuser-access")
+                )
+            )
+            return {
+                "can_view_marc21": current_identity_can_view(),
+                "can_upload_publications": can_upload_publications,
+                "can_upload_oer": can_upload_oer,
+            }
 
         @app.context_processor
         def inject_deposit_page_description():

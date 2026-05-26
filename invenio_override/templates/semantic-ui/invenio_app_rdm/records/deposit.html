@@ -6,10 +6,8 @@
   details.
 
   Overrides: invenio_app_rdm/records/deposit.html
-  Changes:
-    - Added page_description for each deposit state (new upload, new version, edit)
-      so the page inner banner shows a subtitle below the title.
-    - Added record deletion and file modification hidden inputs.
+  Adds page_description for each deposit state (new upload / new version / edit)
+  so the page inner banner shows a subtitle below the title.
 #}
 {%- extends config.BASE_TEMPLATE %}
 {%- if community and community.theme and community.theme.enabled %}

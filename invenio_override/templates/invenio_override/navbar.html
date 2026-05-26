@@ -142,12 +142,10 @@
             {% endif %}
             <div class="header-topbar-dropdown-divider"></div>
             <a href="/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Research Result") }}</a>
-            {%- set _can_upload_pub = current_user.has_role("Marc21Manager") or current_user.has_role("Marc21Creator") or current_user.has_role("superuser-access") or current_user.has_role(config.OVERRIDE_AUTHENTICATED_ROLE) %}
-            {% if config.OVERRIDE_SHOW_PUBLICATIONS_SEARCH and _can_upload_pub %}
+            {% if can_upload_publications %}
               <a href="/publications/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Publication") }}</a>
             {% endif %}
-            {%- set _can_upload_oer = current_user.has_role("oer_certified_user") or current_user.has_role("oer_curator") or current_user.has_role("superuser-access") %}
-            {% if config.OVERRIDE_SHOW_EDUCATIONAL_RESOURCES and _can_upload_oer %}
+            {% if can_upload_oer %}
               <a href="/oer/uploads/new" class="header-topbar-dropdown-item">{{ _("Upload Educational Resource") }}</a>
             {% endif %}
           </div>
