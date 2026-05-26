@@ -57,6 +57,15 @@ const NAV_BOXES = [
     highlight: true,
   },
   {
+    key: "upload-educational-resource",
+    title: () => i18next.t("Upload Educational Resource"),
+    description: () => i18next.t("Deposit an educational resource"),
+    icon: "graduation cap",
+    url: "/oer/uploads/new",
+    lomUploadOnly: true,
+    highlight: true,
+  },
+  {
     key: "upload-dataset",
     title: () => i18next.t("Upload Research Result"),
     description: () =>
@@ -72,13 +81,15 @@ export function DashboardOverview({
   showCurations,
   showPublications,
   canUploadPublications,
+  canUploadOer,
 }) {
   const boxes = NAV_BOXES.filter(
     (box) =>
       (!box.lomOnly || showLom) &&
       (!box.curatorOnly || showCurations) &&
       (!box.marc21Only || showPublications) &&
-      (!box.marc21UploadOnly || canUploadPublications),
+      (!box.marc21UploadOnly || canUploadPublications) &&
+      (!box.lomUploadOnly || canUploadOer),
   );
 
   return (

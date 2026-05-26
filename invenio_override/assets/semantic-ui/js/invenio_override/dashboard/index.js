@@ -14,12 +14,14 @@ if (container) {
   const showPublications = container.dataset.showPublications === "true";
   const canUploadPublications =
     container.dataset.canUploadPublications === "true";
+  const canUploadOer = container.dataset.canUploadOer === "true";
   ReactDOM.render(
     <DashboardOverview
       showLom={showLom}
       showCurations={showCurations}
       showPublications={showPublications}
       canUploadPublications={canUploadPublications}
+      canUploadOer={canUploadOer}
     />,
     container,
   );
