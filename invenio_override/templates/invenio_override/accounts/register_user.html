@@ -14,7 +14,7 @@
       <p class="page-inner-banner-description">{{ _("Join the research data management platform.") }}</p>
     </div>
   </div>
-  {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
+  {%- from "invenio_override/macros/messages.html" import flashed_messages with context -%}
   <div class="ui container" style="padding-top: 1rem;">{{ flashed_messages() }}</div>
   <div class="ui container" style="margin-top: 1rem; margin-bottom: 2rem;">
     <div class="ui stackable two column grid">

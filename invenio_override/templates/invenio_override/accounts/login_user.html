@@ -15,7 +15,7 @@
       <p class="page-inner-banner-description">{{ _("Access and manage your research data.") }}</p>
     </div>
   </div>
-  {%- from "invenio_theme/macros/messages.html" import flashed_messages with context -%}
+  {%- from "invenio_override/macros/messages.html" import flashed_messages with context -%}
   {%- set _flash_html = flashed_messages() %}
   {%- set _allowed = config.get("OVERRIDE_LOGIN_OAUTH_PROVIDERS") %}
   {%- set _has_sso = config.OAUTHCLIENT_REMOTE_APPS and (_allowed is none or _allowed | length > 0) %}
