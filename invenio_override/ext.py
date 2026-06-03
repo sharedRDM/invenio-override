@@ -57,20 +57,20 @@ class InvenioOverride(object):
 
         @app.context_processor
         def inject_visibility():
+            publication_roles = app.config["OVERRIDE_PUBLICATIONS_UPLOAD_ROLES"]
+            oer_roles = app.config["OVERRIDE_OER_UPLOAD_ROLES"]
             can_upload_publications = bool(
                 app.config.get("OVERRIDE_SHOW_PUBLICATIONS_SEARCH")
                 and (
-                    current_user.has_role("Marc21Manager")
-                    or current_user.has_role("Marc21Creator")
-                    or current_user.has_role("superuser-access")
+                    current_user.has_role("superuser-access")
+                    or any(current_user.has_role(role) for role in publication_roles)
                 )
             )
             can_upload_oer = bool(
                 app.config.get("OVERRIDE_SHOW_EDUCATIONAL_RESOURCES")
                 and (
-                    current_user.has_role("oer_certified_user")
-                    or current_user.has_role("oer_curator")
-                    or current_user.has_role("superuser-access")
+                    current_user.has_role("superuser-access")
+                    or any(current_user.has_role(role) for role in oer_roles)
                 )
             )
             return {
