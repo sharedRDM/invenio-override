@@ -41,22 +41,6 @@ OVERRIDE_SHOW_PUBLICATIONS_SEARCH = False
 OVERRIDE_SHOW_EDUCATIONAL_RESOURCES = False
 """Enable or disable the educational resources global search feature."""
 
-OVERRIDE_PUBLICATIONS_UPLOAD_ROLES = []
-"""Roles that may upload publications, on top of ``superuser-access``.
-
-Empty by default; set the data-model roles downstream, e.g.::
-
-    OVERRIDE_PUBLICATIONS_UPLOAD_ROLES = ["Marc21Manager", "Marc21Creator"]
-"""
-
-OVERRIDE_OER_UPLOAD_ROLES = []
-"""Roles that may upload educational resources, on top of ``superuser-access``.
-
-Empty by default; set the data-model roles downstream, e.g.::
-
-    OVERRIDE_OER_UPLOAD_ROLES = ["oer_certified_user", "oer_curator"]
-"""
-
 OVERRIDE_SHOW_RDM_SEARCH = False
 """Force UI to show only Research Results (RDM) in search/overview components."""
 

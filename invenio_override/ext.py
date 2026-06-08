@@ -8,8 +8,8 @@
 
 """invenio module for sharedRDM theme."""
 
-from flask import request
-from flask_login import current_user, login_required
+from flask import g, request
+from flask_login import login_required
 from flask_menu import current_menu
 from invenio_i18n import lazy_gettext as _
 
@@ -17,6 +17,16 @@ try:
     from invenio_records_marc21.ui.theme import current_identity_can_view
 except (ImportError, AttributeError):
     current_identity_can_view = lambda: False
+
+try:
+    from invenio_records_marc21.proxies import current_records_marc21
+except ImportError:
+    current_records_marc21 = None
+
+try:
+    from invenio_records_lom.proxies import current_records_lom
+except ImportError:
+    current_records_lom = None
 
 from . import config
 from .views import (
@@ -57,20 +67,20 @@ class InvenioOverride(object):
 
         @app.context_processor
         def inject_visibility():
-            publication_roles = app.config["OVERRIDE_PUBLICATIONS_UPLOAD_ROLES"]
-            oer_roles = app.config["OVERRIDE_OER_UPLOAD_ROLES"]
+            # OVERRIDE_SHOW_* gates the feature; the data-model permission
+            # decides who may upload.
             can_upload_publications = bool(
                 app.config.get("OVERRIDE_SHOW_PUBLICATIONS_SEARCH")
-                and (
-                    current_user.has_role("superuser-access")
-                    or any(current_user.has_role(role) for role in publication_roles)
+                and current_records_marc21
+                and current_records_marc21.records_service.check_permission(
+                    g.identity, "create"
                 )
             )
             can_upload_oer = bool(
                 app.config.get("OVERRIDE_SHOW_EDUCATIONAL_RESOURCES")
-                and (
-                    current_user.has_role("superuser-access")
-                    or any(current_user.has_role(role) for role in oer_roles)
+                and current_records_lom
+                and current_records_lom.records_service.check_permission(
+                    g.identity, "handle_oer"
                 )
             )
             return {
@@ -84,6 +94,10 @@ class InvenioOverride(object):
             descriptions = {
                 "invenio_communities.communities_search": _(
                     "Browse and discover all communities"
+                ),
+                "invenio_app_rdm.help_search": _(
+                    "This guide explains how to write advanced search queries "
+                    "using easy to understand examples."
                 ),
                 "invenio_records_marc21.deposit_create": _("Deposit a publication"),
                 "invenio_records_marc21.deposit_edit": _("Deposit a publication"),
