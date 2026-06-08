@@ -38,6 +38,6 @@ jobs:
         with:
           python-version: '3.14'
       - name: Install djlint
-        run: pip install djlint
+        run: pip install "djlint~=1.36.4"
       - name: Check HTML templates
         run: djlint --check invenio_override/templates/

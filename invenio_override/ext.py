@@ -8,6 +8,8 @@
 
 """invenio module for sharedRDM theme."""
 
+from types import SimpleNamespace
+
 from flask import g, request
 from flask_login import login_required
 from flask_menu import current_menu
@@ -21,12 +23,16 @@ except (ImportError, AttributeError):
 try:
     from invenio_records_marc21.proxies import current_records_marc21
 except ImportError:
-    current_records_marc21 = None
+    current_records_marc21 = SimpleNamespace(
+        records_service=SimpleNamespace(check_permission=lambda *args, **kwargs: False)
+    )
 
 try:
     from invenio_records_lom.proxies import current_records_lom
 except ImportError:
-    current_records_lom = None
+    current_records_lom = SimpleNamespace(
+        records_service=SimpleNamespace(check_permission=lambda *args, **kwargs: False)
+    )
 
 from . import config
 from .views import (
@@ -71,14 +77,12 @@ class InvenioOverride(object):
             # decides who may upload.
             can_upload_publications = bool(
                 app.config.get("OVERRIDE_SHOW_PUBLICATIONS_SEARCH")
-                and current_records_marc21
                 and current_records_marc21.records_service.check_permission(
                     g.identity, "create"
                 )
             )
             can_upload_oer = bool(
                 app.config.get("OVERRIDE_SHOW_EDUCATIONAL_RESOURCES")
-                and current_records_lom
                 and current_records_lom.records_service.check_permission(
                     g.identity, "handle_oer"
                 )
