@@ -41,10 +41,11 @@
 #}
   {%- block page_inner_banner %}
     {%- set _path = request.path %}
-    {%- if (title or _path == '/publications/search') and not (_path.startswith('/records/') and not _path.startswith('/records/search')) %}
+    {%- set _is_community_detail = _path.startswith('/communities/') and _path not in ['/communities/search', '/communities/new'] %}
+    {%- if (title or _is_community_detail or _path == '/publications/search') and not (_path.startswith('/records/') and not _path.startswith('/records/search')) %}
       <div class="page-inner-banner">
         <div class="ui container">
-          <h1 class="page-inner-banner-title">{{ title or _("Publications") }}</h1>
+          <h1 class="page-inner-banner-title">{{ _("Community") if _is_community_detail else (title or _("Publications")) }}</h1>
           {%- if page_description %}
             <p class="page-inner-banner-description">{{ page_description }}</p>
           {%- elif _path == '/me/uploads' %}
@@ -61,6 +62,10 @@
             </p>
           {%- elif _path == '/communities/new' %}
             <p class="page-inner-banner-description">{{ _("Create a community to organize and share your research outputs.") }}</p>
+          {%- elif _is_community_detail %}
+            <p class="page-inner-banner-description">
+              {{ _("Browse and manage this community's records, members and requests.") }}
+            </p>
           {%- elif _path.startswith('/account/settings') %}
             <p class="page-inner-banner-description">{{ _("Manage your profile, security and connected applications.") }}</p>
           {%- elif _path == '/publications/search' %}
