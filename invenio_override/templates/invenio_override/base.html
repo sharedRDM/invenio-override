@@ -52,9 +52,7 @@
       {%- block css %}
         {{ webpack['theme.css'] }}
         {{ webpack['invenio-override-theme.css'] }}
-        <style>body{opacity:0;transition:opacity .15s ease}</style>
-        <noscript><style>body{opacity:1}</style></noscript>
-        <script>document.addEventListener('DOMContentLoaded',function(){document.body.style.opacity='1'});</script>
+        {% include "invenio_override/fouc_guard.html" %}
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
