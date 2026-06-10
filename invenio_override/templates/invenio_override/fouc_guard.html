@@ -1,0 +1,31 @@
+{#
+  Copyright (C) 2026 Graz University of Technology.
+
+  invenio-override is free software; you can redistribute it and/or
+  modify it under the terms of the MIT License; see LICENSE file for more
+  details.
+
+  App-wide FOUC guard. Hides the body until the client side widgets
+  have initialised, so the server rendered placeholders dont flash
+  before JS fills them in.
+#}
+<style>
+  body { opacity: 0; }
+  body.ready { opacity: 1; transition: opacity 0.15s ease; }
+</style>
+<noscript>
+  <style>body { opacity: 1; }</style>
+</noscript>
+<script>
+  (function () {
+    function reveal() {
+      if (document.body) document.body.classList.add("ready");
+    }
+    if (document.readyState === "complete") {
+      reveal();
+    } else {
+      window.addEventListener("load", reveal);
+    }
+    setTimeout(reveal, 1500);
+  })();
+</script>

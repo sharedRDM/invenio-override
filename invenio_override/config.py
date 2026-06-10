@@ -146,6 +146,12 @@ Example::
 OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 """Default base template"""
 
+BASE_TEMPLATE = "invenio_override/page.html"
+"""App-wide base template — adds the FOUC guard on top of invenio-app-rdm's page base."""
+
+THEME_BASE_TEMPLATE = "invenio_override/page.html"
+"""Keep THEME_BASE_TEMPLATE in sync with BASE_TEMPLATE."""
+
 OVERRIDE_ACCOUNT_BASE = "invenio_override/accounts/accounts_base.html"
 """Default account base template"""
 
