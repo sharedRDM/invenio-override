@@ -170,6 +170,9 @@ OVERRIDE_SAML_INSTITUTION = "TUGRAZ"
 OVERRIDE_ICON = "images/icon_use.png"
 """Icon used in login page"""
 
+OVERRIDE_EDUGAIN_ICON = "icons/eduGAIN-FavIcon-transparent.png"
+"""Icon used for EDUGAIN login option."""
+
 OVERRIDE_CONTACT_FORM = False
 """Enable/Disable Contact form."""
 

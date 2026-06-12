@@ -640,6 +640,10 @@ msgstr "Forschung teilen"
 msgid "Log in with %(title)s"
 msgstr "Warum %(title)s verwenden?"
 
+#: invenio_override/templates/invenio_override/accounts/login_user.html:48
+msgid "Log in with edugain"
+msgstr "Einloggen mit edugain"
+
 #: invenio_override/templates/invenio_override/accounts/login_user.html:45
 #: invenio_override/templates/invenio_override/accounts/register_user.html:45
 msgid "Or"

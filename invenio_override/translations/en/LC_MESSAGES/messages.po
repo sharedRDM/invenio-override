@@ -578,6 +578,10 @@ msgstr ""
 msgid "Log in with %(title)s"
 msgstr ""
 
+#: invenio_override/templates/invenio_override/accounts/login_user.html:48
+msgid "Log in with edugain"
+msgstr ""
+
 #: invenio_override/templates/invenio_override/accounts/login_user.html:45
 #: invenio_override/templates/invenio_override/accounts/register_user.html:45
 msgid "Or"
