@@ -144,6 +144,7 @@ OVERRIDE_RESOURCE_OVERVIEW = False  # Show resource overview section
 # OVERRIDE_FAVICON = "tug.ico"
 # OVERRIDE_PRODUCTION = True
 # OVERRIDE_ICON = "images/icon_use.png"
+# OVERRIDE_EDUGAIN_ICON = "icons/eduGAIN-FavIcon-transparent.png"
 # OVERRIDE_CONTACT_FORM = False
 # OVERRIDE_SHIBBOLETH = False
 # OVERRIDE_FRONTPAGE_RIGHT = False
