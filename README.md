@@ -37,7 +37,15 @@ All available `OVERRIDE_*` configuration variables with descriptions and default
 
 ## Supports
 
+**Default**
+- [invenio-rdm-records](https://github.com/inveniosoftware/invenio-rdm-records)
 - [invenio-global-search](https://github.com/tu-graz-library/invenio-global-search)
 - [invenio-curations](https://github.com/tu-graz-library/invenio-curations)
+
+**Optional extras**
 - [invenio-records-lom](https://github.com/tu-graz-library/invenio-records-lom) (OER)
 - [invenio-records-marc21](https://github.com/tu-graz-library/invenio-records-marc21) (Publications)
+- [invenio-edugain](https://github.com/tu-graz-library/invenio-edugain)
+  - Make sure to have `EDUGAIN_LOGIN_ENABLED = True` to see the edugain login option
+
+To install invenio-override with an extra: `uv pip install invenio-override[edugain]`
