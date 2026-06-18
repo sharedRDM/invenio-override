@@ -137,11 +137,33 @@
 }
 
 /* ======================================
+   Community list/search result item
+====================================== */
+.community-item .community-image,
+.community-item .ui.image.community-image {
+  width: 80px !important;
+  height: 80px !important;
+  min-width: 80px !important;
+  max-width: 80px !important;
+  overflow: hidden !important;
+  object-fit: contain !important;
+  flex-shrink: 0;
+}
+
+.community-item .community-image img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 80px !important;
+  max-height: 80px !important;
+  object-fit: contain !important;
+}
+
+/* ======================================
    Override community cards — clean grid
 ====================================== */
 .override-community-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: @contentGridGap;
   margin-bottom: @contentGridMarginV;
 }
@@ -169,17 +191,18 @@
 
 .override-community-card-logo {
   width: 100%;
-  height: 120px;
+  aspect-ratio: 1 / 1;
   overflow: hidden;
-  background: #f5f5f6;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.5rem;
 
   img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
   }
 }
 
