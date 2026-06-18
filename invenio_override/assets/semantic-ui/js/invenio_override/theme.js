@@ -235,3 +235,35 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+/* Frontpage tabbed section: Recent uploads <-> New communities.*/
+function initFrontpageTabs() {
+  const root = document.querySelector(".frontpage-tabbed");
+  if (!root) {
+    return;
+  }
+
+  const activate = (name) => {
+    root.querySelectorAll(".frontpage-tab").forEach((tab) => {
+      tab.classList.toggle("active", tab.dataset.tab === name);
+    });
+    root.querySelectorAll(".frontpage-tab-panel").forEach((panel) => {
+      panel.hidden = panel.dataset.panel !== name;
+    });
+    root.querySelectorAll(".more[data-more]").forEach((link) => {
+      link.hidden = link.dataset.more !== name;
+    });
+  };
+
+  root.querySelectorAll(".frontpage-tab").forEach((tab) => {
+    tab.addEventListener("click", () => activate(tab.dataset.tab));
+    tab.addEventListener("keydown", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        e.preventDefault();
+        activate(tab.dataset.tab);
+      }
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initFrontpageTabs);

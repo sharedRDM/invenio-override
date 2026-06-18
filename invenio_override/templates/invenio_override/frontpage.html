@@ -8,6 +8,7 @@
 {%- set main_column_width = "ten" if config.OVERRIDE_FRONTPAGE_RIGHT else "sixteen" %}
 {%- block javascript %}
   {{ webpack['invenio-override-js.js'] }}
+  {{ webpack['invenio-override-communities.js'] }}
 {%- endblock javascript %}
 {%- from "invenio_override/macros/authors.html" import creators -%}
 {%- from "invenio_app_rdm/macros/records_list.html" import records_list %}
