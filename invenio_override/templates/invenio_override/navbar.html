@@ -160,13 +160,6 @@
             <a href="/communities/new" class="header-topbar-dropdown-item">{{ _("New Community") }}</a>
           </div>
         </div>
-        {%- for item in current_menu.submenu('profile-admin').children if item.visible %}
-          {% set admin_text = item.text|safe %}
-          {% if 'Administration' in item.text|safe %}
-            {% set admin_text = _("Administration") %}
-          {%- endif %}
-          <a class="header-topbar-link" href="{{ item.url }}">{{ admin_text }}</a>
-        {%- endfor %}
         <div class="header-topbar-dropdown">
           <a href="/help" class="header-topbar-link">
             {{ _("Help") }} <span class="topbar-arrow"></span>
@@ -180,6 +173,13 @@
             {%- endif %}
           </div>
         </div>
+        {%- for item in current_menu.submenu('profile-admin').children if item.visible %}
+          {% set admin_text = item.text|safe %}
+          {% if 'Administration' in item.text|safe %}
+            {% set admin_text = _("Administration") %}
+          {%- endif %}
+          <a class="header-topbar-link" href="{{ item.url }}">{{ admin_text }}</a>
+        {%- endfor %}
         <div class="header-topbar-lang">
           {%- for l in current_i18n.get_locales() %}
             {%- if current_i18n.language != l.language %}
