@@ -751,3 +751,11 @@ msgstr ""
 msgid "Account settings"
 msgstr ""
 
+#: invenio_override/templates/invenio_override/recent_uploads.html:9
+msgid "Recent uploads and new communities"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/recent_uploads.html:31
+msgid "All communities"
+msgstr ""
+
