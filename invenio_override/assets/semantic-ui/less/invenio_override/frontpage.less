@@ -408,6 +408,11 @@ h2 {
 
   .more {
     display: inline-block;
+
+    &[hidden] {
+      display: none;
+    }
+
     padding: 0.5em 1.3em;
     border: 1px solid #000000;
     border-radius: @radiusPill;
@@ -454,6 +459,48 @@ h2 {
   flex: 1;
   height: 1px;
   background: rgba(0, 0, 0, 0.12);
+}
+
+/* ======================================
+   Tabbed section header 
+====================================== */
+.frontpage-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+
+  .frontpage-tab {
+    margin: 0 !important;
+    white-space: nowrap;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    font-weight: 800;
+    line-height: 1.15;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.55);
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.2rem;
+    transition:
+      color 0.15s ease,
+      border-color 0.15s ease;
+
+    &::after {
+      display: none !important;
+    }
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.78);
+    }
+
+    &.active,
+    &.active:hover {
+      color: @primaryText;
+      border-bottom-color: @overridePrimary;
+    }
+  }
+}
+
+.frontpage-tab-panel[hidden] {
+  display: none;
 }
 
 .section-more-link {

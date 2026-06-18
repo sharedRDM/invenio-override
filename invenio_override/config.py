@@ -83,6 +83,9 @@ OVERRIDE_FRONTPAGE_RIGHT = True
 OVERRIDE_FRONTPAGE_SUBTITLE = ""
 """Subtitle displayed below the frontpage title in the hero section."""
 
+OVERRIDE_FRONTPAGE_SHOW_NEW_COMMUNITIES = True
+"""Show the "New communities" tab next to "Recent uploads" on the frontpage."""
+
 OVERRIDE_REASONS_PARTNER = "CERN"
 """Trusted partner name shown in the 'Why use X?' reasons strip on the frontpage."""
 
