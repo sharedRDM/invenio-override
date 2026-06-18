@@ -825,6 +825,14 @@ msgstr "Verwalten Sie Ihr Profil, Ihre Einstellungen und Kontooptionen."
 msgid "Account settings"
 msgstr "Kontoeinstellungen"
 
+#: invenio_override/templates/invenio_override/recent_uploads.html:9
+msgid "Recent uploads and new communities"
+msgstr "Neueste Uploads und neue Gruppen"
+
+#: invenio_override/templates/invenio_override/recent_uploads.html:31
+msgid "All communities"
+msgstr "Alle Gruppen"
+
 #~ msgid "Search"
 #~ msgstr "Suchen"
 
