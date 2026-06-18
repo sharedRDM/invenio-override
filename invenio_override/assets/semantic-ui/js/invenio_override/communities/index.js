@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (newContainer) {
     ReactDOM.render(
       <CommunityCards
-        fetchUrl="/api/communities?sort=newest&size=10"
+        fetchUrl="/api/communities?sort=newest&size=5"
         defaultLogo={DEFAULT_LOGO}
         emptyMessage="No communities yet."
       />,
