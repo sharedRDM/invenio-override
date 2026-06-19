@@ -16,11 +16,21 @@ overrideStore.add(
   UploadsResults,
 );
 overrideStore.add("SearchApp.results", UploadsResults);
+overrideStore.add("InvenioAppRdm.Search.SearchApp.results", UploadsResults);
+overrideStore.add(
+  "GlobalSearchRecords.Search.SearchApp.results",
+  UploadsResults,
+);
 overrideStore.add(
   "InvenioAppRdm.DashboardCommunities.SearchApp.results",
   CommunitiesResults,
 );
 overrideStore.add("SearchApp.resultOptions", () => null);
+overrideStore.add("InvenioAppRdm.Search.SearchApp.resultOptions", () => null);
+overrideStore.add(
+  "GlobalSearchRecords.Search.SearchApp.resultOptions",
+  () => null,
+);
 
 /* sticky notification setup for test instance */
 $(".ui.sticky.instance-banner").sticky({
