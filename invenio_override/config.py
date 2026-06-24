@@ -179,6 +179,9 @@ OVERRIDE_EDUGAIN_ICON = "icons/eduGAIN-FavIcon-transparent.png"
 OVERRIDE_CONTACT_FORM = False
 """Enable/Disable Contact form."""
 
+OVERRIDE_CONTACT_FORM_BUNDLE = None
+"""Webpack bundle that activates the contact form """
+
 # ============================================================================
 # Production and Shibboleth Configuration
 # ============================================================================

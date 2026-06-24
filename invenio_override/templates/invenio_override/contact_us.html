@@ -8,21 +8,22 @@
 <div class="ui segment">
   <h4>{{ _("Need help?") }}</h4>
   {%- if config.OVERRIDE_CONTACT_FORM %}
-    <div style="padding-bottom: 10px;">
-      <a id="feedback-form" class="fluid ui button">{{ _("Contact us") }}</a>
-    </div>
-  {%- endif %}
-  {%- if config.OVERRIDE_SHOW_RIGHT_CONTACT_EMAIL %}
-    <div style="padding-bottom: 10px;">
-      <a href="mailto:{{ config.OVERRIDE_RIGHT_SECTION_CONTACT_EMAIL }}"
-         class="fluid ui button">{{ _("Contact our Help Service") }}</a>
-    </div>
-  {%- endif %}
-  <p>{{ _("We can help with:") }}</p>
-  <ul>
-    <li>{{ _("Upload your research results, software, preprints, etc.") }}</li>
-    <li>{{ _("Increase upload limit beyond our default policy of 10GB.") }}</li>
-    <li>{{ _("Establish contact with data stewards.") }}</li>
-    <li>{{ _("Find individual solutions.") }}</li>
-  </ul>
-</div>
+    {%- if config.OVERRIDE_CONTACT_FORM_BUNDLE %}{{ webpack[config.OVERRIDE_CONTACT_FORM_BUNDLE] }}{%- endif %}
+      <div style="padding-bottom: 10px;">
+        <a id="feedback-form" class="fluid ui button">{{ _("Contact us") }}</a>
+      </div>
+    {%- endif %}
+    {%- if config.OVERRIDE_SHOW_RIGHT_CONTACT_EMAIL %}
+      <div style="padding-bottom: 10px;">
+        <a href="mailto:{{ config.OVERRIDE_RIGHT_SECTION_CONTACT_EMAIL }}"
+           class="fluid ui button">{{ _("Contact our Help Service") }}</a>
+      </div>
+    {%- endif %}
+    <p>{{ _("We can help with:") }}</p>
+    <ul>
+      <li>{{ _("Upload your research results, software, preprints, etc.") }}</li>
+      <li>{{ _("Increase upload limit beyond our default policy of 10GB.") }}</li>
+      <li>{{ _("Establish contact with data stewards.") }}</li>
+      <li>{{ _("Find individual solutions.") }}</li>
+    </ul>
+  </div>
