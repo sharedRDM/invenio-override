@@ -114,31 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-/* load Zammad script on document ready
-$(function () {
-  importZammadScript();
-});
-*/
-
-/* function to import Zammad script for feedback form
-function importZammadScript() {
-  let scriptNode = document.createElement("hidden");
-  scriptNode.id = "zammad_form_script";
-  scriptNode.src = "URL";
-  document.head.appendChild(scriptNode);
-
-  $.getScript("URL", () => {
-    $("#feedback-form").ZammadForm({
-      messageTitle: "Contact us",
-      showTitle: true,
-      messageSubmit: "Submit",
-      messageThankYou: "Thank you for your message, (#%s). We will get back to you as quickly as possible!",
-      modal: true,
-    });
-  });
-}
-*/
-
 /* function to toggle visibility of an element by ID
 export function toggleVisibility(id) {
   const element = document.getElementById(id);
