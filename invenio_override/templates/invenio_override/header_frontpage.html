@@ -42,10 +42,7 @@
     } %}
   {% set options = [all_option] + options %}
 {% endif %}
-{%- block site_banner %}
-  {%- from "invenio_banners/banner.html" import banner with context -%}
-  {{ banner() }}
-{%- endblock site_banner %}
+{%- block site_banner %}{%- endblock site_banner %}
 {%- block frontpage_search %}
   <section class="frontpage-hero-section"
            role="banner"
