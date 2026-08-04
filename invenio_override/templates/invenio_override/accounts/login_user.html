@@ -41,15 +41,14 @@
             {%- endfor %}
           {%- endif %}
           {% if config.EDUGAIN_LOGIN_ENABLED %}
-            <div class="field">
-              {% set return_url = url_for('invenio_edugain.authn_request', next=next_url, _external=True) %}
-              <a class="login-page-button ui fluid large button"
-                 href="{{ url_for('invenio_edugain.login_discover', **{'return': return_url}) }}">
-                {{ _("Log in with edugain") }}
-                <img src="{{ url_for('static', filename=config.OVERRIDE_EDUGAIN_ICON) }}"
-                     height="20px" />
-              </a>
-            </div>
+            {% set return_url = url_for('invenio_edugain.authn_request', next=next_url, _external=True) %}
+            <a class="login-sso-button"
+               href="{{ url_for('invenio_edugain.login_discover', **{'return': return_url}) }}">
+              <span>{{ _("Log in with eduGAIN") }}</span>
+              <img src="{{ url_for('static', filename=config.OVERRIDE_EDUGAIN_ICON) }}"
+                   height="22px"
+                   alt="eduGAIN" />
+            </a>
           {% endif %}
           {%- if _has_sso and config.ACCOUNTS_LOCAL_LOGIN_ENABLED %}
             <div class="login-divider">

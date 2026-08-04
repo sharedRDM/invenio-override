@@ -103,6 +103,10 @@ class InvenioOverride(object):
                     "This guide explains how to write advanced search queries "
                     "using easy to understand examples."
                 ),
+                "invenio_app_rdm.help_statistics": _(
+                    "Answers to frequently asked questions about how usage "
+                    "statistics are collected, anonymized and displayed."
+                ),
                 "invenio_records_marc21.deposit_create": _("Deposit a publication"),
                 "invenio_records_marc21.deposit_edit": _("Deposit a publication"),
                 "invenio_catalogue_marc21.deposit_create": _(
