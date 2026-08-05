@@ -42,7 +42,15 @@ msgstr ""
 "Diese Anleitung erklärt anhand von leicht verständlichen Beispielen, wie "
 "man erweiterte Suchanfragen schreibt."
 
-#: invenio_override/ext.py:106 invenio_override/ext.py:107
+#: invenio_override/ext.py:106
+msgid ""
+"Answers to frequently asked questions about how usage statistics are "
+"collected, anonymized and displayed."
+msgstr ""
+"Antworten auf häufig gestellte Fragen dazu, wie Nutzungsstatistiken "
+"erhoben, anonymisiert und angezeigt werden."
+
+#: invenio_override/ext.py:109 invenio_override/ext.py:110
 #, fuzzy
 msgid "Deposit a publication"
 msgstr "Publikationen suchen"

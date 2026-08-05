@@ -38,7 +38,13 @@ msgid ""
 "understand examples."
 msgstr ""
 
-#: invenio_override/ext.py:106 invenio_override/ext.py:107
+#: invenio_override/ext.py:106
+msgid ""
+"Answers to frequently asked questions about how usage statistics are "
+"collected, anonymized and displayed."
+msgstr ""
+
+#: invenio_override/ext.py:109 invenio_override/ext.py:110
 msgid "Deposit a publication"
 msgstr ""
 
