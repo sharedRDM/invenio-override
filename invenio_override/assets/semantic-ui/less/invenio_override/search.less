@@ -274,12 +274,14 @@ aside.column .ui.card.borderless.facet {
       padding: 0.4rem 0 !important;
     }
 
-    /* Publication-date histogram */
-    > svg {
-      display: block;
-      margin: 10px !important;
-      max-width: calc(100% - 20px);
-      height: auto;
+    &:has(.searchkit-daterange-slider-container) {
+      padding-left: 1.25rem !important;
+      padding-right: 1.25rem !important;
+
+      h2.header:not(.ui) {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
     }
 
     /* Clear selection button */
