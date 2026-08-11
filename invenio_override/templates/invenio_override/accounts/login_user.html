@@ -33,8 +33,8 @@
                     {{ _('Log in with %(title)s', title=config.SSO_SAML_IDPS[name]['title']|default("SAML", true) )
                     }}
                   </span>
-                  {%- if config.OVERRIDE_ICON %}
-                    <img src="{{ url_for('static', filename=config.OVERRIDE_ICON) }}"
+                  {%- if config.OVERRIDE_SAML_ICON %}
+                    <img src="{{ url_for('static', filename=config.OVERRIDE_SAML_ICON) }}"
                          height="22px"
                          alt="{{ config.SSO_SAML_IDPS[name]['title']|default("SAML", true) }}" />
                   {%- endif %}
@@ -49,8 +49,8 @@
                 <a class="login-sso-button"
                    href="{{ url_for('invenio_oauthclient.login', remote_app=name, next=request.args.get('next') or request.referrer) }}">
                   <span>{{ _('Log in with %(title)s', title=app['title']) }}</span>
-                  {%- if config.OVERRIDE_ICON %}
-                    <img src="{{ url_for('static', filename=config.OVERRIDE_ICON) }}"
+                  {%- if config.OVERRIDE_OAUTH_ICON %}
+                    <img src="{{ url_for('static', filename=config.OVERRIDE_OAUTH_ICON) }}"
                          height="22px"
                          alt="{{ app['title'] }}" />
                   {%- endif %}

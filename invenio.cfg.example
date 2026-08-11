@@ -22,7 +22,7 @@ OVERRIDE_LOGO = "images/YOUR_LOGO.png"
 OVERRIDE_FAVICON = "your_favicon.ico"
 
 # Icon shown on the login page
-OVERRIDE_ICON = "images/YOUR_ICON.png"
+OVERRIDE_OAUTH_ICON = "images/YOUR_ICON.png"
 
 # ------------------------------------------------------------------------------
 # Header layout
@@ -143,7 +143,7 @@ OVERRIDE_RESOURCE_OVERVIEW = False  # Show resource overview section
 # OVERRIDE_LOGO = "images/TUG.png"
 # OVERRIDE_FAVICON = "tug.ico"
 # OVERRIDE_PRODUCTION = True
-# OVERRIDE_ICON = "images/icon_use.png"
+# OVERRIDE_OAUTH_ICON = "images/icon_use.png"
 # OVERRIDE_EDUGAIN_ICON = "icons/eduGAIN-FavIcon-transparent.png"
 # OVERRIDE_CONTACT_FORM = False
 # OVERRIDE_SHIBBOLETH = False
@@ -212,7 +212,7 @@ OVERRIDE_RESOURCE_OVERVIEW = False  # Show resource overview section
 OVERRIDE_LOGO = "images/MUG.svg"
 OVERRIDE_FAVICON = "mug.ico"
 OVERRIDE_PRODUCTION = True
-OVERRIDE_ICON = "images/icon_use.png"
+OVERRIDE_OAUTH_ICON = "images/icon_use.png"
 OVERRIDE_CONTACT_FORM = False
 OVERRIDE_SHIBBOLETH = False
 OVERRIDE_FRONTPAGE_RIGHT = False
