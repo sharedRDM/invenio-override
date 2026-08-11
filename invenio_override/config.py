@@ -146,6 +146,9 @@ Example::
     }
 """
 
+OVERRIDE_MANUAL_URL = ""
+"""URL of the user manual linked from the Help dropdown."""
+
 OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 """Default base template"""
 
