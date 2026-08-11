@@ -166,6 +166,12 @@
           </a>
           <div class="header-topbar-dropdown-menu">
             <a href="/help/search" class="header-topbar-dropdown-item">{{ _("Search Guide") }}</a>
+            {% if config.get('OVERRIDE_MANUAL_URL') %}
+              <a href="{{ config.OVERRIDE_MANUAL_URL }}"
+                 class="header-topbar-dropdown-item"
+                 target="_blank"
+                 rel="noopener">{{ _("Manual") }}</a>
+            {% endif %}
             {%- if config.get('OVERRIDE_SHOW_CONTACT') or config.get('OVERRIDE_FRONTPAGE_RIGHT') %}
               <a id="contact-modal-trigger"
                  href="#"
