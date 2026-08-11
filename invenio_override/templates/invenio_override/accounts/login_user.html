@@ -24,6 +24,24 @@
       <div class="login-card">
         {%- block form_header %}{%- endblock form_header %}
           {%- if _flash_html %}<div class="login-flash-messages">{{ _flash_html }}</div>{%- endif %}
+          {% if config.SSO_SAML_IDPS %}
+            {% for name in config.SSO_SAML_IDPS.keys() %}
+              <div class="field">
+                <a class="login-sso-button"
+                   href="{{ url_for('sso_saml.sso', idp=name, next=next_url) }}">
+                  <span>
+                    {{ _('Log in with %(title)s', title=config.SSO_SAML_IDPS[name]['title']|default("SAML", true) )
+                    }}
+                  </span>
+                  {%- if config.OVERRIDE_ICON %}
+                    <img src="{{ url_for('static', filename=config.OVERRIDE_ICON) }}"
+                         height="22px"
+                         alt="{{ config.SSO_SAML_IDPS[name]['title']|default("SAML", true) }}" />
+                  {%- endif %}
+                </a>
+              </div>
+            {% endfor %}
+          {% endif %}
           {# OAuth SSO buttons #}
           {%- if config.OAUTHCLIENT_REMOTE_APPS %}
             {%- for name, app in config.OAUTHCLIENT_REMOTE_APPS.items() %}
