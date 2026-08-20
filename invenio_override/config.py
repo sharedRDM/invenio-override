@@ -149,6 +149,9 @@ Example::
 OVERRIDE_MANUAL_URL = ""
 """URL of the user manual linked from the Help dropdown."""
 
+OVERRIDE_FILE_FORMATS_URL = ""
+"""URL of the preferred file formats list linked from the Help page (empty = hidden)."""
+
 OVERRIDE_BASE_TEMPLATE = "invenio_override/base.html"
 """Default base template"""
 
