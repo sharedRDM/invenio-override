@@ -22,6 +22,7 @@
   <div class="ui container">
     <div class="login-page-container">
       <div class="login-card">
+        <a href="/" class="login-back-link">&larr; {{ _("Back to main page") }}</a>
         {%- block form_header %}{%- endblock form_header %}
           {%- if _flash_html %}<div class="login-flash-messages">{{ _flash_html }}</div>{%- endif %}
           {% if config.SSO_SAML_IDPS %}
