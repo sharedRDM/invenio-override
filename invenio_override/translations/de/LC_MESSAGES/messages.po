@@ -1135,3 +1135,24 @@ msgstr "Alle Gruppen"
 #~ msgid "to change the font size."
 #~ msgstr "um die Schriftgröße zu ändern."
 
+
+#: invenio_override/templates/invenio_override/accounts/login_user.html:25
+msgid "Back to main page"
+msgstr "Zurück zur Hauptseite"
+
+#: invenio_override/templates/invenio_override/help.html:38
+#: invenio_override/templates/invenio_override/navbar.html:186
+msgid "File formats"
+msgstr "Dateiformate"
+
+#: invenio_override/templates/invenio_override/help.html:39
+msgid "Recommended formats for long-term preservation."
+msgstr "Empfohlene Formate für die Langzeitarchivierung."
+
+#: invenio_override/templates/invenio_override/navbar.html:142
+msgid "Open requests"
+msgstr "Offene Anfragen"
+
+#: invenio_override/templates/invenio_override/navbar.html:156
+msgid "Log in for more features"
+msgstr "Anmelden für weitere Funktionen"

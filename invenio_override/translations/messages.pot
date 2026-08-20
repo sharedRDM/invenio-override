@@ -759,3 +759,24 @@ msgstr ""
 msgid "All communities"
 msgstr ""
 
+
+#: invenio_override/templates/invenio_override/accounts/login_user.html:25
+msgid "Back to main page"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/help.html:38
+#: invenio_override/templates/invenio_override/navbar.html:186
+msgid "File formats"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/help.html:39
+msgid "Recommended formats for long-term preservation."
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:142
+msgid "Open requests"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:156
+msgid "Log in for more features"
+msgstr ""
