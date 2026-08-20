@@ -27,6 +27,18 @@
         <div class="dashboard-nav-box-title">{{ _("Search Guide") }}</div>
         <div class="dashboard-nav-box-desc">{{ _("Learn how to search effectively.") }}</div>
       </a>
+      {%- if config.get('OVERRIDE_FILE_FORMATS_URL') %}
+        <a href="{{ config.OVERRIDE_FILE_FORMATS_URL }}"
+           class="dashboard-nav-box"
+           target="_blank"
+           rel="noopener noreferrer">
+          <div class="dashboard-nav-box-circle">
+            <i class="file alternate outline icon"></i>
+          </div>
+          <div class="dashboard-nav-box-title">{{ _("File formats") }}</div>
+          <div class="dashboard-nav-box-desc">{{ _("Recommended formats for long-term preservation.") }}</div>
+        </a>
+      {%- endif %}
     </div>
   </div>
 {%- endblock page_body %}
