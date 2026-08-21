@@ -173,14 +173,14 @@
           </a>
           <div class="header-topbar-dropdown-menu">
             <a href="/help/search" class="header-topbar-dropdown-item">{{ _("Search Guide") }}</a>
-            {% if config.get('OVERRIDE_MANUAL_URL') %}
-              <a href="{{ config.OVERRIDE_MANUAL_URL }}"
+            {% if config.get('OVERRIDE_DOC_REDIRECTS', {}).get('/manual') %}
+              <a href="/manual"
                  class="header-topbar-dropdown-item"
                  target="_blank"
                  rel="noopener">{{ _("Manual") }}</a>
             {% endif %}
-            {% if config.get('OVERRIDE_FILE_FORMATS_URL') %}
-              <a href="{{ config.OVERRIDE_FILE_FORMATS_URL }}"
+            {% if config.get('OVERRIDE_DOC_REDIRECTS', {}).get('/file-formats') %}
+              <a href="/file-formats"
                  class="header-topbar-dropdown-item"
                  target="_blank"
                  rel="noopener">{{ _("File formats") }}</a>
