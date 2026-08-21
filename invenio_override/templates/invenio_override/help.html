@@ -27,8 +27,8 @@
         <div class="dashboard-nav-box-title">{{ _("Search Guide") }}</div>
         <div class="dashboard-nav-box-desc">{{ _("Learn how to search effectively.") }}</div>
       </a>
-      {%- if config.get('OVERRIDE_FILE_FORMATS_URL') %}
-        <a href="{{ config.OVERRIDE_FILE_FORMATS_URL }}"
+      {%- if config.get('OVERRIDE_DOC_REDIRECTS', {}).get('/file-formats') %}
+        <a href="/file-formats"
            class="dashboard-nav-box"
            target="_blank"
            rel="noopener noreferrer">
