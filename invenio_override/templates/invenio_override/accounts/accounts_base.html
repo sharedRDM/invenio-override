@@ -70,7 +70,7 @@
         data-target=".scrollspy-target">
     {% for _banner in get_active_banners() %}
       <div class="ui sticky instance-banner instance-banner--{{ config.OVERRIDE_INSTANCE_TYPE }}">
-        <p>{{ _banner.message|safe }}</p>
+        <p>{{ _(_banner.message) |safe }}</p>
       </div>
     {% endfor %}
     {%- block body %}

@@ -56,9 +56,12 @@ document.addEventListener("DOMContentLoaded", function () {
       <div className="ui fluid input frontpage-search-container">
         <MultipleOptionsSearchBar
           options={searchBarOptions}
-          placeholder={i18next.t(
-            "Use this dropdown to search across different resource types",
-          )}
+          placeholder={
+            frontpageSearchbar.dataset.placeholder ||
+            i18next.t(
+              "Use this dropdown to search across different resource types",
+            )
+          }
         />
       </div>,
       frontpageSearchbar,
