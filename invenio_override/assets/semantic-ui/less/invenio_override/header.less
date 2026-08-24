@@ -28,6 +28,15 @@ header > nav {
   border-bottom: 1px solid black;
 }
 
+/* pinned to the viewport top while scrolling (toggled in theme.js) */
+.header-topbar--stuck {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
 /* Single outlined pill wrapping all nav items */
 .header-topbar .ui.container {
   display: flex;
