@@ -37,6 +37,32 @@ $(".ui.sticky.instance-banner").sticky({
   context: "body",
 });
 
+/* keep the top navigation bar visible while scrolling */
+document.addEventListener("DOMContentLoaded", function () {
+  const topbar = document.querySelector(".header-topbar");
+  if (!topbar) {
+    return;
+  }
+  const spacer = document.createElement("div");
+  let stuck = false;
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!stuck && topbar.getBoundingClientRect().top <= 0) {
+        spacer.style.height = `${topbar.offsetHeight}px`;
+        topbar.before(spacer);
+        topbar.classList.add("header-topbar--stuck");
+        stuck = true;
+      } else if (stuck && spacer.getBoundingClientRect().top > 0) {
+        topbar.classList.remove("header-topbar--stuck");
+        spacer.remove();
+        stuck = false;
+      }
+    },
+    { passive: true },
+  );
+});
+
 const DEFAULT_LOGO = "/static/images/square-placeholder.png";
 
 document.addEventListener("DOMContentLoaded", function () {
