@@ -322,9 +322,8 @@ msgstr "Dies ist die Testinstanz des Repositories."
 
 #: invenio_override/templates/invenio_override/accounts/accounts_base.html:77
 #: invenio_override/templates/invenio_override/header.html:14
-#, fuzzy
 msgid "This is the demo instance of the Repository."
-msgstr "Dies ist die Testinstanz des Repositories."
+msgstr "Dies ist die Demoinstanz des Repositories."
 
 #: invenio_override/templates/invenio_override/header.html:48
 msgid "Community"
@@ -443,7 +442,7 @@ msgstr "Nehmen Sie Kontakt mit unserem Team auf."
 #: invenio_override/templates/invenio_override/help.html:27
 #: invenio_override/templates/invenio_override/navbar.html:175
 msgid "Search Guide"
-msgstr "Suchhandbuch"
+msgstr "Suchanleitung"
 
 #: invenio_override/templates/invenio_override/help.html:28
 msgid "Learn how to search effectively."
@@ -960,11 +959,6 @@ msgstr "Alle Gruppen"
 #~ msgid "My Communities"
 #~ msgstr "Meine Gruppen"
 
-#~ msgid "Publish and share your research data — citable, visible, and FAIR."
-#~ msgstr ""
-#~ "Forschungsdaten veröffentlichen und teilen —"
-#~ " zitierbar, sichtbar und FAIR."
-
 #~ msgid "TU Graz Research Data Repository"
 #~ msgstr "TU Graz Research Data Repository"
 
@@ -982,15 +976,6 @@ msgstr "Alle Gruppen"
 
 #~ msgid "PASSION"
 #~ msgstr "LEIDENSCHAFT"
-
-#~ msgid "Accessibility Statement"
-#~ msgstr "Erklärung zur Barrierefreiheit"
-
-#~ msgid "List of preferred file formats"
-#~ msgstr "Liste bevorzugter Dateiformate"
-
-#~ msgid "Curation Workflow"
-#~ msgstr "Kurations-Workflow"
 
 #~ msgid "Access and manage your research data."
 #~ msgstr "Auf Ihre Forschungsdaten zugreifen und diese verwalten."
@@ -1084,57 +1069,6 @@ msgstr "Alle Gruppen"
 #~ msgid "Log in to Repository"
 #~ msgstr "Mit Repository-Zugangsdaten anmelden"
 
-#~ msgid "Repository"
-#~ msgstr "Repository"
-
-#~ msgid "Documentation"
-#~ msgstr "Dokumentation"
-
-#~ msgid "Reference Guide"
-#~ msgstr "Referenzhandbuch"
-
-#~ msgid "Data Protection"
-#~ msgstr "Datenschutz"
-
-#~ msgid "Terms and Conditions"
-#~ msgstr "Allgemeine Geschäftsbedingungen"
-
-#~ msgid "Features"
-#~ msgstr "Funktionen"
-
-#~ msgid "Scalability"
-#~ msgstr "Skalierbarkeit"
-
-#~ msgid "Institutional integration"
-#~ msgstr "Institutionelle Integration"
-
-#~ msgid "Next Generation Repository"
-#~ msgstr "Repository der nächsten Generation"
-
-#~ msgid "Repository Profiles"
-#~ msgstr "Repository-Profile"
-
-#~ msgid "Resilient"
-#~ msgstr "Widerstandsfähig"
-
-#~ msgid "Connected Services"
-#~ msgstr "Verbundene Dienste"
-
-#~ msgid "Research Data Management"
-#~ msgstr "Forschungsdatenmanagement"
-
-#~ msgid "Accessibility"
-#~ msgstr "Barrierefreiheit"
-
-#~ msgid "Tipp:"
-#~ msgstr "Tipp:"
-
-#~ msgid "Use Ctrl + and Crtl -"
-#~ msgstr "Verwenden Sie Strg + und Strg -"
-
-#~ msgid "to change the font size."
-#~ msgstr "um die Schriftgröße zu ändern."
-
 
 #: invenio_override/templates/invenio_override/accounts/login_user.html:25
 msgid "Back to main page"
@@ -1156,3 +1090,7 @@ msgstr "Offene Anfragen"
 #: invenio_override/templates/invenio_override/navbar.html:156
 msgid "Log in for more features"
 msgstr "Anmelden für weitere Funktionen"
+
+#: invenio_override/templates/invenio_override/header_frontpage.html
+msgid "Use this dropdown to search across different resource types"
+msgstr "Über diese Auswahl verschiedene Ressourcentypen durchsuchen"
