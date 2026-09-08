@@ -8,6 +8,10 @@
 Changes
 =======
 
+Version v1.1.1 (released 2026-09-08)
+
+- fix(i18n): replace fuzzy German guesses and resync translation catalog
+
 Version v1.1.0 (released 2026-09-03)
 
 - feat(header): keep top navbar visible on scroll
