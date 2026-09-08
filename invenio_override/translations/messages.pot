@@ -1,5 +1,5 @@
 # Translations template for PROJECT.
-# Copyright (C) 2024-2026 Graz University of Technology
+# Copyright (C) 2026 sharedRDM
 # This file is distributed under the same license as the PROJECT project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
@@ -8,20 +8,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: repository-support@tugraz.at\n"
-"POT-Creation-Date: 2026-06-10 09:09+0200\n"
+"POT-Creation-Date: 2026-09-08 10:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.18.0\n"
+"Generated-By: Babel 2.17.0\n"
 
-#: invenio_override/config.py:296
+#: invenio_override/config.py:314
 msgid "German"
 msgstr ""
 
-#: invenio_override/config.py:309
+#: invenio_override/config.py:327
 msgid "Welcome to The Repository!"
 msgstr ""
 
@@ -36,28 +36,34 @@ msgid ""
 "understand examples."
 msgstr ""
 
-#: invenio_override/ext.py:106 invenio_override/ext.py:107
+#: invenio_override/ext.py:107
+msgid ""
+"Answers to frequently asked questions about how usage statistics are "
+"collected, anonymized and displayed."
+msgstr ""
+
+#: invenio_override/ext.py:110 invenio_override/ext.py:111
 msgid "Deposit a publication"
 msgstr ""
 
-#: invenio_override/ext.py:109 invenio_override/ext.py:112
+#: invenio_override/ext.py:113 invenio_override/ext.py:116
 msgid "Deposit a catalogue record"
 msgstr ""
 
-#: invenio_override/ext.py:115
+#: invenio_override/ext.py:119
 msgid "Manage and publish your openly licensed educational materials"
 msgstr ""
 
-#: invenio_override/ext.py:118 invenio_override/ext.py:121
+#: invenio_override/ext.py:122 invenio_override/ext.py:125
 msgid "Deposit an educational resource"
 msgstr ""
 
-#: invenio_override/ext.py:152
+#: invenio_override/ext.py:156
 #: invenio_override/templates/invenio_override/overview.html:10
 msgid "Overview"
 msgstr ""
 
-#: invenio_override/ext.py:158
+#: invenio_override/ext.py:162
 msgid "My dashboard"
 msgstr ""
 
@@ -147,14 +153,14 @@ msgid "More"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/communities_frontpage.html:9
-#: invenio_override/templates/invenio_override/navbar.html:155
-#: invenio_override/templates/invenio_override/navbar.html:158
+#: invenio_override/templates/invenio_override/navbar.html:162
+#: invenio_override/templates/invenio_override/navbar.html:165
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/communities.html:17
 msgid "Communities"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/communities_frontpage.html:10
-#: invenio_override/templates/invenio_override/header.html:61
+#: invenio_override/templates/invenio_override/header.html:52
 msgid ""
 "Organize, curate and collaborate on records for your institution, "
 "project, topic or event."
@@ -170,46 +176,47 @@ msgid "See all"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/communities_frontpage.html:28
+#: invenio_override/templates/invenio_override/recent_uploads.html:17
 msgid "New communities"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/contact_us.html:9
-#: invenio_override/templates/invenio_override/navbar.html:200
+#: invenio_override/templates/invenio_override/navbar.html:219
 msgid "Need help?"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/contact_us.html:12
-#: invenio_override/templates/invenio_override/navbar.html:211
+#: invenio_override/templates/invenio_override/contact_us.html:13
+#: invenio_override/templates/invenio_override/navbar.html:230
 msgid "Contact us"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/contact_us.html:18
-#: invenio_override/templates/invenio_override/navbar.html:217
+#: invenio_override/templates/invenio_override/contact_us.html:19
+#: invenio_override/templates/invenio_override/navbar.html:236
 msgid "Contact our Help Service"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/contact_us.html:21
-#: invenio_override/templates/invenio_override/navbar.html:202
+#: invenio_override/templates/invenio_override/contact_us.html:22
+#: invenio_override/templates/invenio_override/navbar.html:221
 msgid "We can help with:"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/contact_us.html:23
-#: invenio_override/templates/invenio_override/navbar.html:204
+#: invenio_override/templates/invenio_override/contact_us.html:24
+#: invenio_override/templates/invenio_override/navbar.html:223
 msgid "Upload your research results, software, preprints, etc."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/contact_us.html:24
-#: invenio_override/templates/invenio_override/navbar.html:205
+#: invenio_override/templates/invenio_override/contact_us.html:25
+#: invenio_override/templates/invenio_override/navbar.html:224
 msgid "Increase upload limit beyond our default policy of 10GB."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/contact_us.html:25
-#: invenio_override/templates/invenio_override/navbar.html:206
+#: invenio_override/templates/invenio_override/contact_us.html:26
+#: invenio_override/templates/invenio_override/navbar.html:225
 msgid "Establish contact with data stewards."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/contact_us.html:26
-#: invenio_override/templates/invenio_override/navbar.html:207
+#: invenio_override/templates/invenio_override/contact_us.html:27
+#: invenio_override/templates/invenio_override/navbar.html:226
 msgid "Find individual solutions."
 msgstr ""
 
@@ -281,67 +288,57 @@ msgstr ""
 msgid "usage stats on every record"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/accounts_base.html:75
-#: invenio_override/templates/invenio_override/header.html:12
-msgid "This is the test instance of the Repository."
-msgstr ""
-
-#: invenio_override/templates/invenio_override/accounts/accounts_base.html:77
-#: invenio_override/templates/invenio_override/header.html:14
-msgid "This is the demo instance of the Repository."
-msgstr ""
-
-#: invenio_override/templates/invenio_override/header.html:48
+#: invenio_override/templates/invenio_override/header.html:39
 msgid "Community"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:48
+#: invenio_override/templates/invenio_override/header.html:39
 #: invenio_override/templates/invenio_override/header_frontpage.html:21
-#: invenio_override/templates/invenio_override/header_frontpage.html:161
-#: invenio_override/templates/invenio_override/navbar.html:134
+#: invenio_override/templates/invenio_override/header_frontpage.html:159
+#: invenio_override/templates/invenio_override/navbar.html:135
 #: invenio_override/templates/invenio_override/resource_overview.html:37
 #: invenio_override/templates/invenio_override/search_nav.html:15
 msgid "Publications"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:53
+#: invenio_override/templates/invenio_override/header.html:44
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/uploads.html:18
 msgid "Manage and publish your research data, publications and other outputs."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:56
+#: invenio_override/templates/invenio_override/header.html:47
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/requests.html:15
 msgid "Manage your open requests and collaborations."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:58
+#: invenio_override/templates/invenio_override/header.html:49
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/communities.html:18
 msgid "Manage your communities and collaborate with others."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:64
+#: invenio_override/templates/invenio_override/header.html:55
 msgid "Create a community to organize and share your research outputs."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:67
+#: invenio_override/templates/invenio_override/header.html:58
 msgid "Browse and manage this community's records, members and requests."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:70
+#: invenio_override/templates/invenio_override/header.html:61
 msgid "Manage your profile, security and connected applications."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:72
+#: invenio_override/templates/invenio_override/header.html:63
 msgid "Search and discover scientific publications from TU Graz."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header.html:74
+#: invenio_override/templates/invenio_override/header.html:65
 msgid "Search and discover open educational resources."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/header_frontpage.html:13
-#: invenio_override/templates/invenio_override/header_frontpage.html:143
-#: invenio_override/templates/invenio_override/navbar.html:132
+#: invenio_override/templates/invenio_override/header_frontpage.html:141
+#: invenio_override/templates/invenio_override/navbar.html:133
 #: invenio_override/templates/invenio_override/resource_overview.html:20
 #: invenio_override/templates/invenio_override/search.html:8
 #: invenio_override/templates/invenio_override/search_nav.html:13
@@ -350,8 +347,8 @@ msgstr ""
 
 #: invenio_override/templates/invenio_override/datamodels/lom_uploads.html:13
 #: invenio_override/templates/invenio_override/header_frontpage.html:30
-#: invenio_override/templates/invenio_override/header_frontpage.html:181
-#: invenio_override/templates/invenio_override/navbar.html:137
+#: invenio_override/templates/invenio_override/header_frontpage.html:179
+#: invenio_override/templates/invenio_override/navbar.html:138
 #: invenio_override/templates/invenio_override/resource_overview.html:52
 #: invenio_override/templates/invenio_override/search_nav.html:18
 msgid "Educational Resources"
@@ -362,19 +359,23 @@ msgstr ""
 msgid "All"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:52
+#: invenio_override/templates/invenio_override/header_frontpage.html:49
 msgid "Search repository"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:129
+#: invenio_override/templates/invenio_override/header_frontpage.html:117
+msgid "Use this dropdown to search across different resource types"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/header_frontpage.html:127
 msgid "Search research results"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:149
+#: invenio_override/templates/invenio_override/header_frontpage.html:147
 msgid "Search publications"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/header_frontpage.html:168
+#: invenio_override/templates/invenio_override/header_frontpage.html:166
 msgid "Search educational resources"
 msgstr ""
 
@@ -389,7 +390,7 @@ msgid ""
 msgstr ""
 
 #: invenio_override/templates/invenio_override/help.html:19
-#: invenio_override/templates/invenio_override/navbar.html:179
+#: invenio_override/templates/invenio_override/navbar.html:191
 msgid "Contact"
 msgstr ""
 
@@ -406,6 +407,15 @@ msgstr ""
 msgid "Learn how to search effectively."
 msgstr ""
 
+#: invenio_override/templates/invenio_override/help.html:38
+#: invenio_override/templates/invenio_override/navbar.html:186
+msgid "File formats"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/help.html:39
+msgid "Recommended formats for long-term preservation."
+msgstr ""
+
 #: invenio_override/templates/invenio_override/navbar.html:122
 msgid "Menu"
 msgstr ""
@@ -414,44 +424,56 @@ msgstr ""
 msgid "Dashboard"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:139
+#: invenio_override/templates/invenio_override/navbar.html:140
 #: invenio_override/templates/semantic-ui/invenio_app_rdm/users/requests.html:14
 msgid "Requests"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:141
-msgid "Curation Requests"
+#: invenio_override/templates/invenio_override/navbar.html:142
+msgid "Open requests"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/navbar.html:144
+msgid "Curation Requests"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:147
 msgid "Upload Research Result"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:146
+#: invenio_override/templates/invenio_override/navbar.html:149
 msgid "Upload Publication"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:149
+#: invenio_override/templates/invenio_override/navbar.html:152
 msgid "Upload Educational Resource"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:159
-msgid "All Communities"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/navbar.html:160
-msgid "New Community"
+#: invenio_override/templates/invenio_override/navbar.html:156
+msgid "Log in for more features"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/navbar.html:166
-msgid "Administration"
+msgid "All Communities"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:167
+msgid "New Community"
 msgstr ""
 
 #: invenio_override/templates/invenio_override/navbar.html:172
 msgid "Help"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/navbar.html:222
+#: invenio_override/templates/invenio_override/navbar.html:180
+msgid "Manual"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:198
+msgid "Administration"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/navbar.html:241
 msgid "Close"
 msgstr ""
 
@@ -460,23 +482,30 @@ msgid "Manage your uploads, communities and requests."
 msgstr ""
 
 #: invenio_override/templates/invenio_override/recent_uploads.html:9
-#: invenio_override/templates/invenio_override/recent_uploads.html:11
+msgid "Recent uploads and new communities"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/recent_uploads.html:15
 msgid "Recent uploads"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/recent_uploads.html:13
+#: invenio_override/templates/invenio_override/recent_uploads.html:23
 msgid "All uploads"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/recent_uploads.html:19
+#: invenio_override/templates/invenio_override/recent_uploads.html:28
+msgid "All communities"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/recent_uploads.html:37
 msgid "Explore Research Results available in the repository."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/recent_uploads.html:21
+#: invenio_override/templates/invenio_override/recent_uploads.html:39
 msgid "There are no public records to show."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/recent_uploads.html:59
+#: invenio_override/templates/invenio_override/recent_uploads.html:77
 msgid "Uploaded on"
 msgstr ""
 
@@ -571,29 +600,34 @@ msgstr ""
 msgid "Access and manage your research data."
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:33
+#: invenio_override/templates/invenio_override/accounts/login_user.html:25
+msgid "Back to main page"
+msgstr ""
+
+#: invenio_override/templates/invenio_override/accounts/login_user.html:34
+#: invenio_override/templates/invenio_override/accounts/login_user.html:52
 #, python-format
 msgid "Log in with %(title)s"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:48
-msgid "Log in with edugain"
+#: invenio_override/templates/invenio_override/accounts/login_user.html:66
+msgid "Log in with eduGAIN"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:45
+#: invenio_override/templates/invenio_override/accounts/login_user.html:74
 #: invenio_override/templates/invenio_override/accounts/register_user.html:45
 msgid "Or"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:57
+#: invenio_override/templates/invenio_override/accounts/login_user.html:86
 msgid "Log in with repository credentials"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:71
+#: invenio_override/templates/invenio_override/accounts/login_user.html:100
 msgid "Log In"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/accounts/login_user.html:75
+#: invenio_override/templates/invenio_override/accounts/login_user.html:104
 msgid "Forgot password?"
 msgstr ""
 
@@ -751,32 +785,3 @@ msgstr ""
 msgid "Account settings"
 msgstr ""
 
-#: invenio_override/templates/invenio_override/recent_uploads.html:9
-msgid "Recent uploads and new communities"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/recent_uploads.html:31
-msgid "All communities"
-msgstr ""
-
-
-#: invenio_override/templates/invenio_override/accounts/login_user.html:25
-msgid "Back to main page"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/help.html:38
-#: invenio_override/templates/invenio_override/navbar.html:186
-msgid "File formats"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/help.html:39
-msgid "Recommended formats for long-term preservation."
-msgstr ""
-
-#: invenio_override/templates/invenio_override/navbar.html:142
-msgid "Open requests"
-msgstr ""
-
-#: invenio_override/templates/invenio_override/navbar.html:156
-msgid "Log in for more features"
-msgstr ""
